@@ -33,28 +33,28 @@
         .page-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* CARDS & GRIDS */
+        /* DIVINE CARDS */
         .divine-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 1px solid var(--gold); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; }
 
         /* SERVICES ACCORDION */
         .services-accordion { display: flex; flex-direction: column; gap: 10px; }
-        .service-category { background: white; border: 1px solid var(--gold); border-radius: 10px; overflow: hidden; }
+        .service-category { background: white; border: 1px solid var(--gold); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         .cat-header { padding: 15px; display: flex; align-items: center; cursor: pointer; background: var(--cream); gap: 12px; }
         .cat-header img { width: 32px; }
         .cat-header h3 { flex-grow: 1; font-size: 15px; color: var(--maroon); margin: 0; font-weight: 600; }
         .cat-body { max-height: 0; overflow: hidden; transition: 0.3s ease-out; background: white; }
+        .service-banner { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid var(--gold); display: block; }
         .cat-body ul { list-style: none; padding: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
         .cat-body li { font-size: 13px; color: #444; border-bottom: 1px solid #f0f0f0; padding: 4px 0; }
-        .service-category.active .cat-body { max-height: 1000px; border-top: 1px solid var(--gold); }
+        .service-category.active .cat-body { max-height: 1200px; border-top: 1px solid var(--gold); }
         .service-category.active .cat-header i { transform: rotate(180deg); }
 
         /* RASHI & DARSHAN */
-        .rashi-card { text-align: center; background: var(--cream); padding: 10px; border-radius: 10px; border: 1px solid var(--gold); cursor: pointer; }
+        .rashi-card { text-align: center; background: var(--cream); padding: 10px; border-radius: 10px; border: 1px solid var(--gold); }
         .rashi-card span { font-size: 28px; display: block; }
-        .darshan-img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; border: 1px solid var(--gold); }
+        .darshan-img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; border: 1px solid var(--gold); }
 
-        /* UTILS */
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 1500; }
         .overlay.active { display: block; }
         .wa-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 3000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 8px; }
@@ -89,72 +89,102 @@
 
     <main>
         <section id="home" class="page-content active">
-            <div class="divine-card" style="text-align:center; background:var(--cream); border: 2px solid var(--gold);">
-                <h2 class="lang" data-hi="जय श्री महाकाल" data-en="Jai Shree Mahakal">जय श्री महाकाल</h2>
-                <p class="lang" data-hi="उज्जैन के विद्वान ब्राह्मणों द्वारा वैदिक अनुष्ठान एवं ज्योतिष समाधान।" data-en="Vedic rituals and astrology solutions by scholars of Ujjain.">उज्जैन के विद्वान ब्राह्मणों द्वारा वैदिक अनुष्ठान एवं ज्योतिष समाधान।</p>
-                <button class="lang-btn lang" onclick="showPage('services')" style="margin-top:15px;" data-hi="सेवाएं देखें" data-en="Our Services">सेवाएं देखें</button>
+            <div class="divine-card" style="text-align:center; background:var(--cream); border: 2px solid var(--gold); padding: 50px 20px;">
+                <h1 class="lang" data-hi="जय श्री महाकाल" data-en="Jai Shree Mahakal">जय श्री महाकाल</h1>
+                <p class="lang" data-hi="अवंतिका नगरी उज्जैन के अनुभवी विद्वानों द्वारा ज्योतिष एवं कर्मकांड समाधान।" data-en="Astrology and Ritual solutions by experienced scholars of Avantika City, Ujjain.">अवंतिका नगरी उज्जैन के अनुभवी विद्वानों द्वारा ज्योतिष एवं कर्मकांड समाधान।</p>
+                <button class="lang-btn lang" onclick="showPage('services')" style="margin-top:20px; padding: 10px 30px;" data-hi="हमारी सेवाएं देखें" data-en="Explore Services">हमारी सेवाएं देखें</button>
             </div>
         </section>
 
         <section id="services" class="page-content">
-            <h2 class="lang" data-hi="हमारी समस्त सेवाएं" data-en="Our Services">हमारी समस्त सेवाएं</h2>
+            <h2 class="lang" data-hi="हमारी समस्त पूजन एवं ज्योतिष सेवाएं" data-en="Our Sacred Services" style="text-align:center; margin-bottom:25px;">हमारी समस्त पूजन एवं ज्योतिष सेवाएं</h2>
             <div class="services-accordion">
                 
                 <div class="service-category">
                     <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/zodiac-sign.png"> <h3 class="lang" data-hi="1. ज्योतिष सेवाएं" data-en="1. Astrology">1. ज्योतिष सेवाएं</h3> <i class="fa fa-chevron-down"></i></div>
-                    <div class="cat-body"><ul><li>कुंडली विश्लेषण</li><li>विवाह मिलान</li><li>वास्तु परामर्श</li><li>रत्न सुझाव</li><li>मुहूर्त</li><li>नामकरण</li></ul></div>
+                    <div class="cat-body">
+                        <img src="service1.jpg" class="service-banner" alt="Astrology" onerror="this.src='https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600'">
+                        <ul><li>कुंडली विश्लेषण</li><li>विवाह मिलान</li><li>वास्तु परामर्श</li><li>रत्न सुझाव</li><li>मुहूर्त निर्धारण</li><li>नामकरण</li></ul>
+                    </div>
                 </div>
 
                 <div class="service-category">
-                    <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/shiva-linga.png"> <h3 class="lang" data-hi="2. उज्जैन विशेष" data-en="2. Ujjain Special">2. उज्जैन विशेष</h3> <i class="fa fa-chevron-down"></i></div>
-                    <div class="cat-body"><ul><li>भस्म आरती</li><li>भात पूजा</li><li>काल भैरव</li><li>क्षिप्रा स्नान</li><li>रामघाट पूजन</li><li>सिद्ध आश्रम</li></ul></div>
+                    <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/shiva-linga.png"> <h3 class="lang" data-hi="2. उज्जैन विशेष सेवाएं" data-en="2. Ujjain Special">2. उज्जैन विशेष सेवाएं</h3> <i class="fa fa-chevron-down"></i></div>
+                    <div class="cat-body">
+                        <img src="service2.jpg" class="service-banner" alt="Ujjain" onerror="this.src='https://images.unsplash.com/photo-1621213320078-d5d594008985?w=600'">
+                        <ul><li>भस्म आरती गाइड</li><li>भात पूजा</li><li>काल भैरव पूजन</li><li>क्षिप्रा स्नान</li><li>रामघाट आरती</li><li>सिद्ध आश्रम दर्शन</li></ul>
+                    </div>
                 </div>
 
                 <div class="service-category">
-                    <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/durga.png"> <h3 class="lang" data-hi="3. शक्ति तंत्र" data-en="3. Shakti Tantra">3. शक्ति तंत्र</h3> <i class="fa fa-chevron-down"></i></div>
-                    <div class="cat-body"><ul><li>बगलामुखी</li><li>दस महाविद्या</li><li>महाकाली</li><li>भैरव अनुष्ठान</li></ul></div>
+                    <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/durga.png"> <h3 class="lang" data-hi="3. शक्ति तंत्र अनुष्ठान" data-en="3. Shakti Tantra">3. शक्ति तंत्र अनुष्ठान</h3> <i class="fa fa-chevron-down"></i></div>
+                    <div class="cat-body">
+                        <img src="service3.jpg" class="service-banner" alt="Tantra" onerror="this.src='https://images.unsplash.com/photo-1614030424754-24d9f9666a4e?w=600'">
+                        <ul><li>बगलामुखी अनुष्ठान</li><li>दस महाविद्या</li><li>महाकाली पूजा</li><li>भैरव साधना</li></ul>
+                    </div>
                 </div>
 
                 <div class="service-category">
                     <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/parchment.png"> <h3 class="lang" data-hi="4. पाठ सेवाएं" data-en="4. Path Seva">4. पाठ सेवाएं</h3> <i class="fa fa-chevron-down"></i></div>
-                    <div class="cat-body"><ul><li>महामृत्युंजय</li><li>दुर्गा सप्तशती</li><li>सुंदरकांड</li><li>विष्णु सहस्रनाम</li></ul></div>
+                    <div class="cat-body">
+                        <img src="service4.jpg" class="service-banner" alt="Path" onerror="this.src='https://images.unsplash.com/photo-1532356884227-66d7c0e9e4c2?w=600'">
+                        <ul><li>महामृत्युंजय पाठ</li><li>दुर्गा सप्तशती</li><li>सुंदरकांड</li><li>विष्णु सहस्रनाम</li></ul>
+                    </div>
                 </div>
 
                 <div class="service-category">
                     <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/prayer-beads.png"> <h3 class="lang" data-hi="5. जाप सेवाएं" data-en="5. Jaap Seva">5. जाप सेवाएं</h3> <i class="fa fa-chevron-down"></i></div>
-                    <div class="cat-body"><ul><li>शिव मंत्र</li><li>देवी मंत्र</li><li>नवग्रह जाप</li><li>हनुमान मंत्र</li></ul></div>
+                    <div class="cat-body">
+                        <img src="service5.jpg" class="service-banner" alt="Jaap" onerror="this.src='https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?w=600'">
+                        <ul><li>शिव मंत्र जाप</li><li>देवी मंत्र जाप</li><li>नवग्रह शांति जाप</li><li>हनुमान मंत्र जाप</li></ul>
+                    </div>
                 </div>
 
                 <div class="service-category">
                     <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/fire-element.png"> <h3 class="lang" data-hi="6. दोष निवारण" data-en="6. Dosh Nivaran">6. दोष निवारण</h3> <i class="fa fa-chevron-down"></i></div>
-                    <div class="cat-body"><ul><li>कालसर्प दोष</li><li>मंगल दोष</li><li>पितृ दोष</li><li>शनि शांति</li></ul></div>
+                    <div class="cat-body">
+                        <img src="service6.jpg" class="service-banner" alt="Dosh" onerror="this.src='https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?w=600'">
+                        <ul><li>कालसर्प दोष</li><li>मंगल दोष</li><li>पितृ दोष</li><li>शनि-राहु शांति</li></ul>
+                    </div>
                 </div>
 
                 <div class="service-category">
                     <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/river.png"> <h3 class="lang" data-hi="7. पितृ मोक्ष" data-en="7. Pitru Moksha">7. पितृ मोक्ष</h3> <i class="fa fa-chevron-down"></i></div>
-                    <div class="cat-body"><ul><li>नारायण बलि</li><li>त्रिपिंडी श्राद्ध</li><li>पिंडदान</li><li>तर्पण</li></ul></div>
+                    <div class="cat-body">
+                        <img src="service7.jpg" class="service-banner" alt="Pitru" onerror="this.src='https://images.unsplash.com/photo-1582650625119-3a31f8fa2699?w=600'">
+                        <ul><li>नारायण बलि</li><li>त्रिपिंडी श्राद्ध</li><li>पिंडदान</li><li>वार्षिक श्राद्ध</li></ul>
+                    </div>
                 </div>
 
                 <div class="service-category">
-                    <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/scroll.png"> <h3 class="lang" data-hi="8. वेद पुराण" data-en="8. Vedas">8. वेद पुराण</h3> <i class="fa fa-chevron-down"></i></div>
-                    <div class="cat-body"><ul><li>वेद पारायण</li><li>महापुराण</li><li>उपनिषद</li><li>श्रीमद्भगवद्गीता</li></ul></div>
+                    <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/scroll.png"> <h3 class="lang" data-hi="8. वेद पुराण सेवाएं" data-en="8. Vedas">8. वेद पुराण सेवाएं</h3> <i class="fa fa-chevron-down"></i></div>
+                    <div class="cat-body">
+                        <img src="service8.jpg" class="service-banner" alt="Vedas" onerror="this.src='https://images.unsplash.com/photo-1585829365234-781fcd1428ef?w=600'">
+                        <ul><li>वेद पारायण</li><li>महापुराण श्रवण</li><li>उपनिषद पाठ</li><li>श्रीमद्भगवद्गीता</li></ul>
+                    </div>
                 </div>
 
                 <div class="service-category">
                     <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/reading.png"> <h3 class="lang" data-hi="9. कथा सेवाएं" data-en="9. Katha Seva">9. कथा सेवाएं</h3> <i class="fa fa-chevron-down"></i></div>
-                    <div class="cat-body"><ul><li>श्रीमद्भागवत</li><li>शिव पुराण</li><li>राम कथा</li><li>देवी भागवत</li></ul></div>
+                    <div class="cat-body">
+                        <img src="service9.jpg" class="service-banner" alt="Katha" onerror="this.src='https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=600'">
+                        <ul><li>श्रीमद्भागवत</li><li>शिव पुराण</li><li>राम कथा</li><li>विष्णु कथा</li></ul>
+                    </div>
                 </div>
 
                 <div class="service-category">
                     <div class="cat-header" onclick="toggleAcc(this)"><img src="https://img.icons8.com/color/48/om.png"> <h3 class="lang" data-hi="10. विशेष अनुष्ठान" data-en="10. Special">10. विशेष अनुष्ठान</h3> <i class="fa fa-chevron-down"></i></div>
-                    <div class="cat-body"><ul><li>रुद्राभिषेक</li><li>यज्ञोपवीत</li><li>विवाह</li><li>प्राण प्रतिष्ठा</li></ul></div>
+                    <div class="cat-body">
+                        <img src="service10.jpg" class="service-banner" alt="Special" onerror="this.src='https://images.unsplash.com/photo-1609137144813-9993380d39e3?w=600'">
+                        <ul><li>महा रुद्राभिषेक</li><li>यज्ञोपवीत</li><li>यंत्र प्राण प्रतिष्ठा</li><li>विवाह संस्कार</li></ul>
+                    </div>
                 </div>
 
             </div>
         </section>
 
         <section id="rashifal" class="page-content">
-            <h2 class="lang" data-hi="दैनिक राशिफल" data-en="Daily Rashifal">दैनिक राशिफल</h2>
+            <h2 class="lang" data-hi="आज का राशिफल" data-en="Daily Horoscope">आज का राशिफल</h2>
             <div class="grid-container">
                 <div class="rashi-card"><span>♈</span><p>मेष</p></div>
                 <div class="rashi-card"><span>♉</span><p>वृषभ</p></div>
@@ -162,6 +192,12 @@
                 <div class="rashi-card"><span>♋</span><p>कर्क</p></div>
                 <div class="rashi-card"><span>♌</span><p>सिंह</p></div>
                 <div class="rashi-card"><span>♍</span><p>कन्या</p></div>
+                <div class="rashi-card"><span>♎</span><p>तुला</p></div>
+                <div class="rashi-card"><span>♏</span><p>वृश्चिक</p></div>
+                <div class="rashi-card"><span>♐</span><p>धनु</p></div>
+                <div class="rashi-card"><span>♑</span><p>मकर</p></div>
+                <div class="rashi-card"><span>♒</span><p>कुंभ</p></div>
+                <div class="rashi-card"><span>♓</span><p>मीन</p></div>
             </div>
         </section>
 
@@ -169,12 +205,12 @@
             <h2 class="lang" data-hi="उज्जैन दर्शन" data-en="Ujjain Darshan">उज्जैन दर्शन</h2>
             <div class="grid-container">
                 <div class="divine-card">
-                    <img src="https://images.unsplash.com/photo-1621213320078-d5d594008985?w=400" class="darshan-img">
-                    <h3 style="font-size:16px;">महाकालेश्वर</h3>
+                    <img src="https://images.unsplash.com/photo-1621213320078-d5d594008985?w=500" class="darshan-img">
+                    <h3 style="font-size:16px;">महाकालेश्वर ज्योतिर्लिंग</h3>
                 </div>
                 <div class="divine-card">
-                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400" class="darshan-img">
-                    <h3 style="font-size:16px;">काल भैरव</h3>
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500" class="darshan-img">
+                    <h3 style="font-size:16px;">काल भैरव मंदिर</h3>
                 </div>
             </div>
         </section>
@@ -182,35 +218,48 @@
         <section id="panchang" class="page-content">
             <h2 class="lang" data-hi="आज का पंचांग" data-en="Daily Panchang">आज का पंचांग</h2>
             <div class="divine-card">
-                <p><strong>Date:</strong> 19 Jan 2026</p>
-                <p><strong>Tithi:</strong> Pratipada</p>
-                <p><strong>Shubh Muhurat:</strong> 11:40 AM - 12:25 PM</p>
+                <p><strong>दिनांक:</strong> 19 Jan 2026</p>
+                <p><strong>तिथि:</strong> प्रतिपदा</p>
+                <p><strong>नक्षत्र:</strong> श्रवण</p>
+                <p style="color:var(--maroon); margin-top:10px;"><strong>शुभ मुहूर्त:</strong> 11:45 AM - 12:30 PM</p>
             </div>
         </section>
     </main>
 
-    <a href="https://wa.me/91XXXXXXXXXX" class="wa-float"><i class="fab fa-whatsapp"></i> <span class="lang" data-hi="संपर्क" data-en="Chat">संपर्क</span></a>
+    <a href="https://wa.me/91XXXXXXXXXX" class="wa-float">
+        <i class="fab fa-whatsapp"></i> <span class="lang" data-hi="संपर्क करें" data-en="Contact Us">संपर्क करें</span>
+    </a>
 
     <script>
         let curLang = 'hi';
         function toggleLang() {
             curLang = curLang === 'hi' ? 'en' : 'hi';
             document.getElementById('langBtn').innerText = curLang === 'hi' ? 'English' : 'हिन्दी';
-            document.querySelectorAll('.lang').forEach(el => el.innerText = el.getAttribute(`data-${curLang}`));
+            document.querySelectorAll('.lang').forEach(el => {
+                el.innerText = el.getAttribute(`data-${curLang}`);
+            });
         }
+
         function toggleSidebar() {
             document.getElementById('sidebar').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
         }
+
         function showPage(id) {
             document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
             document.getElementById(id).classList.add('active');
             if(window.innerWidth < 1000) toggleSidebar();
             window.scrollTo(0,0);
         }
+
         function toggleAcc(header) {
+            // Close other open accordions
+            document.querySelectorAll('.service-category').forEach(cat => {
+                if(cat !== header.parentElement) cat.classList.remove('active');
+            });
             header.parentElement.classList.toggle('active');
         }
+
         document.getElementById('overlay').onclick = toggleSidebar;
     </script>
 </body>
