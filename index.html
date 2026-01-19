@@ -10,88 +10,59 @@
 
     <style>
         :root {
-            --primary: #7B1E1E; /* Deep Maroon */
-            --secondary: #D4AF37; /* Royal Gold */
-            --accent: #FF5E0E; /* Saffron */
-            --bg: #FFFBF2; /* Sacred Cream */
-            --text: #2C2C2C;
-            --white: #FFFFFF;
+            --primary: #7B1E1E; --secondary: #D4AF37; --accent: #FF5E0E;
+            --bg: #FFFBF2; --text: #2C2C2C; --white: #FFFFFF;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { font-family: 'Poppins', 'Noto Serif Devanagari', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-        /* HEADER & NAVIGATION */
         header { 
-            background: var(--white); 
-            height: 70px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-            padding: 0 5%; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
-            border-bottom: 3px solid var(--secondary);
+            background: var(--white); height: 75px; display: flex; align-items: center; justify-content: space-between; 
+            padding: 0 5%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            border-bottom: 4px solid var(--secondary);
         }
-        .logo-area { display: flex; align-items: center; gap: 10px; cursor: pointer; }
-        .logo-img { height: 45px; width: auto; }
-        .brand-name { font-family: 'Cinzel', serif; font-weight: 700; color: var(--primary); font-size: 1.2rem; line-height: 1; }
-        .brand-name span { display: block; font-size: 0.7rem; color: var(--secondary); letter-spacing: 1px; }
+        .brand-name { font-family: 'Cinzel', serif; font-weight: 700; color: var(--primary); font-size: 1rem; line-height: 1.1; }
+        .brand-name span { display: block; font-size: 0.6rem; color: var(--secondary); letter-spacing: 1px; }
 
-        /* SIDEBAR */
-        .sidebar { position: fixed; left: -300px; top: 0; width: 280px; height: 100vh; background: var(--primary); color: var(--white); transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 2001; padding: 30px 20px; box-shadow: 10px 0 30px rgba(0,0,0,0.3); }
+        .sidebar { position: fixed; left: -350px; top: 0; width: 300px; height: 100vh; background: var(--primary); color: var(--white); transition: 0.4s; z-index: 2001; padding: 30px 20px; overflow-y: auto; }
         .sidebar.active { left: 0; }
-        .sidebar-header { text-align: center; margin-bottom: 30px; border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 20px; }
-        .nav-links { list-style: none; }
-        .nav-links li { margin: 15px 0; }
-        .nav-links a { color: var(--white); text-decoration: none; font-size: 1.1rem; display: flex; align-items: center; gap: 15px; padding: 12px; border-radius: 8px; transition: 0.3s; }
+        .nav-links { list-style: none; margin-top: 20px; }
+        .nav-links a { color: var(--white); text-decoration: none; font-size: 0.95rem; display: flex; align-items: center; gap: 15px; padding: 12px; border-radius: 8px; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .nav-links a:hover { background: var(--secondary); color: var(--primary); }
 
-        /* HERO SECTION */
         .hero { 
-            background: linear-gradient(rgba(123, 30, 30, 0.8), rgba(123, 30, 30, 0.8)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000');
-            background-size: cover; background-position: center;
-            height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200');
+            background-size: cover; background-position: center; height: 35vh; display: flex; flex-direction: column; 
+            align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 20px;
         }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; font-family: 'Noto Serif Devanagari'; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.1rem; color: var(--secondary); max-width: 600px; }
 
-        /* PAGE CONTENT */
-        .container { padding: 40px 5%; max-width: 1200px; margin: auto; display: none; animation: slideUp 0.5s ease; }
-        .container.active { display: block; }
-        @keyframes slideUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+        .container { padding: 25px 5%; max-width: 1100px; margin: auto; display: none; }
+        .container.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* MODERN ACCORDION (SERVICES) */
-        .service-grid { display: flex; flex-direction: column; gap: 15px; }
-        .service-card { background: var(--white); border-radius: 15px; overflow: hidden; border: 1px solid rgba(212,175,55,0.2); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .service-trigger { padding: 20px; display: flex; align-items: center; gap: 15px; cursor: pointer; background: var(--white); transition: 0.3s; }
-        .service-trigger i { color: var(--accent); font-size: 1.5rem; width: 30px; }
-        .service-trigger h3 { flex: 1; font-size: 1.1rem; color: var(--primary); font-family: 'Noto Serif Devanagari'; }
-        .service-content { max-height: 0; overflow: hidden; transition: 0.4s ease-out; background: #FFFDF9; }
-        .service-card.active .service-content { max-height: 1000px; border-top: 1px solid var(--secondary); }
-        .service-img { width: 100%; height: 220px; object-fit: contain; background: #eee; padding: 10px; }
-        .service-details { padding: 20px; }
-        .service-details ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .service-details li { font-size: 0.9rem; padding: 8px; background: var(--white); border: 1px solid var(--secondary); border-radius: 5px; text-align: center; color: var(--primary); }
+        .service-card { background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid rgba(212,175,55,0.4); margin-bottom: 15px; }
+        .service-trigger { padding: 18px; display: flex; align-items: center; gap: 12px; cursor: pointer; background: var(--white); }
+        .service-trigger h3 { flex: 1; font-size: 1.05rem; color: var(--primary); font-family: 'Noto Serif Devanagari'; font-weight: 700; }
+        .service-trigger i.chevron { transition: 0.3s; color: var(--secondary); font-size: 0.8rem; }
+        .service-card.active .chevron { transform: rotate(180deg); }
+        
+        .service-content { max-height: 0; overflow: hidden; transition: 0.5s cubic-bezier(0, 1, 0, 1); background: #FFFCF7; }
+        .service-card.active .service-content { max-height: 10000px; border-top: 1px solid var(--secondary); }
+        
+        .service-details { padding: 10px; }
+        .sub-cat-title { font-weight: bold; color: var(--accent); padding: 10px 12px 5px; font-size: 0.95rem; text-decoration: underline; }
+        .service-details ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+        .service-details li { 
+            font-size: 0.85rem; padding: 10px 12px; background: white; border-left: 3px solid var(--secondary); 
+            border-radius: 4px; color: #333; box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
+            display: flex; justify-content: space-between; align-items: center; margin: 2px 0;
+        }
+        .li-wa-btn { color: #25D366; font-size: 1.1rem; text-decoration: none; padding-left: 10px; }
 
-        /* HOROSCOPE GRID */
-        .rashi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-        .rashi-box { background: var(--white); padding: 15px; text-align: center; border-radius: 12px; border-bottom: 3px solid var(--secondary); }
-        .rashi-box span { font-size: 2rem; display: block; margin-bottom: 5px; }
-
-        /* FLOATING ACTION */
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; z-index: 2000; }
+        .wa-btn { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 3000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); text-decoration: none; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; z-index: 2000; }
         .overlay.active { display: block; }
-        .wa-btn { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 25px rgba(37,211,102,0.4); z-index: 3000; text-decoration: none; }
-        .lang-btn { background: var(--secondary); color: var(--primary); border: none; padding: 8px 15px; border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 0.8rem; }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.8rem; }
-            .rashi-grid { grid-template-columns: repeat(3, 1fr); }
-            .service-details ul { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
@@ -99,118 +70,161 @@
 <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
 <nav class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-        <h2 style="font-family: 'Cinzel'; color: var(--secondary);">Menu</h2>
+    <div style="text-align:center; padding-bottom: 15px; border-bottom: 1px solid var(--secondary);">
+        <h2 style="color: var(--secondary); font-family: 'Cinzel';">मेनू</h2>
     </div>
     <ul class="nav-links">
-        <li><a onclick="showPage('home')"><i class="fa fa-om"></i> <span class="lang" data-hi="होम" data-en="Home">होम</span></a></li>
-        <li><a onclick="showPage('services')"><i class="fa fa-hands-praying"></i> <span class="lang" data-hi="पूजा सेवाएं" data-en="Services">पूजा सेवाएं</span></a></li>
-        <li><a onclick="showPage('horoscope')"><i class="fa fa-star-and-crescent"></i> <span class="lang" data-hi="राशिफल" data-en="Horoscope">राशिफल</span></a></li>
-        <li><a onclick="showPage('panchang')"><i class="fa fa-calendar-day"></i> <span class="lang" data-hi="पंचांग" data-en="Panchang">पंचांग</span></a></li>
-        <li><a href="https://wa.me/91XXXXXXXXXX"><i class="fa fa-phone"></i> <span class="lang" data-hi="संपर्क करें" data-en="Contact">संपर्क करें</span></a></li>
+        <li><a onclick="showPage('home')"><i class="fa fa-home"></i> मुख्य पृष्ठ</a></li>
+        <li><a onclick="showPage('services')"><i class="fa fa-scroll"></i> हमारी सेवाएं</a></li>
+        <li><a onclick="showPage('panchang')"><i class="fa fa-calendar-alt"></i> आज का पंचांग</a></li>
     </ul>
 </nav>
 
 <header>
-    <div onclick="toggleSidebar()" style="font-size: 1.5rem; color: var(--primary); cursor: pointer;"><i class="fa fa-bars-staggered"></i></div>
+    <div onclick="toggleSidebar()" style="font-size: 1.4rem; color: var(--primary); cursor: pointer;"><i class="fa fa-bars-staggered"></i></div>
     <div class="logo-area" onclick="showPage('home')">
-        <img src="logo.png" alt="Logo" class="logo-img" onerror="this.src='https://img.icons8.com/color/96/om.png'">
-        <div class="brand-name">
-            UJJAIN PANDITJI
-            <span class="lang" data-hi="ज्योतिष एवं अनुष्ठान केंद्र" data-en="Astrology & Rituals">ज्योतिष एवं अनुष्ठान केंद्र</span>
-        </div>
+        <div class="brand-name">UJJAIN PANDITJI<span>सम्पूर्ण ज्योतिष एवं अनुष्ठान केंद्र</span></div>
     </div>
-    <button class="lang-btn" id="langToggle" onclick="changeLang()">English</button>
+    <div style="width: 40px;"></div>
 </header>
 
 <main>
     <section class="hero" id="hero">
-        <h1 class="lang" data-hi="जय श्री महाकाल" data-en="Jai Shree Mahakal">जय श्री महाकाल</h1>
-        <p class="lang" data-hi="उज्जैन के विद्वान पंडितों द्वारा आपकी हर समस्या का वैदिक समाधान" data-en="Vedic solutions to your every problem by learned pundits of Ujjain">उज्जैन के विद्वान पंडितों द्वारा आपकी हर समस्या का वैदिक समाधान</p>
+        <h1 style="font-family: 'Noto Serif Devanagari';">॥ जय श्री महाकाल ॥</h1>
+        <p>उज्जैन के विद्वान पंडितों द्वारा शास्त्रोक्त विधि से पूजन</p>
     </section>
 
     <div id="home" class="container active">
-        <div style="text-align: center; padding: 20px; background: white; border-radius: 20px; border: 1px solid var(--secondary);">
-            <h2 class="lang" data-hi="महाकाल की नगरी में आपका स्वागत है" data-en="Welcome to Mahakal's City">महाकाल की नगरी में आपका स्वागत है</h2>
-            <p class="lang" data-hi="हम आपके लिए कालसर्प, मंगल दोष, भस्म आरती और सभी प्रकार के पूजन की सुविधा उपलब्ध कराते हैं।" data-en="We provide Kaalsarp, Mangal Dosh, Bhasm Aarti, and all types of puja services.">हम आपके लिए कालसर्प, मंगल दोष, भस्म आरती और सभी प्रकार के पूजन की सुविधा उपलब्ध कराते हैं।</p>
-            <br>
-            <button class="lang-btn" onclick="showPage('services')" style="padding: 12px 25px; font-size: 1rem;">View All Puja</button>
+        <div style="background: white; padding: 25px; border-radius: 15px; border: 1px solid var(--secondary); text-align: center;">
+            <h2 style="color:var(--primary)">महाकाल की नगरी में आपका स्वागत है</h2>
+            <p style="margin: 15px 0;">उज्जैन के सिद्ध स्थानों पर आपके नाम और गोत्र से शास्त्रोक्त विधि द्वारा सभी प्रकार के पूजन संपन्न कराए जाते हैं।</p>
+            <button onclick="showPage('services')" style="background:var(--primary); color:white; border:none; padding:12px 25px; border-radius:5px; cursor:pointer; font-weight:bold;">सम्पूर्ण सेवा सूची देखें</button>
         </div>
     </div>
 
     <div id="services" class="container">
-        <h2 style="text-align: center; margin-bottom: 25px; color: var(--primary);" class="lang" data-hi="हमारी सेवाएं" data-en="Our Services">हमारी सेवाएं</h2>
-        <div class="service-grid" id="serviceGrid">
-            <script>
-                const servicesData = [
-                    {hi: "ज्योतिष परामर्श", en: "Astrology Consultation", img: "service1.jpg", items: ["कुंडली", "वास्तु", "रत्न", "मुहूर्त"]},
-                    {hi: "उज्जैन विशेष", en: "Ujjain Specials", img: "service2.jpg", items: ["भस्म आरती", "भात पूजा", "काल भैरव"]},
-                    {hi: "दोष निवारण", en: "Dosh Nivaran", img: "service3.jpg", items: ["कालसर्प दोष", "मंगल दोष", "पितृ दोष"]},
-                    {hi: "शक्ति तंत्र", en: "Shakti Tantra", img: "service4.jpg", items: ["बगलामुखी", "महाकाली", "भैरव"]},
-                    {hi: "पाठ सेवा", en: "Path Seva", img: "service5.jpg", items: ["महामृत्युंजय", "दुर्गा सप्तशती"]},
-                    {hi: "जाप सेवा", en: "Jaap Seva", img: "service6.jpg", items: ["शिव जाप", "नवग्रह जाप"]},
-                    {hi: "पितृ मोक्ष", en: "Pitru Moksha", img: "service7.jpg", items: ["नारायण बलि", "पिंडदान"]},
-                    {hi: "वेद पुराण", en: "Vedic Wisdom", img: "service8.jpg", items: ["वेद पारायण", "उपनिषद"]},
-                    {hi: "कथा अनुष्ठान", en: "Katha Rituals", img: "service9.jpg", items: ["श्रीमद्भागवत", "राम कथा"]},
-                    {hi: "विशेष अभिषेक", en: "Special Abhishek", img: "service10.jpg", items: ["रुद्राभिषेक", "यज्ञ", "विवाह"]}
-                ];
-
-                document.write(servicesData.map((s, i) => `
-                    <div class="service-card">
-                        <div class="service-trigger" onclick="toggleAcc(this)">
-                            <i class="fa fa-dharmachakra"></i>
-                            <h3 class="lang" data-hi="${s.hi}" data-en="${s.en}">${s.hi}</h3>
-                            <i class="fa fa-chevron-down" style="font-size: 0.8rem;"></i>
-                        </div>
-                        <div class="service-content">
-                            <img src="${s.img}" class="service-img" alt="Puja" onerror="this.src='https://images.unsplash.com/photo-1609137144813-9993380d39e3?w=500'">
-                            <div class="service-details">
-                                <ul>${s.items.map(item => `<li>${item}</li>`).join('')}</ul>
-                            </div>
-                        </div>
-                    </div>
-                `).join(''));
-            </script>
-        </div>
-    </div>
-
-    <div id="horoscope" class="container">
-        <h2 style="text-align: center; margin-bottom: 25px;" class="lang" data-hi="दैनिक राशिफल" data-en="Daily Horoscope">दैनिक राशिफल</h2>
-        <div class="rashi-grid">
-            <div class="rashi-box"><span>♈</span> मेष</div>
-            <div class="rashi-box"><span>♉</span> वृषभ</div>
-            <div class="rashi-box"><span>♊</span> मिथुन</div>
-            <div class="rashi-box"><span>♋</span> कर्क</div>
-            <div class="rashi-box"><span>♌</span> सिंह</div>
-            <div class="rashi-box"><span>♍</span> कन्या</div>
-            <div class="rashi-box"><span>♎</span> तुला</div>
-            <div class="rashi-box"><span>♏</span> वृश्चिक</div>
-            <div class="rashi-box"><span>♐</span> धनु</div>
-        </div>
+        <h2 style="text-align:center; margin-bottom:20px; color:var(--primary)">हमारी विस्तृत सेवाएं</h2>
+        <div class="service-grid" id="mainServiceList">
+            </div>
     </div>
 
     <div id="panchang" class="container">
-        <div style="background: white; padding: 20px; border-radius: 20px; text-align: center; border: 1px solid var(--secondary);">
-            <h3 class="lang" data-hi="आज का पंचांग" data-en="Today's Panchang">आज का पंचांग</h3>
-            <hr style="margin: 15px 0; opacity: 0.2;">
-            <p><strong>तिथि:</strong> शुक्ल पक्ष, प्रतिपदा</p>
-            <p><strong>नक्षत्र:</strong> उत्तराषाढ़ा</p>
-            <p style="color: var(--accent);"><strong>शुभ मुहूर्त:</strong> 11:52 AM - 12:44 PM</p>
+        <div style="background: white; padding: 25px; border-radius: 15px; border: 1px solid var(--secondary); text-align: center;">
+            <h3 style="color:var(--primary)">आज का पंचांग</h3>
+            <p style="margin-top:10px;">📅 दिनांक: 19 जनवरी 2026</p>
+            <p>🚩 शुभ मुहूर्त: 11:52 AM - 12:44 PM</p>
+            <p>विशेष पूजन हेतु संपर्क करें।</p>
         </div>
     </div>
 </main>
 
-<a href="https://wa.me/91XXXXXXXXXX" class="wa-btn"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/918827415099?text=नमस्ते पंडित जी, मुझे पूजन की जानकारी चाहिए।" class="wa-btn"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-    let currentLang = 'hi';
+    const myNumber = "918827415099";
 
-    function changeLang() {
-        currentLang = currentLang === 'hi' ? 'en' : 'hi';
-        document.getElementById('langToggle').innerText = currentLang === 'hi' ? 'English' : 'हिन्दी';
-        document.querySelectorAll('.lang').forEach(el => {
-            el.innerText = el.getAttribute(`data-${currentLang}`);
-        });
+    const fullServicesData = [
+        {
+            title: "1. ज्योतिष सेवाएं",
+            items: [{name: "जन्म कुंडली विश्लेषण"}, {name: "विवाह मिलान"}, {name: "करियर और व्यापार ज्योतिष"}, {name: "वार्षिक भविष्यफल"}, {name: "प्रश्न कुंडली"}, {name: "रत्न सुझाव"}, {name: "मुहूर्त निर्धारण"}, {name: "नामकरण संस्कार"}, {name: "वास्तु परामर्श"}, {name: "ग्रह शांति उपाय"}]
+        },
+        {
+            title: "2. उज्जैन विशेष सेवाएं",
+            items: [{name: "महाकालेश्वर दर्शन व्यवस्था"}, {name: "महाकाल मंदिर प्रोटोकॉल मार्गदर्शन"}, {name: "भस्म आरती बुकिंग मार्गदर्शन"}, {name: "क्षिप्रा स्नान"}, {name: "उज्जैन मंदिर दर्शन, समन्वय एवं अनुष्ठान"}, {name: "रामघाट पर की जाने वाली विभिन्न पूजाएं एवं अनुष्ठान"}, {name: "सिंहस्थ कुंभ मेला सेवाएं एवं विभिन्न यज्ञ, पूजन, अनुष्ठान"}, {name: "काल भैरव मंदिर दर्शन, अनुष्ठान एवं पूजन"}, {name: "हरसिद्धि मंदिर दर्शन, अनुष्ठान एवं पूजन"}, {name: "शनि मंदिर दर्शन, अनुष्ठान एवं पूजन"}, {name: "गोपाल मंदिर दर्शन, अनुष्ठान एवं पूजन"}, {name: "चिंतामन गणेश मंदिर दर्शन, अनुष्ठान एवं पूजन"}, {name: "गढ़ कालिका मंदिर दर्शन, अनुष्ठान एवं पूजन"}, {name: "नवग्रह मंदिर दर्शन, अनुष्ठान एवं पूजन"}, {name: "पारदेश्वर महादेव (सिद्ध आश्रम) दर्शन, अनुष्ठान एवं अभिषेक पूजन"}, {name: "चार धाम मंदिर दर्शन, अनुष्ठान एवं पूजन"}]
+        },
+        {
+            title: "3. शक्ति तंत्र अनुष्ठान सेवाएं",
+            items: [{name: "दस महाविद्या अनुष्ठान"}, {name: "काल भैरव रोग मुक्ति अनुष्ठान"}, {name: "बगलामुखी अनुष्ठान"}, {name: "महाकाली अनुष्ठान"}, {name: "तारा देवी अनुष्ठान"}, {name: "छिन्नमस्ता अनुष्ठान"}, {name: "त्रिपुर सुंदरी अनुष्ठान"}, {name: "भुवनेश्वरी अनुष्ठान"}, {name: "धूमावती अनुष्ठान"}, {name: "मातंगी अनुष्ठान"}, {name: "कमला अनुष्ठान"}, {name: "शक्ति साधना अनुष्ठान"}]
+        },
+        {
+            title: "4. पाठ सेवाएं",
+            items: [
+                {sub: "शिव/महाकाल संबंधी पाठ", name: "महामृत्युंजय पाठ, रुद्राष्टक पाठ, शिव चालीसा पाठ, महाकाल स्तोत्र पाठ"},
+                {sub: "देवी पाठ सेवाएं", name: "दुर्गा सप्तशती पाठ, चंडी पाठ, देवी कवच पाठ, लक्ष्मी स्तोत्र पाठ"},
+                {sub: "बगलामुखी पाठ सेवाएं", name: "बगलामुखी स्तोत्र पाठ, बगलामुखी कवच पाठ, बगलामुखी मंत्र पाठ"},
+                {sub: "गणेश पाठ सेवाएं", name: "गणेश अथर्वशीर्ष पाठ, गणेश चालीसा पाठ, गणेश स्तोत्र पाठ"},
+                {sub: "विष्णु-राम पाठ सेवाएं", name: "विष्णु सहस्रनाम पाठ, राम रक्षा स्तोत्र पाठ, हनुमान चालीसा पाठ"},
+                {sub: "हनुमान पाठ सेवाएं", name: "हनुमान चालीसा पाठ, बजरंग बाण पाठ, हनुमान अष्टक पाठ"},
+                {sub: "नवग्रह पाठ सेवाएं", name: "नवग्रह स्तोत्र पाठ, ग्रह शांति पाठ, सूर्य कवच पाठ"},
+                {sub: "पितृ पाठ सेवाएं", name: "पितृ गीता पाठ, पितृ स्तोत्र पाठ, श्राद्ध मंत्र पाठ"}
+            ]
+        },
+        {
+            title: "5. जाप सेवाएं",
+            items: [
+                {sub: "शिव जाप", name: "ॐ नमः शिवाय जाप, महामृत्युंजय मंत्र जाप, रुद्र मंत्र जाप"},
+                {sub: "देवी जाप", name: "दुर्गा मंत्र जाप, लक्ष्मी मंत्र जाप, सरस्वती मंत्र जाप"},
+                {sub: "गणेश जाप", name: "गणपति मंत्र जाप, गणेश गायत्री जाप, विघ्न हर्ता मंत्र जाप"},
+                {sub: "विष्णु जाप", name: "ॐ नमो नारायणाय जाप, विष्णु सहस्रनाम जाप, राम मंत्र जाप"},
+                {sub: "हनुमान जाप", name: "हनुमान मंत्र जाप, बजरंग बाण जाप, मारुति स्तोत्र जाप"},
+                {sub: "नवग्रह जाप", name: "सूर्य मंत्र जाप, चंद्र मंत्र जाप, मंगल मंत्र जाप, बुध मंत्र जाप"}
+            ]
+        },
+        {
+            title: "6. दोष सेवाएं",
+            items: [{name: "काल सर्प दोष निवारण"}, {name: "मंगल दोष निवारण"}, {name: "शनि दोष निवारण"}, {name: "राहु-केतु दोष निवारण"}, {name: "पितृ दोष निवारण"}, {name: "गुरु चांडाल दोष निवारण"}, {name: "केमद्रुम दोष निवारण"}, {name: "अंगारक दोष निवारण"}, {name: "वैधव्य दोष निवारण"}, {name: "संतान हीनता दोष निवारण"}]
+        },
+        {
+            title: "7. पितृ मोक्ष तर्पण एवं श्राद्ध सेवाएं",
+            items: [
+                {sub: "तर्पण सेवाएं", name: "पितृ तर्पण, गया तर्पण, नर्मदा तर्पण, गंगा तर्पण"},
+                {sub: "श्राद्ध सेवाएं", name: "पितृ पक्ष श्राद्ध, एकोदिष्ट श्राद्ध, नारायण बलि श्राद्ध, त्रिपिंडी श्राद्ध"},
+                {sub: "दोष निवारण", name: "पितृ दोष निवारण, कुल दोष निवारण, वंश दोष निवारण"},
+                {sub: "मोक्ष कर्म", name: "पिंडदान, गया श्राद्ध, विष्णुपद श्राद्ध, फल्गु तीर्थ श्राद्ध"},
+                {sub: "वार्षिक कर्म", name: "वार्षिक श्राद्ध, तिथि श्राद्ध, मासिक श्राद्ध, पक्षीय श्राद्ध"}
+            ]
+        },
+        {
+            title: "8. वेद एवं पुराण सेवाएं",
+            items: [
+                {sub: "वेद", name: "ऋग्वेद, यजुर्वेद, सामवेद, अथर्ववेद"},
+                {sub: "उपवेद", name: "आयुर्वेद, धनुर्वेद, गंधर्ववेद, स्थापत्य वेद (वास्तु शास्त्र)"},
+                {sub: "महापुराण (18)", name: "ब्रह्म पुराण, पद्म पुराण, विष्णु पुराण, शिव (वायु/लिंग) पुराण, भागवत पुराण, नारद पुराण, मार्कण्डेय पुराण, अग्नि पुराण, भविष्य पुराण, ब्रह्मवैवर्त पुराण, लिंग पुराण, वराह पुराण, स्कंद पुराण, वामन पुराण, कूर्म पुराण, मत्स्य पुराण, गरुड़ पुराण, ब्रह्माण्ड पुराण"},
+                {sub: "उपपुराण (प्रमुख)", name: "नारसिंह पुराण, ब्रह्माण्ड उपपुराण, सनत्कुमार पुराण, शिवधर्म पुराण, दुर्गा उपपुराण, विष्णुधर्म उपपुराण"}
+            ]
+        },
+        {
+            title: "9. कथा सेवाएं",
+            items: [{name: "श्रीमद्भागवत कथा"}, {name: "रामायण कथा"}, {name: "महाभारत कथा"}, {name: "शिव पुराण कथा"}, {name: "देवी भागवत कथा"}, {name: "विष्णु पुराण कथा"}, {name: "गरुड़ पुराण कथा"}, {name: "मार्कण्डेय पुराण कथा"}, {name: "स्कंद पुराण कथा"}, {name: "ब्रह्म पुराण कथा"}, {name: "पद्म पुराण कथा"}, {name: "अग्नि पुराण कथा"}, {name: "भविष्य पुराण कथा"}, {name: "वराह पुराण कथा"}, {name: "कूर्म पुराण कथा"}, {name: "मत्स्य पुराण कथा"}, {name: "वामन पुराण कथा"}]
+        },
+        {
+            title: "10. हमारे विशेष सेवाएं",
+            items: [
+                {sub: "वैदिक पूजा सेवाएं", name: "महा रुद्राभिषेक, सत्यनारायण पूजा, गणेश पूजा, दुर्गा पूजा"},
+                {sub: "जीवन संस्कार सेवाएं", name: "नामकरण संस्कार, मुंडन संस्कार, यज्ञोपवीत संस्कार, विवाह संस्कार"},
+                {sub: "साधना एवं जाप सेवाएं", name: "व्यक्तिगत साधना, मंत्र दीक्षा, तंत्र साधना, यंत्र प्राण प्रतिष्ठा"},
+                {sub: "तीर्थ व धार्मिक सेवाएं", name: "तीर्थ यात्रा आयोजन, धार्मिक अनुष्ठान, पवित्र स्थल दर्शन"},
+                {sub: "परामर्श सेवाएं", name: "व्यक्तिगत परामर्श, पारिवारिक समस्या समाधान, आध्यात्मिक मार्गदर्शन"}
+            ]
+        }
+    ];
+
+    function renderServices() {
+        const container = document.getElementById('mainServiceList');
+        container.innerHTML = fullServicesData.map((sec) => `
+            <div class="service-card">
+                <div class="service-trigger" onclick="toggleAcc(this)">
+                    <i class="fa fa-dharmachakra"></i>
+                    <h3>${sec.title}</h3>
+                    <i class="fa fa-chevron-down chevron"></i>
+                </div>
+                <div class="service-content">
+                    <div class="service-details">
+                        <ul>
+                            ${sec.items.map(item => `
+                                ${item.sub ? `<div class="sub-cat-title">${item.sub}</div>` : ''}
+                                <li>
+                                    <span>${item.name}</span>
+                                    <a href="https://wa.me/${myNumber}?text=नमस्ते पंडित जी, मुझे '${item.sub ? item.sub + ': ' : ''}${item.name}' के बारे में जानकारी चाहिए।" target="_blank" class="li-wa-btn">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </a>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        `).join('');
     }
 
     function toggleSidebar() {
@@ -218,20 +232,25 @@
         document.getElementById('overlay').classList.toggle('active');
     }
 
-    function showPage(pageId) {
+    function showPage(p) {
         document.querySelectorAll('.container').forEach(c => c.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-        document.getElementById('hero').style.display = pageId === 'home' ? 'flex' : 'none';
-        if(window.innerWidth < 1000) toggleSidebar();
+        document.getElementById(p).classList.add('active');
+        document.getElementById('hero').style.display = p === 'home' ? 'flex' : 'none';
+        if(window.innerWidth < 1000) {
+            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
         window.scrollTo(0, 0);
     }
 
-    function toggleAcc(header) {
-        const card = header.parentElement;
-        const isOpen = card.classList.contains('active');
-        document.querySelectorAll('.service-card').forEach(c => c.classList.remove('active'));
-        if (!isOpen) card.classList.add('active');
+    function toggleAcc(h) {
+        const c = h.parentElement;
+        const active = c.classList.contains('active');
+        document.querySelectorAll('.service-card').forEach(s => s.classList.remove('active'));
+        if(!active) c.classList.add('active');
     }
+
+    window.onload = renderServices;
 </script>
 
 </body>
