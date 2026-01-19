@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jyotish Anushthan Karmakand Kendra | Ujjain Wale Panditji</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --cream: #FFF8E7;
+            --maroon: #7B1E1E;
+            --white: #FFFFFF;
+            --bhasma: #EDEDED;
+            --glow: rgba(212, 175, 55, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Poppins', 'Noto Serif Devanagari', sans-serif;
+            background-color: var(--white);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- BACKGROUND WATERMARK --- */
+        .watermark-bg {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%; opacity: 0.06;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* --- SIDEBAR MENU --- */
+        .sidebar {
+            position: fixed;
+            left: 0; top: 0;
+            width: 260px; height: 100vh;
+            background: var(--cream);
+            border-right: 2px solid var(--gold);
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .sidebar h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--maroon);
+            font-size: 20px;
+            border-bottom: 2px solid var(--gold);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+
+        .sidebar-menu { list-style: none; }
+        .sidebar-menu li { margin: 15px 0; }
+        .sidebar-menu a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+        .sidebar-menu a:hover { color: var(--gold); transform: translateX(5px); }
+        .sidebar-menu a i { color: var(--gold); font-style: normal; }
+
+        /* --- MAIN CONTENT AREA --- */
+        main { margin-left: 260px; }
+
+        /* --- HEADER --- */
+        header {
+            background: rgba(255,255,255,0.9);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0; z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .lang-toggle {
+            background: var(--gold);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, #fff 0%, var(--cream) 100%);
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 3.5rem;
+            color: var(--maroon);
+            margin-bottom: 20px;
+        }
+
+        .hero p { font-size: 1.2rem; max-width: 800px; color: #666; }
+
+        .cta-btns { margin-top: 30px; display: flex; gap: 20px; }
+        .btn {
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-gold { background: var(--gold); color: white; box-shadow: 0 5px 15px var(--glow); }
+        .btn-outline { border: 2px solid var(--gold); color: var(--gold); }
+
+        /* --- SECTIONS --- */
+        section { padding: 80px 50px; }
+        .section-title {
+            text-align: center;
+            font-family: 'Noto Serif Devanagari', serif;
+            font-size: 2.5rem;
+            color: var(--maroon);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title::after {
+            content: "🔱";
+            display: block;
+            font-size: 20px;
+            color: var(--gold);
+            margin-top: 10px;
+        }
+
+        /* --- SERVICES GRID (10 Categories) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #eee;
+            border-top: 5px solid var(--gold);
+            transition: 0.3s;
+            text-align: center;
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .service-card h3 { color: var(--maroon); margin-bottom: 15px; }
+        .service-card ul { list-style: none; font-size: 14px; color: #666; }
+
+        /* --- RASHIFAL GRID --- */
+        .rashifal-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+        .rashi-item {
+            background: white;
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .rashi-item:hover { background: var(--gold); color: white; }
+        .rashi-item span { display: block; font-size: 30px; margin-bottom: 5px; }
+
+        /* --- KUMBH 2028 --- */
+        .kumbh-box {
+            background: linear-gradient(rgba(123, 30, 30, 0.9), rgba(123, 30, 30, 0.9)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80');
+            background-size: cover;
+            color: white;
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        /* --- SHOP SECTION --- */
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .price { color: var(--gold); font-weight: bold; display: block; margin: 10px 0; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #111;
+            color: white;
+            padding: 60px 50px 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .sidebar { display: none; }
+            main { margin-left: 0; }
+            .hero h1 { font-size: 2.2rem; }
+            .rashifal-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://img.icons8.com/ios/500/shiva.png" class="watermark-bg" alt="Shiva">
+
+    <aside class="sidebar">
+        <h2>पंडितजी मेनू</h2>
+        <ul class="sidebar-menu">
+            <li><a href="#home"><i>🏠</i> होम (Home)</a></li>
+            <li><a href="#services"><i>🕉️</i> सेवाएं (Services)</a></li>
+            <li><a href="#rashifal"><i>✨</i> राशिफल (Rashifal)</a></li>
+            <li><a href="#panchang"><i>📅</i> पंचांग (Panchang)</a></li>
+            <li><a href="#bhakti"><i>🙏</i> भक्ति सागर</a></li>
+            <li><a href="#darshan"><i>🔱</i> उज्जैन दर्शन</a></li>
+            <li><a href="#kumbh"><i>🚩</i> कुंभ मेला 2028</a></li>
+            <li><a href="#shop"><i>🛒</i> शॉप (Shop)</a></li>
+            <li><a href="#vidwan"><i>👨‍🏫</i> हमारे विद्वान</a></li>
+            <li><a href="#about"><i>ℹ️</i> हमारे बारे में</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <header>
+            <div style="font-family: 'Playfair Display'; font-weight: bold; color: var(--maroon);">
+                UJJAIN WALE PANDITJI
+            </div>
+            <button class="lang-toggle">English / हिन्दी</button>
+        </header>
+
+        <section class="hero" id="home">
+            <div style="color: var(--gold); font-weight: bold; letter-spacing: 5px;">ॐ नमः शिवाय</div>
+            <h1>ज्योतिष अनुष्ठान कर्मकांड केंद्र</h1>
+            <p>उज्जैन की पवित्र धरा से बाबा महाकाल के आशीर्वाद के साथ, हम आपके जीवन में सुख, शांति और समृद्धि हेतु शुद्ध वैदिक विधियों से समाधान प्रदान करते हैं।</p>
+            <div class="cta-btns">
+                <a href="#services" class="btn btn-gold">पूजा बुक करें</a>
+                <a href="#" class="btn btn-outline">ज्योतिष परामर्श लें</a>
+            </div>
+        </section>
+
+        <section id="rashifal">
+            <h2 class="section-title">दैनिक राशिफल</h2>
+            <div class="rashifal-grid">
+                <div class="rashi-item"><span>♈</span>मेष</div>
+                <div class="rashi-item"><span>♉</span>वृषभ</div>
+                <div class="rashi-item"><span>♊</span>मिथुन</div>
+                <div class="rashi-item"><span>♋</span>कर्क</div>
+                <div class="rashi-item"><span>♌</span>सिंह</div>
+                <div class="rashi-item"><span>♍</span>कन्या</div>
+                <div class="rashi-item"><span>♎</span>तुला</div>
+                <div class="rashi-item"><span>♏</span>वृश्चिक</div>
+                <div class="rashi-item"><span>♐</span>धनु</div>
+                <div class="rashi-item"><span>♑</span>मकर</div>
+                <div class="rashi-item"><span>♒</span>कुंभ</div>
+                <div class="rashi-item"><span>♓</span>मीन</div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">हमारी मुख्य सेवाएं</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>1. ज्योतिष सेवाएं</h3>
+                    <ul><li>जन्म कुंडली</li><li>विवाह मिलान</li><li>रत्न सुझाव</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>2. उज्जैन विशेष</h3>
+                    <ul><li>भस्म आरती मार्गदर्शन</li><li>महाकाल अभिषेक</li><li>शिप्रा आरती</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>3. शक्ति तंत्र</h3>
+                    <ul><li>बगलामुखी अनुष्ठान</li><li>दस महाविद्या</li><li>तंत्र बाधा मुक्ति</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>4. पाठ सेवाएं</h3>
+                    <ul><li>दुर्गा सप्तशती</li><li>रुद्राष्टक</li><li>विष्णु सहस्रनाम</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>5. जाप सेवाएं</h3>
+                    <ul><li>महामृत्युंजय मंत्र</li><li>गायत्री मंत्र</li><li>नवाक्षरी मंत्र</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>6. दोष निवारण</h3>
+                    <ul><li>काल सर्प शांति</li><li>मंगल दोष</li><li>पितृ दोष</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>7. पितृ मोक्ष</h3>
+                    <ul><li>नारायण बलि</li><li>त्रिपिंडी श्राद्ध</li><li>पिंडदान</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>8. वेद एवं पुराण</h3>
+                    <ul><li>ऋग्वेद पारायण</li><li>महापुराण प्रवचन</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>9. कथा सेवा</h3>
+                    <ul><li>श्रीमद्भागवत</li><li>शिव महापुराण</li><li>राम कथा</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>10. विशेष अनुष्ठान</h3>
+                    <ul><li>यज्ञोपवीत</li><li>विवाह संस्कार</li><li>गृह प्रवेश</li></ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="kumbh">
+            <div class="kumbh-box">
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px;">सिंहस्थ कुंभ मेला 2028</h2>
+                <p>उज्जैन कुंभ के पावन अवसर पर शाही स्नान, कल्पवास और विशेष साधना शिविरों के लिए अग्रिम पंजीकरण प्रारंभ।</p>
+                <br>
+                <a href="#" class="btn btn-gold">विवरण देखें</a>
+            </div>
+        </section>
+
+        <section id="bhakti">
+            <h2 class="section-title">भक्ति सागर</h2>
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                <div class="service-card" style="border-top-color: var(--maroon);"><h4>आरती</h4></div>
+                <div class="service-card" style="border-top-color: var(--maroon);"><h4>मंत्र</h4></div>
+                <div class="service-card" style="border-top-color: var(--maroon);"><h4>श्लोक</h4></div>
+                <div class="service-card" style="border-top-color: var(--maroon);"><h4>चालीसा</h4></div>
+                <div class="service-card" style="border-top-color: var(--maroon);"><h4>स्तोत्रम</h4></div>
+            </div>
+        </section>
+
+        <section id="shop">
+            <h2 class="section-title">पवित्र शॉप</h2>
+            <div class="shop-grid">
+                <div class="product-card">
+                    <div style="font-size: 40px;">📿</div>
+                    <h4>सिद्ध रुद्राक्ष</h4>
+                    <span class="price">₹1,100 - ₹5,100</span>
+                    <button class="lang-toggle">देखें</button>
+                </div>
+                <div class="product-card">
+                    <div style="font-size: 40px;">📐</div>
+                    <h4>श्री यंत्र</h4>
+                    <span class="price">₹2,500</span>
+                    <button class="lang-toggle">देखें</button>
+                </div>
+                <div class="product-card">
+                    <div style="font-size: 40px;">📚</div>
+                    <h4>धर्म ग्रंथ</h4>
+                    <span class="price">₹500+</span>
+                    <button class="lang-toggle">देखें</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-grid">
+                <div>
+                    <h3>संपर्क</h3>
+                    <p>रामघाट, उज्जैन, मध्य प्रदेश</p>
+                    <p>Phone: +91 XXXXX-XXXXX</p>
+                    <p>Email: ujjain@panditji.com</p>
+                </div>
+                <div>
+                    <h3>कानूनी सूचना</h3>
+                    <ul style="list-style: none; font-size: 14px; opacity: 0.8;">
+                        <li>Privacy Policy</li>
+                        <li>Terms & Conditions</li>
+                        <li>Disclaimer</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>आशीर्वाद</h3>
+                    <p style="font-style: italic;">"महाकाल की कृपा सदैव आप पर बनी रहे।"</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2026 Jyotish Anushthan Karmakand Kendra | Design: Divine Premium
+            </div>
+        </footer>
+    </main>
+
+</body>
+</html>
