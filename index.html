@@ -25,7 +25,17 @@
         header { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         .menu-btn { font-size: 24px; color: var(--maroon); cursor: pointer; }
         .lang-btn { background: var(--maroon); color: white; border: 1px solid var(--gold); padding: 6px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+<header>
+    <div class="menu-btn" onclick="toggleSidebar()"><i class="fa fa-bars"></i></div>
+    
+    <div class="logo-container" onclick="showPage('home')" style="cursor:pointer; display:flex; align-items:center;">
+        <img src="logo.png" alt="Panditji Logo" style="height: 50px; width: auto; margin-right: 10px;">
+        <div style="font-family:'Playfair Display'; color:var(--maroon); font-weight:bold; font-size: 16px;">UJJAIN WALE PANDITJI</div>
+    </div>
 
+    <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">English</button>
+</header>
+        
         /* CONTENT AREA */
         .page-content { padding: 30px 5%; display: none; animation: fadeIn 0.5s; max-width: 1100px; margin: auto; }
         .page-content.active { display: block; }
