@@ -22,53 +22,41 @@
             padding: 0 5%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
             border-bottom: 4px solid var(--secondary);
         }
-        .brand-name { font-family: 'Cinzel', serif; font-weight: 700; color: var(--primary); font-size: 0.9rem; line-height: 1.1; }
+        .brand-name { font-family: 'Cinzel', serif; font-weight: 700; color: var(--primary); font-size: 0.9rem; }
         .brand-name span { display: block; font-size: 0.55rem; color: var(--secondary); letter-spacing: 1px; }
 
-        /* SIDEBAR STYLING - FULL 18 SECTIONS */
-        .sidebar { position: fixed; left: -350px; top: 0; width: 300px; height: 100vh; background: var(--primary); color: var(--white); transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 2001; padding: 20px; overflow-y: auto; }
+        /* SIDEBAR - 18 SECTIONS */
+        .sidebar { position: fixed; left: -320px; top: 0; width: 300px; height: 100vh; background: var(--primary); color: var(--white); transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); z-index: 2001; padding: 20px 10px; overflow-y: auto; box-shadow: 5px 0 15px rgba(0,0,0,0.3); }
         .sidebar.active { left: 0; }
-        .sidebar-header { text-align: center; border-bottom: 1px solid var(--secondary); padding-bottom: 15px; margin-bottom: 15px; }
-        .sidebar-header h2 { color: var(--secondary); font-family: 'Cinzel'; font-size: 1.4rem; }
+        .sidebar h2 { font-size: 1.2rem; border-bottom: 2px solid var(--secondary); padding-bottom: 10px; margin-bottom: 20px; text-align: center; color: var(--secondary); font-family: 'Cinzel'; }
         
         .nav-links { list-style: none; }
-        .nav-links li { margin-bottom: 5px; }
-        .nav-links a { color: var(--white); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 12px; padding: 10px 15px; border-radius: 6px; transition: 0.3s; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .nav-links a:hover { background: var(--secondary); color: var(--primary); transform: translateX(5px); }
-        .premium-tag { background: gold; color: black; font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-left: auto; }
+        .nav-links a { color: #f4f4f4; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 12px; padding: 12px 15px; border-radius: 8px; margin-bottom: 4px; transition: 0.3s; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .nav-links a:hover { background: var(--secondary); color: var(--primary); transform: translateX(8px); }
+        
+        .tag { font-size: 0.6rem; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-left: auto; text-transform: uppercase; }
+        .tag-premium { background: #FFD700; color: #000; }
+        .tag-new { background: #25D366; color: #fff; }
 
-        /* MAIN CONTENT */
+        /* PAGE CONTAINERS */
+        .container { padding: 20px 5%; max-width: 1100px; margin: auto; display: none; }
+        .container.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200');
             background-size: cover; background-position: center; height: 30vh; display: flex; flex-direction: column; 
-            align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 20px;
+            align-items: center; justify-content: center; text-align: center; color: var(--white);
         }
 
-        .container { padding: 20px 5%; max-width: 1100px; margin: auto; display: none; }
-        .container.active { display: block; animation: slideIn 0.4s ease; }
-        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* SERVICE CARDS */
-        .service-card { background: var(--white); border-radius: 12px; border: 1px solid rgba(212,175,55,0.3); margin-bottom: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .service-trigger { padding: 15px; display: flex; align-items: center; gap: 10px; cursor: pointer; }
-        .service-trigger h3 { flex: 1; font-size: 1rem; color: var(--primary); font-family: 'Noto Serif Devanagari'; font-weight: 700; }
-        .service-trigger i.chevron { transition: 0.3s; color: var(--secondary); }
-        .service-card.active .chevron { transform: rotate(180deg); }
-        
+        .service-card { background: var(--white); border-radius: 10px; border: 1px solid rgba(212,175,55,0.3); margin-bottom: 10px; overflow: hidden; }
+        .service-trigger { padding: 15px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+        .service-trigger h3 { font-size: 1rem; color: var(--primary); font-family: 'Noto Serif Devanagari'; }
         .service-content { max-height: 0; overflow: hidden; transition: 0.4s ease-out; background: #FFFCF7; }
-        .service-card.active .service-content { max-height: 10000px; border-top: 1px solid #f0f0f0; }
-        
-        .service-details { padding: 10px; }
-        .sub-cat-title { font-weight: 700; color: var(--accent); padding: 12px 10px 5px; font-size: 0.9rem; border-bottom: 1px solid #eee; margin-bottom: 5px; }
-        .service-details ul { list-style: none; }
-        .service-details li { 
-            font-size: 0.85rem; padding: 10px; border-bottom: 1px solid #f9f9f9; display: flex; justify-content: space-between; align-items: center;
-        }
-        .li-wa-btn { color: #25D366; font-size: 1.2rem; }
+        .service-card.active .service-content { max-height: 5000px; border-top: 1px solid #eee; }
 
-        /* BUTTONS */
         .wa-btn { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; z-index: 3000; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-decoration: none; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; z-index: 2000; backdrop-filter: blur(2px); }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; z-index: 2000; backdrop-filter: blur(3px); }
         .overlay.active { display: block; }
     </style>
 </head>
@@ -77,64 +65,54 @@
 <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
 <nav class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-        <h2>पंडित जी मेनू</h2>
-    </div>
+    <h2>मुख्य नेविगेशन</h2>
     <ul class="nav-links">
         <li><a onclick="showPage('home')"><i class="fa fa-home"></i> 1. Home</a></li>
         <li><a onclick="showPage('services')"><i class="fa fa-scroll"></i> 2. Services</a></li>
-        <li><a onclick="contactWA('आज का राशिफल')"><i class="fa fa-star"></i> 3. Rashifal</a></li>
-        <li><a onclick="contactWA('प्रीमियम कुंडली सेवा')"><i class="fa fa-file-invoice"></i> 4. Kundli <span class="premium-tag">PREMIUM</span></a></li>
+        <li><a onclick="contactWA('आज का राशिफल')"><i class="fa fa-sun"></i> 3. Rashifal</a></li>
+        <li><a onclick="contactWA('प्रीमियम कुंडली सेवा')"><i class="fa fa-file-invoice"></i> 4. Kundli <span class="tag tag-premium">Premium</span></a></li>
         <li><a onclick="contactWA('रत्न सुझाव')"><i class="fa fa-gem"></i> 5. Ratna</a></li>
-        <li><a onclick="showPage('panchang')"><i class="fa fa-calendar-days"></i> 6. Panchang</a></li>
-        <li><a onclick="contactWA('भक्ति सागर जानकारी')"><i class="fa fa-om"></i> 7. Bhakti Sagar</a></li>
+        <li><a onclick="contactWA('आज का पंचांग')"><i class="fa fa-calendar-alt"></i> 6. Panchang</a></li>
+        <li><a onclick="contactWA('भक्ति सागर पोर्टल')"><i class="fa fa-om"></i> 7. Bhakti Sagar</a></li>
         <li><a onclick="contactWA('उज्जैन दर्शन बुकिंग')"><i class="fa fa-temple"></i> 8. Ujjain Darshan</a></li>
-        <li><a onclick="contactWA('कुम्भ मेला 2028')"><i class="fa fa-tent"></i> 9. Kumbh Mela 2028</a></li>
-        <li><a onclick="contactWA('गैलरी देखें')"><i class="fa fa-images"></i> 10. Gallery</a></li>
-        <li><a onclick="contactWA('शॉप सामान सूची')"><i class="fa fa-shopping-bag"></i> 11. Shop</a></li>
+        <li><a onclick="contactWA('कुम्भ मेला 2028')"><i class="fa fa-tent"></i> 9. Kumbh Mela 2028 <span class="tag tag-new">New</span></a></li>
+        <li><a onclick="contactWA('फोटो गैलरी')"><i class="fa fa-images"></i> 10. Gallery</a></li>
+        <li><a onclick="contactWA('ऑनलाइन शॉप')"><i class="fa fa-shopping-cart"></i> 11. Shop</a></li>
         <li><a onclick="contactWA('विशेष प्रकाशन')"><i class="fa fa-newspaper"></i> 12. Vishesh Prakashan</a></li>
-        <li><a onclick="contactWA('धार्मिक पुस्तकें')"><i class="fa fa-book-journal-whills"></i> 13. Books</a></li>
-        <li><a onclick="contactWA('प्रमुख विद्वान')"><i class="fa fa-user-graduate"></i> 14. Hamare Pramukh Vidwan</a></li>
+        <li><a onclick="contactWA('धार्मिक पुस्तकें')"><i class="fa fa-book"></i> 13. Books</a></li>
+        <li><a onclick="contactWA('प्रमुख विद्वान')"><i class="fa fa-user-tie"></i> 14. Hamare Pramukh Vidwan</a></li>
         <li><a onclick="contactWA('हमारे बारे में')"><i class="fa fa-info-circle"></i> 15. About Us</a></li>
         <li><a onclick="contactWA('नियम और शर्तें')"><i class="fa fa-gavel"></i> 16. Terms and Conditions</a></li>
         <li><a onclick="contactWA('कानूनी जानकारी')"><i class="fa fa-balance-scale"></i> 17. Legality</a></li>
-        <li><a onclick="contactWA('गोपनीयता नीति')"><i class="fa fa-user-shield"></i> 18. Privacy Policy</a></li>
+        <li><a onclick="contactWA('गोपनीयता नीति')"><i class="fa fa-shield-alt"></i> 18. Privacy Policy</a></li>
     </ul>
 </nav>
 
 <header>
-    <div onclick="toggleSidebar()" style="font-size: 1.5rem; color: var(--primary); cursor: pointer;"><i class="fa fa-bars-staggered"></i></div>
-    <div class="logo-area" onclick="showPage('home')" style="cursor:pointer">
+    <div onclick="toggleSidebar()" style="font-size: 1.4rem; color: var(--primary); cursor: pointer;"><i class="fa fa-bars-staggered"></i></div>
+    <div class="logo-area" onclick="showPage('home')">
         <div class="brand-name">UJJAIN PANDITJI<span>सम्पूर्ण ज्योतिष एवं अनुष्ठान केंद्र</span></div>
     </div>
-    <a href="https://wa.me/918827415099" style="color:var(--primary); font-size: 1.3rem;"><i class="fa fa-phone-volume"></i></a>
+    <a href="https://wa.me/918827415099" style="color:var(--primary); font-size: 1.2rem;"><i class="fa fa-phone"></i></a>
 </header>
 
 <main>
     <section class="hero" id="hero">
         <h1 style="font-family: 'Noto Serif Devanagari'; font-size: 1.8rem;">॥ जय श्री महाकाल ॥</h1>
-        <p>उज्जैन के विद्वान पंडितों द्वारा शास्त्रोक्त विधि से पूजन</p>
+        <p>शिप्रा तट, उज्जैन से सीधा लाइव अनुष्ठान</p>
     </section>
 
     <div id="home" class="container active">
-        <div style="background: white; padding: 25px; border-radius: 15px; border: 1px solid var(--secondary); text-align: center;">
-            <h2 style="color:var(--primary)">महाकाल की नगरी में आपका स्वागत है</h2>
-            <p style="margin: 15px 0;">आपकी हर धार्मिक और ज्योतिषीय समस्या का समाधान यहाँ उपलब्ध है। हमारी विस्तृत सेवाओं को देखने के लिए नीचे दिए बटन पर क्लिक करें।</p>
-            <button onclick="showPage('services')" style="background:var(--primary); color:white; border:none; padding:12px 25px; border-radius:5px; cursor:pointer; font-weight:bold;">सेवाएं देखें</button>
+        <div style="background: white; padding: 30px; border-radius: 15px; border: 1px solid var(--secondary); text-align: center;">
+            <h2 style="color:var(--primary)">अवंतिका नगरी में आपका स्वागत है</h2>
+            <p style="margin: 15px 0;">उज्जैन के सिद्ध स्थानों पर आपके नाम-गोत्र से वैदिक अनुष्ठान संपन्न किए जाते हैं। साइडबार में दी गई 18 श्रेणियों से अपनी जरूरत की सेवा चुनें।</p>
+            <button onclick="showPage('services')" style="background:var(--primary); color:white; border:none; padding:12px 25px; border-radius:5px; cursor:pointer; font-weight:bold;">सभी सेवाएं देखें</button>
         </div>
     </div>
 
     <div id="services" class="container">
         <h2 style="text-align:center; margin-bottom:20px; color:var(--primary)">हमारी विस्तृत सेवाएं</h2>
         <div id="mainServiceList"></div>
-    </div>
-
-    <div id="panchang" class="container">
-        <div style="background: white; padding: 25px; border-radius: 15px; border: 1px solid var(--secondary); text-align: center;">
-            <h3 style="color:var(--primary)">आज का पंचांग</h3>
-            <p style="margin-top:10px;">📅 दिनांक: 19 जनवरी 2026</p>
-            <p>🚩 शुभ मुहूर्त एवं राहुकाल जानने हेतु व्हाट्सएप करें।</p>
-        </div>
     </div>
 </main>
 
@@ -143,43 +121,37 @@
 <script>
     const myNumber = "918827415099";
 
-    // Your Exact Text List
-    const fullServicesData = [
-        {title: "1. ज्योतिष सेवाएं", items: [{name: "जन्म कुंडली विश्लेषण"}, {name: "विवाह मिलान"}, {name: "करियर और व्यापार ज्योतिष"}, {name: "वार्षिक भविष्यफल"}, {name: "प्रश्न कुंडली"}, {name: "रत्न सुझाव"}, {name: "मुहूर्त निर्धारण"}, {name: "नामकरण संस्कार"}, {name: "वास्तु परामर्श"}, {name: "ग्रह शांति उपाय"}]},
-        {title: "2. उज्जैन विशेष सेवाएं", items: [{name: "महाकालेश्वर दर्शन व्यवस्था"}, {name: "महाकाल मंदिर प्रोटोकॉल मार्गदर्शन"}, {name: "भस्म आरती बुकिंग मार्गदर्शन"}, {name: "क्षिप्रा स्नान"}, {name: "उज्जैन मंदिर दर्शन एवं अनुष्ठान"}, {name: "रामघाट अनुष्ठान"}, {name: "सिंहस्थ कुंभ मेला सेवाएं"}, {name: "काल भैरव मंदिर पूजन"}, {name: "हरसिद्धि मंदिर पूजन"}, {name: "शनि मंदिर पूजन"}, {name: "चिंतामन गणेश मंदिर पूजन"}, {name: "गढ़ कालिका मंदिर पूजन"}, {name: "नवग्रह मंदिर पूजन"}, {name: "पारदेश्वर महादेव अभिषेक"}, {name: "चार धाम मंदिर दर्शन"}]},
-        {title: "3. शक्ति तंत्र अनुष्ठान", items: [{name: "दस महाविद्या अनुष्ठान"}, {name: "काल भैरव रोग मुक्ति अनुष्ठान"}, {name: "बगलामुखी अनुष्ठान"}, {name: "महाकाली अनुष्ठान"}, {name: "तारा देवी अनुष्ठान"}, {name: "छिन्नमस्ता अनुष्ठान"}, {name: "शक्ति साधना अनुष्ठान"}]},
-        {title: "4. पाठ सेवाएं", items: [{sub: "शिव पाठ", name: "महामृत्युंजय पाठ, रुद्राष्टक पाठ, शिव चालीसा"}, {sub: "देवी पाठ", name: "दुर्गा सप्तशती, चंडी पाठ, लक्ष्मी स्तोत्र"}, {sub: "बगलामुखी", name: "बगलामुखी स्तोत्र, कवच एवं मंत्र पाठ"}, {sub: "हनुमान पाठ", name: "हनुमान चालीसा, बजरंग बाण, अष्टक पाठ"}]},
-        {title: "5. जाप सेवाएं", items: [{sub: "शिव जाप", name: "ॐ नमः शिवाय, महामृत्युंजय मंत्र जाप"}, {sub: "देवी जाप", name: "दुर्गा मंत्र, लक्ष्मी मंत्र, सरस्वती मंत्र"}, {sub: "नवग्रह जाप", name: "सूर्य, चंद्र, मंगल, बुध मंत्र जाप"}]},
-        {title: "6. दोष सेवाएं", items: [{name: "काल सर्प दोष निवारण"}, {name: "मंगल दोष निवारण"}, {name: "शनि दोष निवारण"}, {name: "पितृ दोष निवारण"}, {name: "गुरु चांडाल दोष निवारण"}, {name: "अंगारक दोष निवारण"}]},
-        {title: "7. पितृ मोक्ष एवं श्राद्ध", items: [{sub: "तर्पण", name: "पितृ, गया, नर्मदा, गंगा तर्पण"}, {sub: "श्राद्ध", name: "नारायण बलि, त्रिपिंडी श्राद्ध, पिंडदान"}]},
-        {title: "8. वेद एवं पुराण", items: [{sub: "वेद", name: "ऋग्वेद, यजुर्वेद, सामवेद, अथर्ववेद"}, {sub: "महापुराण (18)", name: "ब्रह्म, पद्म, विष्णु, शिव, भागवत, नारद, मार्कण्डेय, अग्नि, भविष्य, ब्रह्मवैवर्त, लिंग, वराह, स्कंद, वामन, कूर्म, मत्स्य, गरुड़, ब्रह्माण्ड पुराण"}]},
-        {title: "9. कथा सेवाएं", items: [{name: "श्रीमद्भागवत कथा"}, {name: "रामायण कथा"}, {name: "शिव पुराण कथा"}, {name: "देवी भागवत कथा"}]},
-        {title: "10. विशेष सेवाएं", items: [{sub: "वैदिक पूजा", name: "महा रुद्राभिषेक, सत्यनारायण पूजा"}, {sub: "संस्कार", name: "नामकरण, मुंडन, यज्ञोपवीत, विवाह संस्कार"}]}
+    // All your provided text categories
+    const serviceData = [
+        {title: "1. ज्योतिष सेवाएं", items: ["जन्म कुंडली विश्लेषण", "विवाह मिलान", "करियर ज्योतिष", "वास्तु परामर्श"]},
+        {title: "2. उज्जैन विशेष सेवाएं", items: ["महाकालेश्वर दर्शन", "भस्म आरती बुकिंग मार्गदर्शन", "शिप्रा अभिषेक", "मंगलनाथ भात पूजा"]},
+        {title: "3. शक्ति तंत्र अनुष्ठान", items: ["बगलामुखी अनुष्ठान", "महाकाली अनुष्ठान", "शत्रु बाधा निवारण"]},
+        {title: "4. पाठ सेवाएं", items: ["महामृत्युंजय पाठ", "दुर्गा सप्तशती पाठ", "सुंदरकांड", "रुद्राभिषेक"]},
+        {title: "5. जाप सेवाएं", items: ["ॐ नमः शिवाय जाप", "महामृत्युंजय जाप", "नवग्रह जाप"]},
+        {title: "6. दोष निवारण", items: ["काल सर्प दोष", "मंगल दोष", "पितृ दोष", "शनि शांति"]},
+        {title: "7. पितृ मोक्ष तर्पण", items: ["नारायण बलि श्राद्ध", "त्रिपिंडी श्राद्ध", "पिंडदान उज्जैन"]},
+        {title: "8. वेद एवं पुराण", items: ["ऋग्वेद, यजुर्वेद पाठ", "18 महापुराण श्रवण (शिव, भागवत आदि)"]},
+        {title: "9. कथा सेवाएं", items: ["श्रीमद्भागवत कथा", "शिव महापुराण कथा", "राम कथा"]},
+        {title: "10. विशेष अनुष्ठान", items: ["यज्ञोपवीत", "विवाह संस्कार", "यंत्र प्राण प्रतिष्ठा"]}
     ];
 
     function renderServices() {
         const container = document.getElementById('mainServiceList');
-        container.innerHTML = fullServicesData.map((sec) => `
+        container.innerHTML = serviceData.map(sec => `
             <div class="service-card">
-                <div class="service-trigger" onclick="toggleAcc(this)">
-                    <i class="fa fa-dharmachakra"></i>
+                <div class="service-trigger" onclick="this.parentElement.classList.toggle('active')">
                     <h3>${sec.title}</h3>
-                    <i class="fa fa-chevron-down chevron"></i>
+                    <i class="fa fa-chevron-down"></i>
                 </div>
                 <div class="service-content">
-                    <div class="service-details">
-                        <ul>
-                            ${sec.items.map(item => `
-                                ${item.sub ? `<div class="sub-cat-title">${item.sub}</div>` : ''}
-                                <li>
-                                    <span>${item.name}</span>
-                                    <a href="https://wa.me/${myNumber}?text=नमस्ते पंडित जी, मुझे '${item.name}' के बारे में जानकारी चाहिए।" target="_blank" class="li-wa-btn">
-                                        <i class="fab fa-whatsapp"></i>
-                                    </a>
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
+                    <ul style="list-style:none; padding:10px;">
+                        ${sec.items.map(item => `
+                            <li style="padding:10px; border-bottom:1px solid #f0f0f0; display:flex; justify-content:space-between; align-items:center;">
+                                ${item}
+                                <a href="https://wa.me/${myNumber}?text=नमस्ते, मुझे ${item} के बारे में जानकारी चाहिए।" target="_blank" style="color:#25D366; font-size:1.2rem;"><i class="fab fa-whatsapp"></i></a>
+                            </li>
+                        `).join('')}
+                    </ul>
                 </div>
             </div>
         `).join('');
@@ -193,21 +165,14 @@
     function showPage(p) {
         document.querySelectorAll('.container').forEach(c => c.classList.remove('active'));
         document.getElementById(p).classList.add('active');
-        document.getElementById('hero').style.display = p === 'home' ? 'flex' : 'none';
+        document.getElementById('hero').style.display = (p === 'home') ? 'flex' : 'none';
         if(document.getElementById('sidebar').classList.contains('active')) toggleSidebar();
-        window.scrollTo(0, 0);
+        window.scrollTo(0,0);
     }
 
-    function contactWA(msg) {
-        window.open(`https://wa.me/${myNumber}?text=नमस्ते पंडित जी, मुझे '${msg}' सेवा की जानकारी चाहिए।`, '_blank');
+    function contactWA(topic) {
+        window.open(`https://wa.me/${myNumber}?text=नमस्ते पंडित जी, मुझे '${topic}' के बारे में जानकारी चाहिए।`, '_blank');
         if(document.getElementById('sidebar').classList.contains('active')) toggleSidebar();
-    }
-
-    function toggleAcc(h) {
-        const c = h.parentElement;
-        const active = c.classList.contains('active');
-        document.querySelectorAll('.service-card').forEach(s => s.classList.remove('active'));
-        if(!active) c.classList.add('active');
     }
 
     window.onload = renderServices;
