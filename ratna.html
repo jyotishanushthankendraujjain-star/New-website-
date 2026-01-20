@@ -3,168 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>नवरत्न महाकोश | उज्जैन वाले पंडितजी</title>
+    <title>संपूर्ण रत्न विज्ञान | उज्जैन वाले पंडितजी</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --main-red: #8B0000; --gold: #D4AF37; --light-gold: #fcf6e5; }
-        body { font-family: 'Poppins', sans-serif; background: #fffcf8; color: #333; scroll-behavior: smooth; }
+        :root { --main-red: #8B0000; --gold: #D4AF37; }
+        body { font-family: 'Poppins', sans-serif; background: #fffcf8; scroll-behavior: smooth; }
         .hindi { font-family: 'Tiro Devanagari Hindi', serif; }
         .ratna-card { 
-            background: white; border-radius: 40px; overflow: hidden; 
-            box-shadow: 0 15px 50px rgba(0,0,0,0.05); border: 1px solid #f1e1b9;
-            margin-bottom: 60px; transition: 0.4s;
+            background: white; border-radius: 30px; overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #f1e1b9;
+            margin-bottom: 50px; transition: 0.3s;
         }
-        .ratna-card:hover { transform: translateY(-10px); box-shadow: 0 30px 70px rgba(139,0,0,0.1); }
-        .gem-img { width: 100%; height: 100%; min-height: 400px; object-fit: cover; }
-        .mantra-badge { background: var(--light-gold); border-left: 5px solid var(--gold); padding: 20px; border-radius: 0 15px 15px 0; }
-        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--gold); margin: 15px auto; }
+        .gem-img { width: 100%; height: 100%; min-height: 350px; object-fit: cover; background: #f0f0f0; }
+        .mantra-box { background: #fff8e7; border-left: 5px solid var(--gold); padding: 15px; border-radius: 0 15px 15px 0; }
+        .input-field { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; margin-bottom: 15px; }
     </style>
 </head>
 <body>
 
-<nav class="bg-white/90 backdrop-blur-md p-4 sticky top-0 z-50 border-b border-gold/30 shadow-sm flex justify-between items-center px-8">
-    <a href="index.html" class="flex items-center gap-2 text-main-red font-bold">
-        <i class="fas fa-om text-2xl"></i> <span class="hindi text-xl">मुख्य पृष्ठ</span>
+<nav class="bg-white p-4 shadow-md sticky top-0 z-50 flex justify-between items-center px-6 border-b-2 border-gold">
+    <a href="index.html" class="text-red-900 font-bold flex items-center gap-2">
+        <i class="fas fa-arrow-left"></i> <span class="hindi text-lg">होम</span>
     </a>
-    <a href="https://wa.me/910000000000" class="bg-green-600 text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg hover:bg-green-700 transition">WhatsApp</a>
+    <h1 class="text-xl font-bold text-red-900 hindi">रत्न विज्ञान</h1>
+    <div class="w-10"></div>
 </nav>
 
-<header class="py-20 bg-main-red text-white text-center">
-    <h1 class="text-5xl md:text-6xl font-bold hindi mb-4">९ रत्न: पूर्ण ज्योतिषीय ज्ञान</h1>
-    <p class="max-w-2xl mx-auto opacity-80 text-lg">उज्जैन के सिद्ध ग्रंथों पर आधारित रत्नों की विस्तृत जानकारी</p>
+<header class="py-16 bg-red-900 text-white text-center">
+    <h1 class="text-4xl md:text-6xl font-bold hindi mb-4">९ रत्न: पूर्ण विवरण</h1>
+    <p class="opacity-80 italic px-4">ग्रहों के दुष्प्रभाव को मिटाने और भाग्य जगाने की प्राचीन विद्या</p>
 </header>
 
-<main class="max-w-7xl mx-auto py-16 px-4">
+<main class="max-w-6xl mx-auto py-12 px-4">
 
-    <div class="ratna-card grid grid-cols-1 lg:grid-cols-2">
+    <div class="ratna-card grid grid-cols-1 md:grid-cols-2">
         <img src="manik.jpg" class="gem-img" alt="Ruby">
-        <div class="p-10 flex flex-col justify-center">
-            <h2 class="text-4xl font-bold text-main-red hindi mb-6 border-b pb-4">१. माणिक्य (Ruby)</h2>
-            <p class="text-gray-600 mb-6">सूर्य का प्रतिनिधि रत्न। यह आत्मविश्वास, राज्य-लाभ और पिता से सुख प्रदान करता है।</p>
-            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>धातु:</strong> सोना/तांबा</div>
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>उंगली:</strong> अनामिका</div>
-            </div>
-            <div class="mantra-badge hindi">"ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः"</div>
+        <div class="p-8">
+            <span class="text-xs font-bold text-red-700 uppercase">Graha: Sun (Surya)</span>
+            <h2 class="text-3xl font-bold text-red-900 hindi mt-2 mb-4">१. माणिक्य (Ruby)</h2>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">माणिक्य सूर्य का रत्न है जो व्यक्ति को राजा के समान पद और प्रतिष्ठा दिलाता है। यह आत्मविश्वास बढ़ाता है और हृदय को शक्ति प्रदान करता है।</p>
+            <ul class="text-sm space-y-2 mb-6 text-gray-700">
+                <li><i class="fas fa-check-circle text-gold mr-2"></i><strong>धातु:</strong> २२K स्वर्ण / तांबा</li>
+                <li><i class="fas fa-check-circle text-gold mr-2"></i><strong>उंगली:</strong> अनामिका (Ring Finger)</li>
+                <li><i class="fas fa-check-circle text-gold mr-2"></i><strong>लाभ:</strong> सरकारी नौकरी, नेतृत्व शक्ति, आरोग्यता।</li>
+            </ul>
+            <div class="mantra-box hindi">मन्त्र: ॐ ह्रां ह्रीं ह्रौं सः सूर्याय नमः</div>
         </div>
     </div>
 
-    <div class="ratna-card grid grid-cols-1 lg:grid-cols-2 lg:flex-row-reverse">
-        <div class="p-10 flex flex-col justify-center order-2 lg:order-1">
-            <h2 class="text-4xl font-bold text-blue-900 hindi mb-6 border-b pb-4">२. मोती (Pearl)</h2>
-            <p class="text-gray-600 mb-6">चंद्र का रत्न। यह मन को शांत करता है, तनाव कम करता है और माता का सुख बढ़ाता है।</p>
-            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>धातु:</strong> चांदी</div>
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>उंगली:</strong> कनिष्ठा</div>
-            </div>
-            <div class="mantra-badge hindi" style="border-color:#3182ce; background:#f0f7ff;">"ॐ श्रां श्रीं श्रौं सः चन्द्रमसे नमः"</div>
+    <div class="ratna-card grid grid-cols-1 md:grid-cols-2 md:flex-row-reverse">
+        <div class="p-8 order-2 md:order-1">
+            <span class="text-xs font-bold text-blue-600 uppercase">Graha: Moon (Chandra)</span>
+            <h2 class="text-3xl font-bold text-blue-900 hindi mt-2 mb-4">२. मोती (Pearl)</h2>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">चंद्रमा का रत्न मोती मन की चंचलता को दूर करता है। यह माता के सुख में वृद्धि करता है और मानसिक तनाव (Stress) को पूरी तरह मिटा देता है।</p>
+            <ul class="text-sm space-y-2 mb-6 text-gray-700">
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>धातु:</strong> शुद्ध चांदी</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>उंगली:</strong> कनिष्ठा (Little Finger)</li>
+                <li><i class="fas fa-check-circle text-blue-500 mr-2"></i><strong>लाभ:</strong> शांति, धन लाभ, सुखी वैवाहिक जीवन।</li>
+            </ul>
+            <div class="mantra-box hindi" style="background:#f0f7ff; border-color:#3182ce;">मन्त्र: ॐ श्रां श्रीं श्रौं सः चन्द्रमसे नमः</div>
         </div>
-        <img src="images/moti.jpg" class="gem-img order-1 lg:order-2" alt="Pearl">
+        <img src="moti.jpg" class="gem-img order-1 md:order-2" alt="Pearl">
     </div>
 
-    <div class="ratna-card grid grid-cols-1 lg:grid-cols-2">
-        <img src="images/moonga.jpg" class="gem-img" alt="Coral">
-        <div class="p-10 flex flex-col justify-center">
-            <h2 class="text-4xl font-bold text-red-600 hindi mb-6 border-b pb-4">३. मूंगा (Red Coral)</h2>
-            <p class="text-gray-600 mb-6">मंगल का रत्न। यह साहस, पराक्रम बढ़ाता है और मांगलिक दोष शांत करता है।</p>
-            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>धातु:</strong> तांबा/सोना</div>
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>उंगली:</strong> अनामिका</div>
-            </div>
-            <div class="mantra-badge hindi" style="border-color:#e53e3e; background:#fff5f5;">"ॐ क्रां क्रीं क्रौं सः भौमाय नमः"</div>
-        </div>
-    </div>
-
-    <div class="ratna-card grid grid-cols-1 lg:grid-cols-2 lg:flex-row-reverse">
-        <div class="p-10 flex flex-col justify-center order-2 lg:order-1">
-            <h2 class="text-4xl font-bold text-green-800 hindi mb-6 border-b pb-4">४. पन्ना (Emerald)</h2>
-            <p class="text-gray-600 mb-6">बुध का रत्न। बुद्धि, व्यापार और गणितीय कौशल के लिए सर्वोत्तम।</p>
-            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>धातु:</strong> सोना/चांदी</div>
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>उंगली:</strong> कनिष्ठा</div>
-            </div>
-            <div class="mantra-badge hindi" style="border-color:#38a169; background:#f0fff4;">"ॐ ब्रां ब्रीं ब्रौं सः बुधाय नमः"</div>
-        </div>
-        <img src="images/panna.jpg" class="gem-img order-1 lg:order-2" alt="Emerald">
-    </div>
-
-    <div class="ratna-card grid grid-cols-1 lg:grid-cols-2">
-        <img src="images/pukhraj.jpg" class="gem-img" alt="Pukhraj">
-        <div class="p-10 flex flex-col justify-center">
-            <h2 class="text-4xl font-bold text-yellow-600 hindi mb-6 border-b pb-4">५. पुखराज (Yellow Sapphire)</h2>
-            <p class="text-gray-600 mb-6">गुरु का रत्न। विवाह, संतान सुख और उच्च ज्ञान के लिए धारण किया जाता है।</p>
-            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>धातु:</strong> सोना</div>
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>उंगली:</strong> तर्जनी</div>
-            </div>
-            <div class="mantra-badge hindi" style="border-color:#d69e2e; background:#fffff0;">"ॐ ग्रां ग्रीं ग्रौं सः गुरुवे नमः"</div>
+    <div class="ratna-card grid grid-cols-1 md:grid-cols-2">
+        <img src="moonga.jpg" class="gem-img" alt="Coral">
+        <div class="p-8">
+            <span class="text-xs font-bold text-red-600 uppercase">Graha: Mars (Mangal)</span>
+            <h2 class="text-3xl font-bold text-red-700 hindi mt-2 mb-4">३. मूंगा (Red Coral)</h2>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">यह साहस और पराक्रम का कारक है। मंगल दोष की शांति के लिए मूंगा धारण करना रामबाण इलाज माना जाता है।</p>
+            <ul class="text-sm space-y-2 mb-6 text-gray-700">
+                <li><strong>धातु:</strong> तांबा/सोना | <strong>दिन:</strong> मंगलवार प्रातः</li>
+                <li><strong>लाभ:</strong> संपत्ति लाभ, कर्ज मुक्ति, ऊर्जा वृद्धि।</li>
+            </ul>
+            <div class="mantra-box hindi">मन्त्र: ॐ क्रां क्रीं क्रौं सः भौमाय नमः</div>
         </div>
     </div>
 
-    <div class="ratna-card grid grid-cols-1 lg:grid-cols-2 lg:flex-row-reverse">
-        <div class="p-10 flex flex-col justify-center order-2 lg:order-1">
-            <h2 class="text-4xl font-bold text-gray-700 hindi mb-6 border-b pb-4">६. हीरा (Diamond)</h2>
-            <p class="text-gray-600 mb-6">शुक्र का रत्न। लग्जरी लाइफ, वैवाहिक सुख और कलात्मक सफलता देता है।</p>
-            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>धातु:</strong> प्लेटिनम/चांदी</div>
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>उंगली:</strong> मध्यमा</div>
-            </div>
-            <div class="mantra-badge hindi" style="border-color:#a0aec0; background:#f7fafc;">"ॐ द्रां द्रीं द्रौं सः शुक्राय नमः"</div>
+    <div class="ratna-card grid grid-cols-1 md:grid-cols-2 md:flex-row-reverse">
+        <div class="p-8 order-2 md:order-1">
+            <span class="text-xs font-bold text-green-700 uppercase">Graha: Mercury (Budh)</span>
+            <h2 class="text-3xl font-bold text-green-800 hindi mt-2 mb-4">४. पन्ना (Emerald)</h2>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">बुद्धि और वाणी का रत्न। व्यापारियों और छात्रों के लिए यह सबसे प्रभावशाली रत्न है जो निर्णय लेने की क्षमता बढ़ाता है।</p>
+            <ul class="text-sm space-y-2 mb-6 text-gray-700">
+                <li><strong>धातु:</strong> चांदी/सोना | <strong>दिन:</strong> बुधवार दोपहर</li>
+                <li><strong>लाभ:</strong> व्यापार वृद्धि, गणितीय बुद्धि, याददाश्त।</li>
+            </ul>
+            <div class="mantra-box hindi" style="background:#f0fff4; border-color:#38a169;">मन्त्र: ॐ ब्रां ब्रीं ब्रौं सः बुधाय नमः</div>
         </div>
-        <img src="images/heera.jpg" class="gem-img order-1 lg:order-2" alt="Diamond">
+        <img src="panna.jpg" class="gem-img order-1 md:order-2" alt="Emerald">
     </div>
 
-    <div class="ratna-card grid grid-cols-1 lg:grid-cols-2">
-        <img src="images/neelam.jpg" class="gem-img" alt="Neelam">
-        <div class="p-10 flex flex-col justify-center">
-            <h2 class="text-4xl font-bold text-blue-900 hindi mb-6 border-b pb-4">७. नीलम (Blue Sapphire)</h2>
-            <p class="text-gray-600 mb-6">शनि का रत्न। यह रंक को राजा बना सकता है। करियर और सुरक्षा के लिए अचूक।</p>
-            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>धातु:</strong> पंचधातु/लोहा</div>
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>उंगली:</strong> मध्यमा</div>
-            </div>
-            <div class="mantra-badge hindi" style="border-color:#2a4365; background:#ebf8ff;">"ॐ प्रां प्रीं प्रौं सः शनैश्चराय नमः"</div>
+    <div class="ratna-card grid grid-cols-1 md:grid-cols-2">
+        <img src="pukhraj.jpg" class="gem-img" alt="Pukhraj">
+        <div class="p-8">
+            <span class="text-xs font-bold text-yellow-600 uppercase">Graha: Jupiter (Guru)</span>
+            <h2 class="text-3xl font-bold text-yellow-700 hindi mt-2 mb-4">५. पुखराज (Yellow Sapphire)</h2>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">यह भाग्य और धर्म का रत्न है। विवाह में देरी हो रही हो या ज्ञान की कमी हो, तो पुखराज पहनना भाग्य उदय करता है।</p>
+            <ul class="text-sm space-y-2 mb-6 text-gray-700">
+                <li><strong>धातु:</strong> केवल स्वर्ण | <strong>दिन:</strong> गुरुवार प्रातः</li>
+                <li><strong>लाभ:</strong> संतान सुख, विवाह, धन-वैभव।</li>
+            </ul>
+            <div class="mantra-box hindi" style="border-color:#b7791f;">मन्त्र: ॐ ग्रां ग्रीं ग्रौं सः गुरुवे नमः</div>
         </div>
     </div>
 
-    <div class="ratna-card grid grid-cols-1 lg:grid-cols-2 lg:flex-row-reverse">
-        <div class="p-10 flex flex-col justify-center order-2 lg:order-1">
-            <h2 class="text-4xl font-bold text-orange-900 hindi mb-6 border-b pb-4">८. गोमेद (Hessonite)</h2>
-            <p class="text-gray-600 mb-6">राहु का रत्न। भ्रम दूर करने और राजनीति में सफलता के लिए पहना जाता है।</p>
-            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>धातु:</strong> चांदी</div>
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>उंगली:</strong> मध्यमा</div>
-            </div>
-            <div class="mantra-badge hindi" style="border-color:#c05621; background:#fffaf0;">"ॐ भ्रां भ्रीं भ्रौं सः राहवे नमः"</div>
+    <div class="ratna-card grid grid-cols-1 md:grid-cols-2 md:flex-row-reverse">
+        <div class="p-8 order-2 md:order-1">
+            <span class="text-xs font-bold text-gray-500 uppercase">Graha: Venus (Shukra)</span>
+            <h2 class="text-3xl font-bold text-gray-800 hindi mt-2 mb-4">६. हीरा / ओपल (Diamond)</h2>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">शुक्र ग्रह को मजबूत कर विलासिता, लग्जरी और प्रेम जीवन को सुखी बनाता है। ग्लैमर और फिल्म जगत के लिए अचूक रत्न।</p>
+            <ul class="text-sm space-y-2 mb-6 text-gray-700">
+                <li><strong>धातु:</strong> चांदी/प्लेटिनम | <strong>दिन:</strong> शुक्रवार प्रातः</li>
+                <li><strong>लाभ:</strong> आकर्षण, वैभव, सुखी दांपत्य।</li>
+            </ul>
+            <div class="mantra-box hindi" style="background:#f7fafc; border-color:#718096;">मन्त्र: ॐ द्रां द्रीं द्रौं सः शुक्राय नमः</div>
         </div>
-        <img src="images/gomed.jpg" class="gem-img order-1 lg:order-2" alt="Gomed">
+        <img src="heera.jpg" class="gem-img order-1 md:order-2" alt="Diamond">
     </div>
 
-    <div class="ratna-card grid grid-cols-1 lg:grid-cols-2">
-        <img src="images/lahsuniya.jpg" class="gem-img" alt="Lahsuniya">
-        <div class="p-10 flex flex-col justify-center">
-            <h2 class="text-4xl font-bold text-gray-800 hindi mb-6 border-b pb-4">९. लहसुनिया (Cat's Eye)</h2>
-            <p class="text-gray-600 mb-6">केतु का रत्न। आध्यात्मिक उन्नति और बुरी नजर से बचने के लिए।</p>
-            <div class="grid grid-cols-2 gap-4 text-sm mb-6">
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>धातु:</strong> चांदी</div>
-                <div class="bg-gray-50 p-3 rounded-lg"><strong>उंगली:</strong> मध्यma</div>
-            </div>
-            <div class="mantra-badge hindi" style="border-color:#4a5568; background:#f7fafc;">"ॐ स्रां स्रीं स्रौं सः केतवे नमः"</div>
+    <div class="ratna-card grid grid-cols-1 md:grid-cols-2">
+        <img src="neelam.jpg" class="gem-img" alt="Neelam">
+        <div class="p-8">
+            <span class="text-xs font-bold text-blue-900 uppercase">Graha: Saturn (Shani)</span>
+            <h2 class="text-3xl font-bold text-blue-950 hindi mt-2 mb-4">७. नीलम (Blue Sapphire)</h2>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">सबसे तीव्र प्रभावशाली रत्न। यह रंक से राजा बनाने की शक्ति रखता है। न्याय और स्थिरता का प्रतीक।</p>
+            <ul class="text-sm space-y-2 mb-6 text-gray-700">
+                <li><strong>धातु:</strong> लोहा/पंचधातु | <strong>दिन:</strong> शनिवार संध्या</li>
+                <li><strong>लाभ:</strong> अचानक धन लाभ, सुरक्षा, करियर ग्रोथ।</li>
+            </ul>
+            <div class="mantra-box hindi" style="background:#ebf8ff; border-color:#2a4365;">मन्त्र: ॐ प्रां प्रीं प्रौं सः शनैश्चराय नमः</div>
+        </div>
+    </div>
+
+    <div class="ratna-card grid grid-cols-1 md:grid-cols-2 md:flex-row-reverse">
+        <div class="p-8 order-2 md:order-1">
+            <span class="text-xs font-bold text-orange-900 uppercase">Graha: Rahu</span>
+            <h2 class="text-3xl font-bold text-orange-950 hindi mt-2 mb-4">८. गोमेद (Hessonite)</h2>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">राहु की महादशा और मानसिक भ्रम से बचने के लिए। यह कलयुग में राजनीति और शेयर बाजार में सफलता दिलाता है।</p>
+            <ul class="text-sm space-y-2 mb-6 text-gray-700">
+                <li><strong>धातु:</strong> चांदी | <strong>दिन:</strong> शनिवार रात्रि</li>
+                <li><strong>लाभ:</strong> अचानक बाधा निवारण, कालसर्प दोष शांति।</li>
+            </ul>
+            <div class="mantra-box hindi" style="background:#fffaf0; border-color:#7b341e;">मन्त्र: ॐ भ्रां भ्रीं भ्रौं सः राहवे नमः</div>
+        </div>
+        <img src="gomed.jpg" class="gem-img order-1 md:order-2" alt="Gomed">
+    </div>
+
+    <div class="ratna-card grid grid-cols-1 md:grid-cols-2">
+        <img src="lahsuniya.jpg" class="gem-img" alt="Lahsuniya">
+        <div class="p-8">
+            <span class="text-xs font-bold text-gray-700 uppercase">Graha: Ketu</span>
+            <h2 class="text-3xl font-bold text-gray-800 hindi mt-2 mb-4">९. लहसुनिया (Cat's Eye)</h2>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">केतु की बाधाओं और अदृश्य शत्रुओं से रक्षा करता है। यह आध्यात्मिक उन्नति और मोक्ष का कारक माना जाता है।</p>
+            <ul class="text-sm space-y-2 mb-6 text-gray-700">
+                <li><strong>धातु:</strong> चांदी | <strong>दिन:</strong> मंगलवार/शनिवार</li>
+                <li><strong>लाभ:</strong> तंत्र-बाधा मुक्ति, एक्सीडेंट से बचाव।</li>
+            </ul>
+            <div class="mantra-box hindi" style="background:#f7fafc; border-color:#4a5568;">मन्त्र: ॐ स्रां स्रीं स्रौं सः केतवे नमः</div>
         </div>
     </div>
 
 </main>
 
-<section class="py-20 bg-light-gold text-center px-4">
-    <h3 class="text-3xl font-bold hindi mb-8">अपनी राशि के अनुसार रत्न परामर्श लें</h3>
-    <a href="https://wa.me/910000000000" class="bg-main-red text-white px-10 py-4 rounded-full font-bold shadow-xl">WhatsApp Consultation</a>
+<section id="consult" class="py-20 bg-red-50">
+    <div class="max-w-4xl mx-auto px-6 bg-white p-10 rounded-[40px] shadow-2xl border-2 border-gold/20">
+        <h2 class="text-3xl font-bold text-center hindi text-red-900 mb-8 underline">निःशुल्क रत्न परामर्श (WhatsApp)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <label class="block mb-2 font-bold text-sm">आपका नाम</label>
+                <input type="text" id="name" class="input-field" placeholder="अपना नाम लिखें">
+                
+                <label class="block mb-2 font-bold text-sm">जन्म तारीख</label>
+                <input type="date" id="dob" class="input-field">
+                
+                <label class="block mb-2 font-bold text-sm">जन्म समय</label>
+                <input type="time" id="time" class="input-field">
+            </div>
+            <div>
+                <label class="block mb-2 font-bold text-sm">जन्म स्थान</label>
+                <input type="text" id="place" class="input-field" placeholder="शहर का नाम">
+                
+                <label class="block mb-2 font-bold text-sm">अपनी समस्या</label>
+                <textarea id="issue" class="input-field h-32" placeholder="करियर, स्वास्थ्य, विवाह आदि..."></textarea>
+            </div>
+        </div>
+        <button onclick="sendWhatsApp()" class="w-full bg-green-600 text-white font-bold py-4 rounded-full mt-6 flex items-center justify-center gap-3 hover:bg-green-700 transition shadow-lg">
+            <i class="fab fa-whatsapp text-2xl"></i> पंडित जी से परामर्श लें
+        </button>
+    </div>
 </section>
 
-<footer class="bg-gray-900 text-white/50 py-10 text-center text-sm">
-    <p>© 2026 Ujjain Wale Panditji | All Gems Shastrokta Certified</p>
+<footer class="bg-gray-900 text-white py-12 text-center text-sm">
+    <p class="hindi text-gold text-lg mb-4">ज्योतिष अनुष्ठान केंद्र, उज्जैन</p>
+    <p class="opacity-40">© 2026 Ujjain Wale Panditji. All Rights Reserved.</p>
 </footer>
+
+<script>
+    function sendWhatsApp() {
+        let name = document.getElementById('name').value;
+        let dob = document.getElementById('dob').value;
+        let time = document.getElementById('time').value;
+        let place = document.getElementById('place').value;
+        let issue = document.getElementById('issue').value;
+        let phone = "8827415099";
+
+        let message = `नमस्ते पंडित जी! 🙏%0A%0A*रत्न परामर्श के लिए मेरी जानकारी:*%0A👤 *नाम:* ${name}%0A📅 *तारीख:* ${dob}%0A⏰ *समय:* ${time}%0A📍 *स्थान:* ${place}%0A❓ *समस्या:* ${issue}%0A%0Aकृपया मार्गदर्शन करें।`;
+        
+        window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+    }
+</script>
 
 </body>
 </html>
