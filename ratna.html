@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>श्री ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन | ₹299 रत्न परामर्श</title>
+    <title>ज्योतिष कर्मकांड अनुष्ठान केंद्र, उज्जैन | सम्पूर्ण रत्न एवं कुंडली महाज्ञान</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
     
@@ -13,230 +13,250 @@
             --gold: #ffd700;
             --deep-gold: #b8860b;
             --shiv-purple: #2c003e;
-            --divine-white: #fffdfa;
-            --bg: #fff5e6;
+            --cream: #fff9f0;
+            --white: #ffffff;
         }
 
-        /* --- Divine Animations --- */
-        @keyframes shine { 0% { background-position: -100px; } 100% { background-position: 200px; } }
-        @keyframes glow { 0%, 100% { text-shadow: 0 0 10px var(--gold); } 50% { text-shadow: 0 0 25px var(--gold), 0 0 35px var(--kesariya); } }
-        @keyframes borderFlash { 0%, 100% { border-color: var(--gold); } 50% { border-color: var(--kesariya); } }
+        /* Animations */
+        @keyframes glow { 0%, 100% { text-shadow: 0 0 10px var(--gold); } 50% { text-shadow: 0 0 30px var(--gold); } }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
 
-        body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--bg); color: #3e2723; scroll-behavior: smooth; }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background: var(--cream); color: #3e2723; scroll-behavior: smooth; }
         h1, h2, h3, h4, .shlok, .mantra { font-family: 'Tiro Devanagari Hindi', serif; }
 
-        /* --- Header & Logo --- */
+        /* Sticky Fee Bar */
+        .fee-sticky {
+            background: linear-gradient(90deg, #b71c1c, #f44336, #b71c1c);
+            color: white; text-align: center; padding: 15px; font-size: 24px; font-weight: bold;
+            position: sticky; top: 0; z-index: 10000; border-bottom: 4px solid var(--gold);
+        }
+
+        /* Hero Section */
         header {
-            background: linear-gradient(rgba(44, 0, 62, 0.9), rgba(44, 0, 62, 0.9)), url('ujjain-bg.jpg');
-            background-size: cover; padding: 60px 20px; text-align: center; color: var(--gold); border-bottom: 8px double var(--gold);
+            background: linear-gradient(rgba(44, 0, 62, 0.9), rgba(44, 0, 62, 0.9)), url('ujjain-mahakal.jpg');
+            background-size: cover; background-attachment: fixed; padding: 100px 20px; text-align: center;
+            color: var(--gold); border-bottom: 15px double var(--gold);
         }
-        .logo-box img { width: 140px; height: 140px; border-radius: 50%; border: 4px solid var(--gold); box-shadow: 0 0 20px var(--gold); margin-bottom: 15px; }
-        .om-shrine { font-size: 50px; animation: glow 3s infinite; }
-        header h1 { font-size: 42px; margin: 10px 0; color: #fff; }
+        .main-logo { width: 180px; height: 180px; border-radius: 50%; border: 5px solid var(--gold); box-shadow: 0 0 30px var(--gold); animation: float 4s infinite ease-in-out; }
+        header h1 { font-size: 50px; margin: 20px 0; animation: glow 3s infinite; }
 
-        /* --- Fee Banner --- */
-        .fee-alert {
-            background: linear-gradient(45deg, #d32f2f, #ff5252);
-            color: white; padding: 15px; text-align: center; font-size: 22px; font-weight: bold;
-            border-radius: 50px; margin: -30px auto 40px; max-width: 700px;
-            border: 3px solid var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
+
+        /* Trust Factors */
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        .trust-card { background: white; padding: 30px; border-radius: 20px; text-align: center; border-bottom: 5px solid var(--kesariya); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        /* Kundli Wisdom Section */
+        .wisdom-card {
+            background: white; border: 3px solid var(--gold); border-radius: 50px; padding: 50px; margin: 80px 0;
         }
+        .wisdom-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .wisdom-item { background: #fffcf5; padding: 25px; border-radius: 15px; border-left: 8px solid var(--shiv-purple); }
 
-        .container { max-width: 1100px; margin: auto; padding: 20px; }
-
-        /* --- Symbols --- */
-        .divine-symbols { display: flex; justify-content: center; gap: 30px; font-size: 35px; margin: 20px 0; color: var(--kesariya); }
-
-        /* --- Gem Card Style --- */
-        .gem-card {
-            background: #fff; border-radius: 30px; border: 2px solid var(--gold);
-            margin-bottom: 50px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            animation: borderFlash 5s infinite;
+        /* Gemstone Design */
+        .gem-mega-card {
+            background: white; border-radius: 50px; border: 2px solid var(--gold); margin-bottom: 80px;
+            overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
-        .gem-header { background: var(--shiv-purple); color: var(--gold); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
-        .gem-body { display: flex; flex-wrap: wrap; }
-        .gem-img { flex: 1; min-width: 300px; height: 350px; object-fit: cover; border-right: 2px solid var(--gold); }
-        .gem-info { flex: 1.5; min-width: 300px; padding: 30px; }
-
-        .mantra-strip {
-            background: #fff9c4; padding: 12px; border: 2px dashed var(--deep-gold);
-            text-align: center; font-size: 20px; color: #856404; font-weight: bold; margin: 15px 0;
-        }
-
-        .details-section b { color: var(--kesariya); display: block; margin-top: 10px; font-size: 17px; }
-        .details-section p { font-size: 15px; line-height: 1.6; margin: 5px 0; }
-
-        /* --- Button --- */
-        .btn-consult {
-            background: var(--kesariya); color: white; padding: 15px 30px;
-            border-radius: 50px; text-decoration: none; font-weight: bold;
-            display: inline-block; border: 2px solid var(--gold); margin-top: 15px;
+        .gem-flex { display: flex; flex-wrap: wrap; }
+        .gem-img-side { flex: 1; min-width: 400px; height: 500px; overflow: hidden; }
+        .gem-img-side img { width: 100%; height: 100%; object-fit: cover; }
+        .gem-text-side { flex: 1.5; min-width: 400px; padding: 50px; }
+        
+        .mantra-banner {
+            background: #fff9c4; padding: 20px; border: 2px dashed var(--deep-gold);
+            text-align: center; font-size: 28px; color: #856404; font-weight: bold; margin: 20px 0;
         }
 
-        /* --- Floating WhatsApp --- */
-        .wa-float {
-            position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white;
-            padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; gap: 10px;
+        .benefit-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .benefit-tag { background: #fdf2e9; padding: 10px; border-radius: 8px; font-weight: bold; border-left: 4px solid var(--kesariya); }
+
+        .btn-divine {
+            background: var(--kesariya); color: white; padding: 20px 45px; border-radius: 100px;
+            text-decoration: none; font-size: 22px; font-weight: bold; display: inline-block;
+            border: 3px solid var(--gold); transition: 0.3s;
+        }
+        .btn-divine:hover { background: var(--shiv-purple); transform: scale(1.05); }
+
+        /* Floating WA */
+        .wa-sticky {
+            position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white;
+            padding: 18px 35px; border-radius: 100px; text-decoration: none; font-weight: bold;
+            font-size: 20px; z-index: 10000; box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            display: flex; align-items: center; gap: 12px; border: 2px solid #fff;
         }
 
-        footer { background: var(--shiv-purple); color: white; padding: 60px 20px; text-align: center; border-top: 8px double var(--gold); }
+        footer { background: #1a0026; color: white; padding: 80px 20px; text-align: center; border-top: 10px double var(--gold); }
+
+        @media (max-width: 768px) {
+            .gem-img-side { min-width: 100%; height: 300px; }
+            .gem-text-side { padding: 30px; }
+            header h1 { font-size: 35px; }
+        }
     </style>
 </head>
 <body>
 
+<div class="fee-sticky">🔱 उज्जैन रत्न परामर्श: ₹299 (कुंडली आधारित) 🔱</div>
+
 <header>
-    <div class="logo-box"><img src="logo.jpg" alt="Center Logo"></div>
-    <div class="om-shrine">🕉️</div>
+    <img src="logo.jpg" class="main-logo">
     <h1>श्री ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</h1>
-    <p>महाकाल की नगरी से सिद्ध एवं जागृत असली रत्न</p>
+    <div style="font-size: 24px; color: #fff;">॥ अवंतिकापुरी महाकाल नगरी ॥</div>
 </header>
 
 <div class="container">
-    <div class="fee-alert">🔱 व्हाट्सएप परामर्श शुल्क: मात्र ₹299/- 🔱</div>
 
-    <div class="divine-symbols"><span>🔱</span><span>🕉️</span><span>🚩</span><span>☀️</span></div>
+    <div class="trust-grid">
+        <div class="trust-card"><i>🔬</i><h3>Lab Certified</h3><p>हर रत्न के साथ NABL सर्टिफिकेट</p></div>
+        <div class="trust-card"><i>🕉️</i><h3>सिद्ध अनुष्ठान</h3><p>1.25 लाख मंत्रों से प्राण-प्रतिष्ठा</p></div>
+        <div class="trust-card"><i>⚖️</i><h3>7 Day Return</h3><p>शुद्धता की 100% लिखित गारंटी</p></div>
+    </div>
 
-    <div class="gem-card">
-        <div class="gem-header"><h3>1. माणिक्य (Ruby)</h3> <span>ग्रह: सूर्य</span></div>
-        <div class="gem-body">
-            <img src="ruby.jpg" class="gem-img">
-            <div class="gem-info">
-                <div class="mantra-strip">॥ ॐ घृणि सूर्याय नमः ॥</div>
-                <div class="details-section">
-                    <b>📜 पौराणिक महत्व:</b> सूर्य देव का अंश। इसे 'रत्नराज' कहा जाता है। उज्जैन के सूर्य कुंड पर विशेष अनुष्ठान द्वारा इसे सिद्ध किया जाता है।
-                    <b>✨ लाभ:</b> सरकारी नौकरी, राजनीति में सफलता, आत्मविश्वास और हड्डियों की मजबूती।
-                    <b>📅 विधि:</b> रविवार प्रातः, अनामिका उंगली, स्वर्ण/तांबा।
+    <section class="wisdom-card">
+        <h2 style="text-align:center; color: var(--kesariya); font-size: 35px;">बिना कुंडली रत्न क्यों न पहनें?</h2>
+        <p style="text-align:center;">रत्न ब्रह्मांडीय ऊर्जा के रिसीवर हैं। गलत रत्न जीवन में तबाही ला सकता है।</p>
+        <div class="wisdom-grid">
+            <div class="wisdom-item"><h3>योगकारक विचार</h3>आपके भाग्य का मुख्य ग्रह।</div>
+            <div class="wisdom-item"><h3>मारक विचार</h3>वे ग्रह जो कष्ट दे सकते हैं।</div>
+            <div class="wisdom-item"><h3>दशा विश्लेषण</h3>वर्तमान में कौन सा रत्न जरूरी है।</div>
+        </div>
+        <div style="text-align:center; margin-top: 40px;">
+            <a href="https://wa.me/918827415099?text=प्रणाम%20पंडित%20जी,%0Aमुझे%20₹299%20वाला%20कुंडली%20परामर्श%20चाहिए।%0A%0Aनाम:%20%0Aजन्म%20तिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="btn-divine">₹299 में कुंडली दिखाएँ</a>
+        </div>
+    </section>
+
+    <div class="gem-mega-card">
+        <div class="gem-flex">
+            <div class="gem-img-side"><img src="ruby.jpg"></div>
+            <div class="gem-text-side">
+                <h2>1. माणिक्य (Ruby) - सूर्य</h2>
+                <div class="mantra-banner">॥ ॐ घृणि सूर्याय नमः ॥</div>
+                <div class="benefit-list">
+                    <div class="benefit-tag">सरकारी नौकरी</div><div class="benefit-tag">आत्मविश्वास</div>
+                    <div class="benefit-tag">पिता का सुख</div><div class="benefit-tag">यश-कीर्ति</div>
                 </div>
-                <a href="https://wa.me/918827415099?text=प्रणाम,%20मैं%20माणिक्य%20परामर्श%20चाहता/चाहती%20हूँ।%20फीस%20299%20स्वीकार्य%20है।" class="btn-consult">₹299 में परामर्श लें</a>
+                <a href="https://wa.me/918827415099?text=माणिक्य%20विवरण:%0Aनाम:%20%0Aतिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="btn-divine">परामर्श लें</a>
             </div>
         </div>
     </div>
 
-    <div class="gem-card">
-        <div class="gem-header"><h3>2. मोती (Pearl)</h3> <span>ग्रह: चंद्रमा</span></div>
-        <div class="gem-body">
-            <img src="pearl.jpg" class="gem-img">
-            <div class="gem-info">
-                <div class="mantra-strip">॥ ॐ सों सोमाय नमः ॥</div>
-                <div class="details-section">
-                    <b>📜 पौराणिक महत्व:</b> चंद्रमा मन का कारक है। यह रत्न शीतलता और मानसिक संतुलन का प्रतीक है।
-                    <b>✨ लाभ:</b> मानसिक शांति, डिप्रेशन से मुक्ति, एकाग्रता और माता का सुख।
-                    <b>📅 विधि:</b> सोमवार प्रातः, कनिष्ठा उंगली, चांदी।
+    <div class="gem-mega-card">
+        <div class="gem-flex">
+            <div class="gem-text-side">
+                <h2>2. मोती (Pearl) - चंद्रमा</h2>
+                <div class="mantra-banner">॥ ॐ सों सोमाय नमः ॥</div>
+                <div class="benefit-list">
+                    <div class="benefit-tag">मानसिक शांति</div><div class="benefit-tag">क्रोध नियंत्रण</div>
+                    <div class="benefit-tag">माता का स्वास्थ्य</div><div class="benefit-tag">एकाग्रता</div>
                 </div>
-                <a href="https://wa.me/918827415099?text=प्रणाम,%20मैं%20मोती%20परामर्श%20चाहता/चाहती%20हूँ।%20फीस%20299%20स्वीकार्य%20है।" class="btn-consult">₹299 में परामर्श लें</a>
+                <a href="https://wa.me/918827415099?text=मोती%20विवरण:%0Aनाम:%20%0Aतिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="btn-divine">परामर्श लें</a>
+            </div>
+            <div class="gem-img-side"><img src="pearl.jpg"></div>
+        </div>
+    </div>
+
+    <div class="gem-mega-card">
+        <div class="gem-flex">
+            <div class="gem-img-side"><img src="coral.jpg"></div>
+            <div class="gem-text-side">
+                <h2>3. मूंगा (Red Coral) - मंगल</h2>
+                <div class="mantra-banner">॥ ॐ भौं भौमाय नमः ॥</div>
+                <div class="benefit-list">
+                    <div class="benefit-tag">कर्ज मुक्ति</div><div class="benefit-tag">भूमि लाभ</div>
+                    <div class="benefit-tag">साहस में वृद्धि</div><div class="benefit-tag">मांगलिक शांति</div>
+                </div>
+                <a href="https://wa.me/918827415099?text=मूंगा%20विवरण:%0Aनाम:%20%0Aतिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="btn-divine">परामर्श लें</a>
             </div>
         </div>
     </div>
 
-    <div class="gem-card">
-        <div class="gem-header"><h3>3. मूंगा (Red Coral)</h3> <span>ग्रह: मंगल</span></div>
-        <div class="gem-body">
-            <img src="coral.jpg" class="gem-img">
-            <div class="gem-info">
-                <div class="mantra-strip">॥ ॐ भौं भौमाय नमः ॥</div>
-                <div class="details-section">
-                    <b>📜 पौराणिक महत्व:</b> मंगल शक्ति का स्वामी है। मूंगा हनुमान जी की कृपा प्राप्त करने का सर्वश्रेष्ठ माध्यम है।
-                    <b>✨ लाभ:</b> कर्ज मुक्ति, साहस, भूमि-भवन लाभ और रक्त शुद्धि।
-                    <b>📅 विधि:</b> मंगलवार प्रातः, अनामिका उंगली, तांबा/सोना।
+    <div class="gem-mega-card">
+        <div class="gem-flex">
+            <div class="gem-text-side">
+                <h2>4. पन्ना (Emerald) - बुध</h2>
+                <div class="mantra-banner">॥ ॐ बुं बुधाय नमः ॥</div>
+                <div class="benefit-list">
+                    <div class="benefit-tag">व्यापार वृद्धि</div><div class="benefit-tag">बुद्धि विकास</div>
+                    <div class="benefit-tag">वाणी में मिठास</div><div class="benefit-tag">गणित-विज्ञान</div>
                 </div>
-                <a href="https://wa.me/918827415099?text=प्रणाम,%20मैं%20मूंगा%20परामर्श%20चाहता/चाहती%20हूँ।%20फीस%20299%20स्वीकार्य%20है।" class="btn-consult">₹299 में परामर्श लें</a>
+                <a href="https://wa.me/918827415099?text=पन्ना%20विवरण:%0Aनाम:%20%0Aतिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="btn-divine">परामर्श लें</a>
+            </div>
+            <div class="gem-img-side"><img src="emerald.jpg"></div>
+        </div>
+    </div>
+
+    <div class="gem-mega-card">
+        <div class="gem-flex">
+            <div class="gem-img-side"><img src="pukhraj.jpg"></div>
+            <div class="gem-text-side">
+                <h2>5. पुखराज (Yellow Sapphire) - गुरु</h2>
+                <div class="mantra-banner">॥ ॐ बृं बृहस्पतये नमः ॥</div>
+                <div class="benefit-list">
+                    <div class="benefit-tag">शीघ्र विवाह</div><div class="benefit-tag">संतान सुख</div>
+                    <div class="benefit-tag">धन-वैभव</div><div class="benefit-tag">भाग्य उदय</div>
+                </div>
+                <a href="https://wa.me/918827415099?text=पुखराज%20विवरण:%0Aनाम:%20%0Aतिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="btn-divine">परामर्श लें</a>
             </div>
         </div>
     </div>
 
-    <div class="gem-card">
-        <div class="gem-header"><h3>4. पन्ना (Emerald)</h3> <span>ग्रह: बुध</span></div>
-        <div class="gem-body">
-            <img src="emerald.jpg" class="gem-img">
-            <div class="gem-info">
-                <div class="mantra-strip">॥ ॐ बुं बुधाय नमः ॥</div>
-                <div class="details-section">
-                    <b>📜 पौराणिक महत्व:</b> बुध बुद्धि का राजकुमार है। पन्ना पहनने से वाणी में सरस्वती का वास होता है।
-                    <b>✨ लाभ:</b> व्यापार में वृद्धि, गणित-विज्ञान में सफलता और स्मरण शक्ति।
-                    <b>📅 विधि:</b> बुधवार दोपहर, कनिष्ठा उंगली, स्वर्ण/चांदी।
+    <div class="gem-mega-card">
+        <div class="gem-flex">
+            <div class="gem-text-side">
+                <h2>6. हीरा / ओपल (Diamond) - शुक्र</h2>
+                <div class="mantra-banner">॥ ॐ शुं शुक्राय नमः ॥</div>
+                <div class="benefit-list">
+                    <div class="benefit-tag">लग्जरी लाइफ</div><div class="benefit-tag">प्रेम संबंध</div>
+                    <div class="benefit-tag">कला-मीडिया</div><div class="benefit-tag">सुख-सुविधा</div>
                 </div>
-                <a href="https://wa.me/918827415099?text=प्रणाम,%20मैं%20पन्ना%20परामर्श%20चाहता/चाहती%20हूँ।%20फीस%20299%20स्वीकार्य%20है।" class="btn-consult">₹299 में परामर्श लें</a>
+                <a href="https://wa.me/918827415099?text=हीरा%20विवरण:%0Aनाम:%20%0Aतिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="btn-divine">परामर्श लें</a>
+            </div>
+            <div class="gem-img-side"><img src="diamond.jpg"></div>
+        </div>
+    </div>
+
+    <div class="gem-mega-card">
+        <div class="gem-flex">
+            <div class="gem-img-side"><img src="neelam.jpg"></div>
+            <div class="gem-text-side">
+                <h2>7. नीलम (Blue Sapphire) - शनि</h2>
+                <div class="mantra-banner">॥ ॐ शं शनैश्चराय नमः ॥</div>
+                <div class="benefit-list">
+                    <div class="benefit-tag">अचानक प्रगति</div><div class="benefit-tag">शनि दोष मुक्ति</div>
+                    <div class="benefit-tag">शत्रु विजय</div><div class="benefit-tag">न्याय लाभ</div>
+                </div>
+                <a href="https://wa.me/918827415099?text=नीलम%20विवरण:%0Aनाम:%20%0Aतिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="btn-divine">परामर्श लें</a>
             </div>
         </div>
     </div>
 
-    <div class="gem-card">
-        <div class="gem-header"><h3>5. पुखराज (Yellow Sapphire)</h3> <span>ग्रह: बृहस्पति</span></div>
-        <div class="gem-body">
-            <img src="yellow-sapphire.jpg" class="gem-img">
-            <div class="gem-info">
-                <div class="mantra-strip">॥ ॐ बृं बृहस्पतये नमः ॥</div>
-                <div class="details-section">
-                    <b>📜 पौराणिक महत्व:</b> देवगुरु का रत्न। उज्जैन के सांदीपनि आश्रम की गरिमा इस रत्न के सिद्धिकरण में निहित है।
-                    <b>✨ लाभ:</b> शीघ्र विवाह, संतान सुख, अपार धन और धार्मिक उन्नति।
-                    <b>📅 विधि:</b> गुरुवार प्रातः, तर्जनी उंगली, स्वर्ण।
+    <div class="gem-mega-card">
+        <div class="gem-flex">
+            <div class="gem-text-side">
+                <h2>8. गोमेद (Hessonite) - राहु</h2>
+                <div class="mantra-banner">॥ ॐ रां राहवे नमः ॥</div>
+                <div class="benefit-list">
+                    <div class="benefit-tag">राजनीति में जीत</div><div class="benefit-tag">कानूनी विजय</div>
+                    <div class="benefit-tag">भ्रम का नाश</div><div class="benefit-tag">अचानक लाभ</div>
                 </div>
-                <a href="https://wa.me/918827415099?text=प्रणाम,%20मैं%20पुखराज%20परामर्श%20चाहता/चाहती%20हूँ।%20फीस%20299%20स्वीकार्य%20है।" class="btn-consult">₹299 में परामर्श लें</a>
+                <a href="https://wa.me/918827415099?text=गोमेद%20विवरण:%0Aनाम:%20%0Aतिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="btn-divine">परामर्श लें</a>
             </div>
+            <div class="gem-img-side"><img src="gomed.jpg"></div>
         </div>
     </div>
 
-    <div class="gem-card">
-        <div class="gem-header"><h3>6. हीरा/ओपल (Diamond)</h3> <span>ग्रह: शुक्र</span></div>
-        <div class="gem-body">
-            <img src="diamond.jpg" class="gem-img">
-            <div class="gem-info">
-                <div class="mantra-strip">॥ ॐ शुं शुक्राय नमः ॥</div>
-                <div class="details-section">
-                    <b>📜 पौराणिक महत्व:</b> शुक्र ऐश्वर्य का स्वामी है। यह जीवन को लग्जरी और सुखों से भर देता है।
-                    <b>✨ लाभ:</b> वैवाहिक सुख, प्रेम संबंध, कला और भौतिक समृद्धि।
-                    <b>📅 विधि:</b> शुक्रवार प्रातः, मध्यमा उंगली, चांदी/प्लैटिनम।
+    <div class="gem-mega-card">
+        <div class="gem-flex">
+            <div class="gem-img-side"><img src="catseye.jpg"></div>
+            <div class="gem-text-side">
+                <h2>9. लहसुनिया (Cat's Eye) - केतु</h2>
+                <div class="mantra-banner">॥ ॐ कें केतवे नमः ॥</div>
+                <div class="benefit-list">
+                    <div class="benefit-tag">नजर दोष रक्षा</div><div class="benefit-tag">अध्यात्म</div>
+                    <div class="benefit-tag">गुप्त शत्रु नाश</div><div class="benefit-tag">मोक्ष मार्ग</div>
                 </div>
-                <a href="https://wa.me/918827415099?text=प्रणाम,%20मैं%20हीरा-ओपल%20परामर्श%20चाहता/चाहती%20हूँ।%20फीस%20299%20स्वीकार्य%20है।" class="btn-consult">₹299 में परामर्श लें</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="gem-card">
-        <div class="gem-header"><h3>7. नीलम (Blue Sapphire)</h3> <span>ग्रह: शनि</span></div>
-        <div class="gem-body">
-            <img src="blue-sapphire.jpg" class="gem-img">
-            <div class="gem-info">
-                <div class="mantra-strip">॥ ॐ शं शनैश्चराय नमः ॥</div>
-                <div class="details-section">
-                    <b>📜 पौराणिक महत्व:</b> शनि देव का शक्तिशाली रत्न। उज्जैन के शनि नवग्रह मंदिर में अभिमंत्रित।
-                    <b>✨ लाभ:</b> साढ़ेसाती से मुक्ति, अचानक धन लाभ और न्याय कार्यों में विजय।
-                    <b>📅 विधि:</b> शनिवार संध्या, मध्यमा उंगली, पंचधातु/लोहा।
-                </div>
-                <a href="https://wa.me/918827415099?text=प्रणाम,%20मैं%20नीलम%20परामर्श%20चाहता/चाहती%20हूँ।%20फीस%20299%20स्वीकार्य%20है।" class="btn-consult">₹299 में परामर्श लें</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="gem-card">
-        <div class="gem-header"><h3>8. गोमेद (Hessonite)</h3> <span>ग्रह: राहु</span></div>
-        <div class="gem-body">
-            <img src="hessonite.jpg" class="gem-img">
-            <div class="gem-info">
-                <div class="mantra-strip">॥ ॐ रां राहवे नमः ॥</div>
-                <div class="details-section">
-                    <b>📜 पौराणिक महत्व:</b> राहु के दोषों को दूर करने वाला रत्न। यह कलयुग में राजनीति और जुए-सट्टे में जीत दिलाता है।
-                    <b>✨ लाभ:</b> कानूनी जीत, शेयर बाजार लाभ, और अचानक आने वाली बाधाओं का नाश।
-                    <b>📅 विधि:</b> शनिवार संध्या, मध्यमा उंगली, चांदी।
-                </div>
-                <a href="https://wa.me/918827415099?text=प्रणाम,%20मैं%20गोमेद%20परामर्श%20चाहता/चाहती%20हूँ।%20फीस%20299%20स्वीकार्य%20है।" class="btn-consult">₹299 में परामर्श लें</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="gem-card">
-        <div class="gem-header"><h3>9. लहसुनिया (Cat's Eye)</h3> <span>ग्रह: केतु</span></div>
-        <div class="gem-body">
-            <img src="catseye.jpg" class="gem-img">
-            <div class="gem-info">
-                <div class="mantra-strip">॥ ॐ कें केतवे नमः ॥</div>
-                <div class="details-section">
-                    <b>📜 पौराणिक महत्व:</b> केतु मोक्ष का कारक है। यह रत्न नजर दोष और तंत्र बाधा से रक्षा करता है।
-                    <b>✨ लाभ:</b> शत्रुओं का नाश, आध्यात्मिक जागृति और नजर दोष से बचाव।
-                    <b>📅 विधि:</b> शनिवार संध्या, मध्यमा उंगली, चांदी।
-                </div>
-                <a href="https://wa.me/918827415099?text=प्रणाम,%20मैं%20लहसुनिया%20परामर्श%20चाहता/चाहती%20हूँ।%20फीस%20299%20स्वीकार्य%20है।" class="btn-consult">₹299 में परामर्श लें</a>
+                <a href="https://wa.me/918827415099?text=लहसुनिया%20विवरण:%0Aनाम:%20%0Aतिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="btn-divine">परामर्श लें</a>
             </div>
         </div>
     </div>
@@ -244,14 +264,13 @@
 </div>
 
 <footer>
-    <img src="logo.jpg" style="width: 80px; border-radius: 50%; border: 2px solid var(--gold); margin-bottom: 10px;">
-    <h3>श्री ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</h3>
-    <p>परामर्श शुल्क मात्र ₹299 (व्हाट्सएप द्वारा)</p>
-    <p>पता: महाकाल मंदिर परिसर के समीप, उज्जैन (म.प्र.)</p>
-    <div style="font-size: 12px; opacity: 0.6; margin-top: 20px;">© 2026 उज्जैन कर्मकांड केंद्र | शुद्धता एवं सिद्धता का प्रतीक</div>
+    <img src="logo.jpg" style="width:100px; border-radius:50%; margin-bottom:20px;">
+    <h2>ज्योतिष कर्मकांड अनुष्ठान केंद्र, उज्जैन</h2>
+    <p>🚩 शिप्रा तट, महाकाल मंदिर मार्ग, उज्जैन (म.प्र.) 🚩</p>
+    <p>व्हाट्सएप परामर्श शुल्क: ₹299/-</p>
 </footer>
 
-<a href="https://wa.me/918827415099?text=नमस्ते%20पंडित%20जी,%0Aमुझे%20कुंडली%20परामर्श%20चाहिए।%20फीस%20₹299%20स्वीकार्य%20है।" class="wa-float">
+<a href="https://wa.me/918827415099?text=नमस्ते%20पंडित%20जी,%0Aमुझे%20कुंडली%20के%20आधार%20पर%20रत्न%20परामर्श%20चाहिए।%0Aपरामर्श%20शुल्क%20₹299%20स्वीकार्य%20है।%0A%0Aनाम:%20%0Aजन्म%20तिथि:%20%0Aसमय:%20%0Aस्थान:%20" class="wa-sticky">
     <span>परामर्श शुल्क ₹299</span> 📱
 </a>
 
