@@ -1,318 +1,454 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>वैदिक नवग्रह रत्न | Lab Certified Navratna</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ज्योतिष अनुष्ठान कर्मकांड केंद्र उज्जैन  | सिद्ध एवं अभिमंत्रित नवग्रह रत्न</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --shree: #ff4500; /* Saffron/Keshariya */
+            --gold: #ffd700;
+            --dark-gold: #b8860b;
+            --shiv-purple: #2c003e;
+            --divine-white: #fffdfa;
+            --bg: #fff5e6;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+        /* Shining Animations */
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px var(--gold); }
+            50% { text-shadow: 0 0 20px var(--gold), 0 0 30px #ff8c00; }
+            100% { text-shadow: 0 0 5px var(--gold); }
+        }
 
-<style>
-:root{
---gold:#f6c76b;
---purple:#4a148c;
---bg:#fff7e6;
---dark:#2b1a10;
---green:#25D366;
-}
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:radial-gradient(circle at top,rgba(246,199,107,.25),transparent 45%),var(--bg);
-color:#3a2a18;
-}
-h1,h2,h3{font-family:'Tiro Devanagari Hindi',serif}
-section{padding:70px 20px}
-.container{max-width:1200px;margin:auto}
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
 
-/* HEADER */
-header{
-background:linear-gradient(135deg,#2a063a,#6a1b9a);
-color:#fff;text-align:center;
-padding:110px 20px;position:relative;
-}
-header::after{
-content:"ॐ 🔱 ☸︎ ✦ ॐ 🔱 ☸︎ ✦";
-position:absolute;top:18px;left:50%;
-transform:translateX(-50%);
-opacity:.3;font-size:32px;letter-spacing:16px;
-}
-header h1{font-size:48px}
-header p{font-size:18px}
-.shlok{margin-top:22px;color:var(--gold);font-size:22px}
+        @keyframes shiningBorder {
+            0% { border-color: var(--gold); }
+            50% { border-color: var(--shree); }
+            100% { border-color: var(--gold); }
+        }
 
-/* BOX */
-.box{
-background:#fff;border-radius:26px;
-padding:50px;margin-bottom:70px;
-box-shadow:0 22px 55px rgba(0,0,0,.18);
-border:2px solid rgba(246,199,107,.5);
-}
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg);
+            color: #332211;
+            scroll-behavior: smooth;
+        }
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-gap:40px;
-}
+        h1, h2, h3, .mantra, .shlok { font-family: 'Tiro Devanagari Hindi', serif; }
 
-/* CARD */
-.card{
-background:#fff;border-radius:28px;
-overflow:hidden;
-box-shadow:0 22px 55px rgba(0,0,0,.18);
-border:2px solid rgba(246,199,107,.6);
-}
-.card img{width:100%;height:260px;object-fit:cover}
-.card-content{padding:35px}
-.card-content h3{color:var(--purple)}
-.card-content p{font-size:15.6px;line-height:1.95}
+        /* --- Divine Header --- */
+        header {
+            background: linear-gradient(rgba(44, 0, 62, 0.85), rgba(44, 0, 62, 0.85)), url('temple-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 20px;
+            text-align: center;
+            color: var(--gold);
+            border-bottom: 8px double var(--gold);
+        }
 
-/* METHOD */
-.method{
-margin-top:18px;
-background:#fff2d2;
-padding:18px;
-border-left:6px solid var(--gold);
-border-radius:14px;
-font-size:14.6px;
-}
+        .om-main {
+            font-size: 80px;
+            animation: glow 3s infinite;
+            display: block;
+            margin-bottom: 10px;
+        }
 
-/* TRUST */
-.trust{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-.trust div{
-background:#fff;padding:30px;
-border-radius:20px;text-align:center;
-box-shadow:0 12px 28px rgba(0,0,0,.15);
-border-top:4px solid var(--gold);
-}
+        .shlok-box {
+            border: 2px solid var(--gold);
+            display: inline-block;
+            padding: 20px 40px;
+            margin: 25px 0;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 60px 0 60px 0;
+            box-shadow: inset 0 0 15px rgba(255, 215, 0, 0.2);
+        }
 
-/* WHATSAPP */
-.whatsapp{text-align:center;margin:90px 20px}
-.whatsapp a{
-background:var(--green);color:#fff;
-padding:28px 60px;border-radius:60px;
-font-size:22px;font-weight:700;
-text-decoration:none;
-}
-.float-wa{
-position:fixed;bottom:22px;right:22px;
-width:64px;height:64px;border-radius:50%;
-background:var(--green);color:#fff;
-display:flex;align-items:center;justify-content:center;
-font-size:30px;text-decoration:none;
-}
+        /* --- Container & Titles --- */
+        .container { max-width: 1200px; margin: auto; padding: 40px 20px; }
+        
+        .section-title {
+            text-align: center;
+            color: var(--shree);
+            font-size: 42px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .section-title::before { content: "🔱"; display: block; font-size: 30px; margin-bottom: 10px; }
 
-/* FOOTER */
-footer{
-background:var(--dark);color:#f3e1c3;
-text-align:center;padding:35px;font-size:14px;
-}
-</style>
+        /* --- Grid Layout --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .gem-card {
+            background: var(--divine-white);
+            border-radius: 30px;
+            overflow: hidden;
+            border: 2px solid var(--gold);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            animation: shiningBorder 5s infinite;
+        }
+
+        .gem-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .gem-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .card-body { padding: 30px; flex-grow: 1; }
+        
+        .planet-name {
+            color: var(--shree);
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gem-name {
+            font-size: 30px;
+            margin: 5px 0 15px 0;
+            color: var(--shiv-purple);
+        }
+
+        .mantra {
+            background: #fff8e1;
+            padding: 12px;
+            border-radius: 12px;
+            color: #856404;
+            font-weight: bold;
+            font-size: 19px;
+            text-align: center;
+            border: 1px dashed var(--dark-gold);
+            margin-bottom: 20px;
+        }
+
+        .mythology {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #554433;
+            font-style: italic;
+            border-left: 3px solid var(--shree);
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+
+        .benefits { padding: 0; list-style: none; }
+        .benefits li { 
+            margin-bottom: 10px; 
+            font-size: 15px; 
+            display: flex; 
+            align-items: flex-start;
+        }
+        .benefits li::before { content: "☀️"; margin-right: 12px; color: var(--shree); }
+
+        .method-info {
+            background: #fdf2e9;
+            padding: 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 25px;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        /* --- Process Section --- */
+        .process-section {
+            background: white;
+            padding: 60px 20px;
+            margin: 60px 0;
+            border-radius: 40px;
+            text-align: center;
+            border: 2px solid var(--gold);
+        }
+
+        /* --- Floating WhatsApp --- */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            padding: 16px 30px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: pulse 2s infinite;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--shiv-purple);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 10px double var(--gold);
+        }
+
+        .consult-btn {
+            background: var(--shree);
+            color: white;
+            padding: 20px 45px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 22px;
+            display: inline-block;
+            margin: 30px 0;
+            border: 2px solid var(--gold);
+            transition: 0.3s;
+        }
+        .consult-btn:hover { background: #e63e00; transform: scale(1.05); }
+
+    </style>
 </head>
-
 <body>
 
 <header>
-<h1>वैदिक नवग्रह रत्न</h1>
-<p>Lab Certified • 100% Natural • Kundli Based</p>
-<div class="shlok">न रत्नं समं ग्रहशान्त्यै</div>
+    <div class="om-main">ॐ</div>
+    <h1>श्री वैदिक नवग्रह रत्न संस्थान</h1>
+    <div class="shlok-box">
+        <div class="shlok">न रत्नं समं ग्रहशान्त्यै, न च दैवं समं महत्।</div>
+        <small>— ग्रहों की शांति और भाग्य वृद्धि हेतु रत्न ही सर्वश्रेष्ठ औषधि हैं —</small>
+    </div>
+    <p style="color: var(--white); font-size: 18px;">100% प्राकृतिक • लैब प्रमाणित • वैदिक विधि द्वारा सिद्ध</p>
 </header>
 
-<section class="container box">
-<h2>नवरत्न – ब्रह्मांडीय ऊर्जा का विज्ञान</h2>
-<p>
-प्रत्येक ग्रह एक विशिष्ट ब्रह्मांडीय ऊर्जा वहन करता है।
-कुंडली में ग्रह दुर्बल होने पर उससे संबंधित रत्न
-उस ऊर्जा को सक्रिय कर जीवन में संतुलन, स्वास्थ्य,
-धन, मानसिक शांति और आध्यात्मिक उन्नति प्रदान करता है।
-</p>
-</section>
+<div class="container">
+    <h2 class="section-title">सम्पूर्ण नवग्रह रत्न जिज्ञासा समाधान</h2>
 
-<section class="container box">
-<h2>हमारे रत्न क्यों विश्वसनीय हैं?</h2>
-<div class="trust">
-<div>🔬 NABL / IGI Lab Certified</div>
-<div>💎 100% Natural & Untreated</div>
-<div>🕉 मंत्र-संस्कार द्वारा सिद्ध</div>
-<div>📜 कुंडली अनुसार चयन</div>
-</div>
-</section>
+    <div class="grid">
+        <div class="gem-card">
+            <img src="ruby.jpg" alt="माणिक्य" class="gem-img">
+            <div class="card-body">
+                <span class="planet-name">ग्रह: सूर्य (Sun)</span>
+                <h3 class="gem-name">माणिक्य (Ruby)</h3>
+                <div class="mantra">ॐ घृणि सूर्याय नमः</div>
+                <p class="mythology">अग्नि पुराण के अनुसार, माणिक्य सूर्य का अंश है। इसे धारण करने से व्यक्ति का तेज बढ़ता है और उसे राजसत्ता में उच्च स्थान प्राप्त होता है।</p>
+                <ul class="benefits">
+                    <li>सरकारी पद और राजनीति में अपार सफलता।</li>
+                    <li>पिता के साथ संबंधों में सुधार और पैतृक संपत्ति लाभ।</li>
+                    <li>आत्मविश्वास की कमी और नेत्र रोगों में चमत्कारी प्रभाव।</li>
+                </ul>
+                <div class="method-info">
+                    📅 <b>दिन:</b> रविवार | ☝️ <b>उंगली:</b> अनामिका (Ring)<br>
+                    💍 <b>धातु:</b> स्वर्ण (Gold) | ☀️ <b>समय:</b> सूर्योदय काल
+                </div>
+            </div>
+        </div>
 
-<section class="container">
-<h2>नवग्रह रत्न – पूर्ण विवरण</h2>
-<div class="grid">
+        <div class="gem-card">
+            <img src="pearl.jpg" alt="मोती" class="gem-img">
+            <div class="card-body">
+                <span class="planet-name">ग्रह: चंद्रमा (Moon)</span>
+                <h3 class="gem-name">मोती (South Sea Pearl)</h3>
+                <div class="mantra">ॐ सों सोमाय नमः</div>
+                <p class="mythology">चंद्रमा मन का स्वामी है। मोती धारण करने से मानसिक शांति और माँ लक्ष्मी की विशेष कृपा प्राप्त होती है।</p>
+                <ul class="benefits">
+                    <li>अनियंत्रित क्रोध, मानसिक तनाव और डिप्रेशन से मुक्ति।</li>
+                    <li>स्मरण शक्ति और एकाग्रता में वृद्धि।</li>
+                    <li>स्त्री रोगों और रक्तचाप (BP) को नियंत्रित करने में सहायक।</li>
+                </ul>
+                <div class="method-info">
+                    📅 <b>दिन:</b> सोमवार | ☝️ <b>उंगली:</b> कनिष्ठा (Little)<br>
+                    💍 <b>धातु:</b> चांदी (Silver)
+                </div>
+            </div>
+        </div>
 
-<!-- 1 Ruby -->
-<div class="card">
-<img src="ruby.jpg">
-<div class="card-content">
-<h3>माणिक्य – सूर्य ☀️</h3>
-<p>
-माणिक्य आत्मविश्वास, नेतृत्व, सरकारी सफलता
-और मान-सम्मान प्रदान करता है।
-कमजोर सूर्य वाले व्यक्ति को अवश्य धारण करना चाहिए।
-</p>
-<div class="method">
-देवता: सूर्य देव | दिन: रविवार<br>
-धातु: सोना | मंत्र: ॐ घृणि सूर्याय नमः<br>
-मूल्य: ₹5,000 – ₹50,000+
-</div>
-</div>
-</div>
+        <div class="gem-card">
+            <img src="coral.jpg" alt="मूंगा" class="gem-img">
+            <div class="card-body">
+                <span class="planet-name">ग्रह: मंगल (Mars)</span>
+                <h3 class="gem-name">मूंगा (Red Coral)</h3>
+                <div class="mantra">ॐ भौं भौमाय नमः</div>
+                <p class="mythology">मंगल ग्रहों का सेनापति है। पौराणिक कथाओं के अनुसार, मूंगा हनुमान जी की विशेष कृपा प्राप्त करने का माध्यम है।</p>
+                <ul class="benefits">
+                    <li>साहस, पराक्रम और शारीरिक ऊर्जा में वृद्धि।</li>
+                    <li>भूमि, भवन और रियल एस्टेट कार्यों में जबरदस्त लाभ।</li>
+                    <li>मांगलिक दोष का शमन और शत्रु विजय।</li>
+                </ul>
+                <div class="method-info">
+                    📅 <b>दिन:</b> मंगलवार | ☝️ <b>उंगली:</b> अनामिका (Ring)<br>
+                    💍 <b>धातु:</b> तांबा/सोना
+                </div>
+            </div>
+        </div>
 
-<!-- 2 Pearl -->
-<div class="card">
-<img src="pearl.jpg">
-<div class="card-content">
-<h3>मोती – चंद्र 🌙</h3>
-<p>
-मानसिक शांति, भावनात्मक संतुलन,
-अनिद्रा व चिंता में अत्यंत लाभकारी।
-</p>
-<div class="method">
-दिन: सोमवार | धातु: चांदी<br>
-मंत्र: ॐ सोमाय नमः<br>
-मूल्य: ₹3,000 – ₹25,000+
-</div>
-</div>
-</div>
+        <div class="gem-card">
+            <img src="emerald.jpg" alt="पन्ना" class="gem-img">
+            <div class="card-body">
+                <span class="planet-name">ग्रह: बुध (Mercury)</span>
+                <h3 class="gem-name">पन्ना (Emerald)</h3>
+                <div class="mantra">ॐ बुं बुधाय नमः</div>
+                <p class="mythology">बुध बुद्धि का राजकुमार है। पन्ना धारण करने से माँ सरस्वती की साक्षात् कृपा मिलती है और व्यापार फलता-फूलता है।</p>
+                <ul class="benefits">
+                    <li>शिक्षा, व्यापार और बैंकिंग क्षेत्र में सफलता।</li>
+                    <li>वाणी दोष (हकलाना) दूर कर प्रभावशाली संवाद शक्ति।</li>
+                    <li>त्वचा रोगों और बुद्धि भ्रम को दूर करने में सहायक।</li>
+                </ul>
+                <div class="method-info">
+                    📅 <b>दिन:</b> बुधवार | ☝️ <b>उंगली:</b> कनिष्ठा (Little)<br>
+                    💍 <b>धातु:</b> सोना/चांदी
+                </div>
+            </div>
+        </div>
 
-<!-- 3 Coral -->
-<div class="card">
-<img src="coral.jpg">
-<div class="card-content">
-<h3>मूंगा – मंगल 🔥</h3>
-<p>
-साहस, ऊर्जा, रक्त दोष, मंगल दोष
-और भूमि विवाद में सहायक।
-</p>
-<div class="method">
-दिन: मंगलवार | धातु: तांबा<br>
-मंत्र: ॐ भौमाय नमः<br>
-मूल्य: ₹4,000 – ₹40,000+
-</div>
-</div>
-</div>
+        <div class="gem-card">
+            <img src="yellow-sapphire.jpg" alt="पुखराज" class="gem-img">
+            <div class="card-body">
+                <span class="planet-name">ग्रह: देवगुरु (Jupiter)</span>
+                <h3 class="gem-name">पुखराज (Yellow Sapphire)</h3>
+                <div class="mantra">ॐ बृं बृहस्पतये नमः</div>
+                <p class="mythology">पुखराज गुरु बृहस्पति का रत्न है। यह ज्ञान, धर्म और धन का प्रतीक है। इसके बिना कोई भी मांगलिक कार्य सिद्ध नहीं होता।</p>
+                <ul class="benefits">
+                    <li>विवाह में आ रही देरी और अड़चनों का अंत।</li>
+                    <li>धन-धान्य, संतान सुख और पदोन्नति के लिए श्रेष्ठ।</li>
+                    <li>लिवर, पीलिया और मोटापे जैसी बीमारियों में राहत।</li>
+                </ul>
+                <div class="method-info">
+                    📅 <b>दिन:</b> गुरुवार | ☝️ <b>उंगली:</b> तर्जनी (Index)<br>
+                    💍 <b>धातु:</b> स्वर्ण (Gold)
+                </div>
+            </div>
+        </div>
 
-<!-- 4 Emerald -->
-<div class="card">
-<img src="emerald.jpg">
-<div class="card-content">
-<h3>पन्ना – बुध 🌿</h3>
-<p>
-बुद्धि, वाणी, व्यापार, शिक्षा
-और तंत्रिका तंत्र को मजबूत करता है।
-</p>
-<div class="method">
-दिन: बुधवार<br>
-मंत्र: ॐ बुं बुधाय नमः<br>
-मूल्य: ₹6,000 – ₹60,000+
-</div>
-</div>
-</div>
+        <div class="gem-card">
+            <img src="diamond.jpg" alt="हीरा" class="gem-img">
+            <div class="card-body">
+                <span class="planet-name">ग्रह: शुक्र (Venus)</span>
+                <h3 class="gem-name">हीरा/ओपल (Diamond)</h3>
+                <div class="mantra">ॐ शुं शुक्राय नमः</div>
+                <p class="mythology">शुक्र देव दैत्य गुरु हैं और ऐश्वर्य के स्वामी हैं। हीरा पहनने से जीवन में कला और विलासिता का आगमन होता है।</p>
+                <ul class="benefits">
+                    <li>सुखद दांपत्य जीवन और प्रेम संबंधों में प्रगाढ़ता।</li>
+                    <li>फिल्म, संगीत और ग्लैमर की दुनिया में सफलता।</li>
+                    <li>डायबिटीज और प्रजनन संबंधी रोगों में रक्षा।</li>
+                </ul>
+                <div class="method-info">
+                    📅 <b>दिन:</b> शुक्रवार | ☝️ <b>उंगली:</b> मध्यमा/तर्जनी<br>
+                    💍 <b>धातु:</b> चांदी/प्लैटिनम
+                </div>
+            </div>
+        </div>
 
-<!-- 5 Yellow Sapphire -->
-<div class="card">
-<img src="yellow-sapphire.jpg">
-<div class="card-content">
-<h3>पुखराज – गुरु 📿</h3>
-<p>
-धन, विवाह, संतान सुख,
-भाग्य और आध्यात्मिक उन्नति देता है।
-</p>
-<div class="method">
-दिन: गुरुवार<br>
-मंत्र: ॐ बृं बृहस्पतये नमः<br>
-मूल्य: ₹8,000 – ₹1,00,000+
-</div>
-</div>
-</div>
+        <div class="gem-card">
+            <img src="blue-sapphire.jpg" alt="नीलम" class="gem-img">
+            <div class="card-body">
+                <span class="planet-name">ग्रह: शनि (Saturn)</span>
+                <h3 class="gem-name">नीलम (Blue Sapphire)</h3>
+                <div class="mantra">ॐ शं शनैश्चराय नमः</div>
+                <p class="mythology">नीलम न्यायप्रिय शनि देव का रत्न है। यह सबसे तीव्र फलदायी रत्न माना जाता है जो भाग्य को रातों-रात चमका सकता है।</p>
+                <ul class="benefits">
+                    <li>साढ़ेसाती और ढैय्या के कुप्रभावों से पूर्ण रक्षा।</li>
+                    <li>आर्थिक तंगी से मुक्ति और छिपे शत्रुओं का नाश।</li>
+                    <li>कठोर परिश्रम का उचित फल और न्याय दिलाता है।</li>
+                </ul>
+                <div class="method-info">
+                    📅 <b>दिन:</b> शनिवार | ☝️ <b>उंगली:</b> मध्यमा (Middle)<br>
+                    💍 <b>धातु:</b> पंचधातु/लोहा
+                </div>
+            </div>
+        </div>
 
-<!-- 6 Diamond -->
-<div class="card">
-<img src="diamond.jpg">
-<div class="card-content">
-<h3>हीरा – शुक्र 💍</h3>
-<p>
-प्रेम, वैवाहिक सुख,
-कला, सौंदर्य और विलासिता बढ़ाता है।
-</p>
-<div class="method">
-दिन: शुक्रवार<br>
-मंत्र: ॐ शुक्राय नमः<br>
-मूल्य: ₹10,000 – ₹2,00,000+
-</div>
-</div>
-</div>
+        <div class="gem-card">
+            <img src="hessonite.jpg" alt="गोमेद" class="gem-img">
+            <div class="card-body">
+                <span class="planet-name">ग्रह: राहु (Rahu)</span>
+                <h3 class="gem-name">गोमेद (Hessonite)</h3>
+                <div class="mantra">ॐ रां राहवे नमः</div>
+                <p class="mythology">राहु एक छाया ग्रह है। गोमेद पहनने से राहु जनित भ्रम, भय और कालसर्प दोष में शांति मिलती है।</p>
+                <ul class="benefits">
+                    <li>अचानक आने वाली विपदाओं और दुर्घटनाओं से बचाव।</li>
+                    <li>राजनीति और जुआ-सट्टा (शेयर बाजार) में सफलता।</li>
+                    <li>अनिद्रा और गुप्त रोगों के निवारण में सहायक।</li>
+                </ul>
+                <div class="method-info">
+                    📅 <b>दिन:</b> शनिवार | ☝️ <b>उंगली:</b> मध्यमा (Middle)<br>
+                    💍 <b>धातु:</b> चांदी (Silver)
+                </div>
+            </div>
+        </div>
 
-<!-- 7 Blue Sapphire -->
-<div class="card">
-<img src="blue-sapphire.jpg">
-<div class="card-content">
-<h3>नीलम – शनि 🪐</h3>
-<p>
-अत्यंत प्रभावशाली रत्न।
-केवल कुंडली परीक्षण के बाद ही पहनें।
-</p>
-<div class="method">
-दिन: शनिवार<br>
-मंत्र: ॐ शं शनैश्चराय नमः<br>
-मूल्य: ₹7,000 – ₹1,50,000+
-</div>
-</div>
-</div>
+        <div class="gem-card">
+            <img src="cat-eye.jpg" alt="लहसुनिया" class="gem-img">
+            <div class="card-body">
+                <span class="planet-name">ग्रह: केतु (Ketu)</span>
+                <h3 class="gem-name">लहसुनिया (Cat's Eye)</h3>
+                <div class="mantra">ॐ कें केतवे नमः</div>
+                <p class="mythology">लहसुनिया को केतु की शांति के लिए पहना जाता है। यह मोक्ष और अंतर्ज्ञान को जागृत करने वाला रत्न है।</p>
+                <ul class="benefits">
+                    <li>बुरी नजर, टोने-टोटके और शत्रुओं के षड्यंत्र से रक्षा।</li>
+                    <li>खोया हुआ धन और सामाजिक मान-सम्मान की वापसी।</li>
+                    <li>आध्यात्मिक शक्ति और ध्यान में सफलता हेतु उत्तम।</li>
+                </ul>
+                <div class="method-info">
+                    📅 <b>दिन:</b> शनिवार | ☝️ <b>उंगली:</b> मध्यमा (Middle)<br>
+                    💍 <b>धातु:</b> चांदी (Silver)
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- 8 Hessonite -->
-<div class="card">
-<img src="hessonite.jpg">
-<div class="card-content">
-<h3>गोमेद – राहु ☊</h3>
-<p>
-भ्रम, भय, अचानक हानि,
-राहु दोष और कोर्ट केस में सहायक।
-</p>
-<div class="method">
-मंत्र: ॐ राहवे नमः<br>
-मूल्य: ₹3,000 – ₹30,000+
+    <div class="process-section">
+        <h2 style="color: var(--shree);">सिद्धिकरण: रत्न से 'यंत्र' तक का सफर</h2>
+        <p>हम केवल पत्थर नहीं, आपकी समस्याओं का समाधान बेचते हैं।</p>
+        <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:20px; margin-top:30px;">
+            <div style="flex:1; min-width:150px;"><b>1. शुद्धिकरण</b><br><small>पंचामृत स्नान</small></div>
+            <div style="flex:1; min-width:150px;"><b>2. तर्पण</b><br><small>गंगाजल अर्पण</small></div>
+            <div style="flex:1; min-width:150px;"><b>3. प्राण प्रतिष्ठा</b><br><small>108 वैदिक मंत्र</small></div>
+            <div style="flex:1; min-width:150px;"><b>4. संकल्प</b><br><small>धारक के नाम से पूजन</small></div>
+        </div>
+    </div>
 </div>
-</div>
-</div>
-
-<!-- 9 Cat Eye -->
-<div class="card">
-<img src="cat-eye.jpg">
-<div class="card-content">
-<h3>लहसुनिया – केतु ☋</h3>
-<p>
-अचानक बाधाओं से रक्षा,
-आध्यात्मिक उन्नति और मोक्ष मार्ग में सहायक।
-</p>
-<div class="method">
-मंत्र: ॐ केतवे नमः<br>
-मूल्य: ₹4,000 – ₹35,000+
-</div>
-</div>
-</div>
-
-</div>
-</section>
-
-<section class="whatsapp">
-<a href="https://wa.me/918827415099?text=नमस्ते%20Pandit%20Ji,%0Aमैं%20₹299%20रत्न%20परामर्श%20चाहता/चाहती%20हूँ।%0Aनाम:%20%0Aजन्म%20तिथि:%20%0Aजन्म%20समय:%20%0Aजन्म%20स्थान:%20">
-📿 WhatsApp रत्न परामर्श – ₹299
-</a>
-</section>
-
-<a class="float-wa" href="https://wa.me/918827415099">🟢</a>
 
 <footer>
-<p>© वैदिक ज्योतिष | सभी अधिकार सुरक्षित</p>
+    <img src="logo.png" alt="संस्थान लोगो" style="width:100px; filter: brightness(0) invert(1);">
+    <h2>श्री वैदिक ज्योतिष एवं रत्न केंद्र</h2>
+    <p>शुद्धता की शपथ, विश्वास की परंपरा।</p>
+    
+    <a href="https://wa.me/918827415099?text=नमस्ते%20पंडित%20जी,%0Aमैं%20रत्न%20परामर्श%20चाहता/चाहती%20हूँ।%0Aमेरी%20जानकारी%20नीचे%20दी%20गई%20है:%0A%0Aनाम:%20%0Aजन्म%20तिथि:%20%0Aजन्म%20समय:%20%0Aजन्म%20स्थान:%20" class="consult-btn">
+        🚩 मुफ्त कुंडली परामर्श (सीमित समय)
+    </a>
+
+    <div style="margin-top:30px; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px;">
+        <p>संपर्क: +91 8827415099 | ईमेल: info@vedicratna.com</p>
+        <p style="font-size:12px; opacity:0.6;">© 2026 ज्योतिष अनुष्ठान कर्मकांड केंद्र उज्जैन। सभी अधिकार सुरक्षित।</p>
+    </div>
 </footer>
 
+<a href="https://wa.me/918827415099?text=नमस्ते%20पंडित%20जी,%0Aमैं%20रत्न%20परामर्श%20चाहता/चाहती%20हूँ।%0Aमेरी%20जानकारी%20नीचे%20दी%20गई%20है:%0A%0Aनाम:%20%0Aजन्म%20तिथि:%20%0Aजन्म%20समय:%20%0Aजन्म%20स्थान:%20" class="wa-float">
+    <span>WhatsApp परामर्श</span> 📱
+</a>
+
 </body>
-</html>
+          </html>
+          
