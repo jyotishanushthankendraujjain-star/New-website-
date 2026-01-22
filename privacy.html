@@ -3,152 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Jyotish Anushthan Karmakand Kendra</title>
+    <title>Detailed Privacy Policy - Jyotish Anushthan Karmakand Kendra</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #bf953f;
             --deep-red: #8e0000;
             --bg-cream: #fff5e6;
+            --saffron: #ff9933;
         }
 
         body {
             font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
             background-color: var(--bg-cream);
-            color: #333;
-            margin: 0; padding: 0;
-            line-height: 1.8;
+            color: #333; margin: 0; padding: 0; line-height: 1.8;
         }
 
-        /* Language Toggle Switch */
+        /* Fixed Toggle Switch */
         .lang-switch {
-            position: fixed; top: 20px; right: 20px; z-index: 1000;
+            position: fixed; top: 20px; right: 20px; z-index: 9999;
             background: white; padding: 5px; border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4); display: flex;
             border: 2px solid var(--deep-red);
         }
         .lang-btn {
-            padding: 8px 15px; border: none; border-radius: 25px;
+            padding: 10px 22px; border: none; border-radius: 25px;
             cursor: pointer; font-weight: bold; transition: 0.3s;
+            background: #f0f0f0; color: #333; font-size: 14px;
         }
-        .lang-btn.active { background: var(--deep-red); color: white; }
+        .lang-btn.active { background: var(--deep-red); color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
 
         header {
             background: linear-gradient(rgba(142, 0, 0, 0.95), rgba(142, 0, 0, 0.95)), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-            color: #ffd700; text-align: center; padding: 50px 20px;
+            color: #ffd700; text-align: center; padding: 60px 20px;
             border-bottom: 5px solid var(--gold);
         }
-        .logo {
-            width: 110px; height: 110px; border-radius: 50%;
-            border: 3px solid #ffd700; margin-bottom: 15px;
-            box-shadow: 0 0 15px gold;
-        }
+        .logo { width: 120px; height: 120px; border-radius: 50%; border: 3px solid #ffd700; margin-bottom: 15px; box-shadow: 0 0 20px gold; }
 
         .container {
-            width: 90%; max-width: 900px; margin: 40px auto;
-            background: white; padding: 40px; border-radius: 15px;
+            width: 90%; max-width: 1000px; margin: 40px auto;
+            background: white; padding: 50px; border-radius: 15px;
             border: 2px solid var(--gold); position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
-        /* Sanskrit Decorative Icons */
-        .symbol { font-size: 2.5em; color: var(--gold); text-align: center; margin: 10px 0; }
-        .shlok {
-            text-align: center; font-style: italic; color: var(--deep-red);
-            font-weight: bold; margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;
-        }
-
-        h2 { color: var(--deep-red); border-left: 5px solid var(--gold); padding-left: 15px; margin-top: 35px; }
+        .shlok { text-align: center; font-style: italic; color: var(--deep-red); font-weight: bold; margin-bottom: 40px; border-bottom: 2px solid var(--bg-cream); padding-bottom: 25px; font-size: 1.2em; }
+        
+        h2 { color: var(--deep-red); border-left: 6px solid var(--saffron); padding-left: 15px; margin-top: 40px; background: #fffcf0; padding-top: 5px; padding-bottom: 5px; }
         
         ul { list-style: '🚩 '; padding-left: 20px; }
-        li { margin-bottom: 12px; }
+        li { margin-bottom: 15px; }
 
-        footer { text-align: center; padding: 20px; background: #111; color: #888; margin-top: 40px; }
+        .highlight-box { background: #fff9f0; border: 1px dashed var(--gold); padding: 20px; border-radius: 10px; margin: 20px 0; }
 
-        [lang="en"] { display: none; }
+        footer { text-align: center; padding: 30px; background: #111; color: #ffd700; border-top: 4px solid var(--gold); }
+
+        /* Multi-Language Classes */
+        .hi-text { display: block; }
+        .en-text { display: none; }
     </style>
 </head>
 <body>
 
 <div class="lang-switch">
-    <button class="lang-btn active" onclick="setLanguage('hi')">हिन्दी</button>
-    <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    <button id="btn-hi" class="lang-btn active" onclick="toggleLang('hi')">हिन्दी</button>
+    <button id="btn-en" class="lang-btn" onclick="toggleLang('en')">English</button>
 </div>
 
 <header>
-    <img src="logo.jpg" alt="Jyotish Logo" class="logo">
-    <h1 lang="hi">ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</h1>
-    <h1 lang="en">Jyotish Anushthan Karmakand Kendra, Ujjain</h1>
-    <p lang="hi">॥ यतो धर्मस्ततो जयः ॥</p>
-    <p lang="en">|| Where there is Dharma, there is Victory ||</p>
+    <img src="logo.jpg" alt="Kendra Logo" class="logo">
+    <h1 class="hi-text">ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</h1>
+    <h1 class="en-text">Jyotish Anushthan Karmakand Kendra, Ujjain</h1>
+    <p class="hi-text" style="color:#ffcc00; font-weight:bold;">॥ सत्यं वद धर्मं चर ॥</p>
+    <p class="en-text" style="color:#ffcc00; font-weight:bold;">|| Speak Truth, Follow Dharma ||</p>
 </header>
 
 <div class="container">
-    <div class="symbol">🕉️ 卐 🕉️</div>
-
-    <div class="shlok" lang="hi">“विश्वासः फलदायकः, गोपनीयता परं तपः।”<br>(विश्वास फल देता है, और गोपनीयता सबसे बड़ी तपस्या है।)</div>
-    <div class="shlok" lang="en">“Confidence yields results, Confidentiality is the supreme penance.”</div>
-
-    <center><h1 lang="hi">गोपनीयता नीति (Privacy Policy)</h1></center>
-    <center><h1 lang="en">Privacy Policy</h1></center>
-
-    <div id="content-hi" lang="hi">
-        <p><strong>ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</strong> आपकी गोपनीयता का पूर्ण सम्मान करता है। ज्योतिष शास्त्र में जातक का विवरण अत्यंत निजी माना जाता है।</p>
-        
-        <h2>1. सूचनाओं का संग्रहण</h2>
-        <p>कुंडली निर्माण के लिए हम आपसे निम्नलिखित जानकारी लेते हैं:</p>
-        <ul>
-            <li>नाम, जन्म तिथि, समय और स्थान।</li>
-            <li>संपर्क विवरण (WhatsApp नंबर)।</li>
-            <li>होम डिलीवरी के लिए डाक पता।</li>
-        </ul>
-
-        <h2>2. डेटा की सुरक्षा</h2>
-        <p>हमारा केंद्र यह सुनिश्चित करता है कि आपकी जन्म पत्रिका का विवरण किसी भी बाहरी व्यक्ति या कंपनी के साथ साझा नहीं किया जाएगा।</p>
-
-        <h2>3. उपयोग का उद्देश्य</h2>
-        <p>आपकी जानकारी का उपयोग केवल मैन्युअल कुंडली गणना और सटीक भविष्यवाणियों के लिए किया जाता है।</p>
+    <div class="shlok">
+        <span class="hi-text">“यथा शिखा मयूराणां नागानां मणयो यथा।<br>तद्वद्वेदांगशास्त्राणां ज्योतिषं मूर्धनि स्थितम्॥”</span>
+        <span class="en-text">“Like the crest on a peacock or the gem on a snake's head,<br>Jyotish (Astrology) stands at the pinnacle of all Vedantic sciences.”</span>
     </div>
 
-    <div id="content-en" lang="en">
-        <p>Welcome to <strong>Jyotish Anushthan Karmakand Kendra, Ujjain</strong>. Your privacy is our highest priority.</p>
-        
-        <h2>1. Data Collection</h2>
-        <p>To prepare your manual Kundli, we collect:</p>
+    <center>
+        <h1 class="hi-text" style="color:var(--deep-red); text-decoration: underline;">विस्तृत गोपनीयता नीति</h1>
+        <h1 class="en-text" style="color:var(--deep-red); text-decoration: underline;">Detailed Privacy Policy</h1>
+    </center>
+
+    <div class="hi-text">
+        <p><strong>ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</strong> में आपका स्वागत है। हम आपकी व्यक्तिगत और ज्योतिषीय जानकारी की पवित्रता को समझते हैं। यह नीति बताती है कि हम आपके डेटा को कैसे सुरक्षित रखते हैं।</p>
+
+        <h2>1. हम कौन सी जानकारी एकत्र करते हैं?</h2>
+        <p>कुंडली के सटीक विश्लेषण के लिए हम निम्नलिखित विवरण मांगते हैं:</p>
         <ul>
-            <li>Name, Date of Birth, Time, and Place.</li>
-            <li>Contact details (WhatsApp number).</li>
-            <li>Shipping address for home delivery.</li>
+            <li><strong>व्यक्तिगत विवरण:</strong> पूरा नाम, लिंग और वैवाहिक स्थिति।</li>
+            <li><strong>जन्म विवरण:</strong> जन्म तिथि, सटीक समय (घंटा/मिनट) और जन्म का स्थान (शहर/राज्य)।</li>
+            <li><strong>संपर्क विवरण:</strong> आपका WhatsApp नंबर (8827415099 के माध्यम से संपर्क) और पता।</li>
         </ul>
 
-        <h2>2. Data Security</h2>
-        <p>We guarantee that your personal and astrological data will never be shared with any third party.</p>
+        <h2>2. आपके डेटा का उपयोग कैसे किया जाता है?</h2>
+        <p>एकत्र की गई जानकारी का उपयोग केवल इन उद्देश्यों के लिए होता है:</p>
+        <ul>
+            <li>मैन्युअल रूप से हस्तलिखित कुंडली गणना के लिए।</li>
+            <li>ग्रहों के दोषों के निवारण हेतु सटीक उपायों के सुझाव के लिए।</li>
+            <li>आपकी कुंडली की प्रिंटेड फाइल आपके घर भेजने के लिए।</li>
+        </ul>
 
-        <h2>3. Purpose of Use</h2>
-        <p>Your details are used solely for precise manual calculations and personalized predictions.</p>
+        <h2>3. पूर्ण गोपनीयता की गारंटी</h2>
+        <div class="highlight-box">
+            <p><strong>गोपनीयता हमारा परम धर्म है:</strong> हम वचन देते हैं कि आपकी जन्म विवरण या आपकी समस्याओं का विवरण किसी भी बाहरी विज्ञापन कंपनी या अन्य व्यक्तियों के साथ साझा नहीं किया जाएगा। आपकी कुंडली केवल हमारे अधिकृत विद्वान ज्योतिषी ही देखते हैं।</p>
+        </div>
+
+        <h2>4. भुगतान और रिफंड नीति</h2>
+        <ul>
+            <li>सभी शुल्क मैन्युअल मेहनत और विद्वानों के समय के लिए लिए जाते हैं।</li>
+            <li>एक बार कुंडली निर्माण कार्य शुरू होने के बाद शुल्क वापस (Refund) नहीं किया जाएगा।</li>
+            <li>यदि कुंडली में कोई लिपिक त्रुटि (Typing Error) होती है, तो हम उसे मुफ्त में सुधार कर देंगे।</li>
+        </ul>
+
+        <h2>5. डेटा सुरक्षा</h2>
+        <p>हमारा डिजिटल डेटा सुरक्षित सर्वर पर रखा जाता है और हस्तलिखित प्रतियों को कुंडली डिलीवरी के बाद हमारे रिकॉर्ड से सुरक्षित रूप से हटा दिया जाता है या सुरक्षित रखा जाता है (यदि भविष्य में आपकी आवश्यकता हो)।</p>
     </div>
 
-    <div class="symbol" style="font-size: 1.5em; margin-top: 40px;">🚩🚩🚩</div>
+    <div class="en-text">
+        <p>Welcome to <strong>Jyotish Anushthan Karmakand Kendra, Ujjain</strong>. We are committed to protecting your personal and astrological data with the highest standards of integrity.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>For accurate chart calculations, we require the following:</p>
+        <ul>
+            <li><strong>Personal Details:</strong> Full Name, Gender, and Marital Status.</li>
+            <li><strong>Birth Details:</strong> Date of Birth, Exact Time (HH:MM), and Place of Birth (City/State).</li>
+            <li><strong>Contact Info:</strong> WhatsApp number and Postal Address for Home Delivery.</li>
+        </ul>
+
+        <h2>2. How We Use Your Data</h2>
+        <p>Your data is used strictly for:</p>
+        <ul>
+            <li>Performing precise manual Vedic calculations.</li>
+            <li>Suggesting specific remedies for planetary doshas.</li>
+            <li>Shipping your physical Kundli file to your registered address.</li>
+        </ul>
+
+        <h2>3. Confidentiality Guarantee</h2>
+        <div class="highlight-box">
+            <p><strong>Privacy is our Sacred Duty:</strong> We guarantee that your birth data and personal struggles will never be shared with third-party advertisers or unauthorized individuals. Only our authorized Vedic scholars access your data.</p>
+        </div>
+
+        <h2>4. Payment & Refund Policy</h2>
+        <ul>
+            <li>Fees are charged for manual scholarly work and time.</li>
+            <li>No refunds are provided once the manual calculation process has started.</li>
+            <li>Any clerical or printing errors will be corrected free of cost upon request.</li>
+        </ul>
+
+        <h2>5. Data Retention</h2>
+        <p>We keep your records secure and confidential. Upon request, your digital data can be deleted from our systems after your order is successfully delivered.</p>
+    </div>
+
+    <center style="margin-top: 50px;">
+        <span class="hi-text" style="color:var(--gold); font-size: 2em;">🚩 ॥ इति शुभम् ॥ 🚩</span>
+        <span class="en-text" style="color:var(--gold); font-size: 2em;">🚩 || Best Wishes || 🚩</span>
+    </center>
 </div>
 
 <footer>
     <p>© 2026 ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन | All Rights Reserved</p>
+    <p class="hi-text">संपर्क: 8827415099 | स्थान: उज्जैन, मध्य प्रदेश</p>
+    <p class="en-text">Contact: 8827415099 | Location: Ujjain, Madhya Pradesh</p>
 </footer>
 
 <script>
-    function setLanguage(lang) {
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-        if(lang === 'hi') {
-            document.querySelector('.lang-btn:nth-child(1)').classList.add('active');
-            document.querySelectorAll('[lang="hi"]').forEach(el => el.style.display = 'block');
-            document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'none');
+    function toggleLang(lang) {
+        const hiNodes = document.querySelectorAll('.hi-text');
+        const enNodes = document.querySelectorAll('.en-text');
+        const btnHi = document.getElementById('btn-hi');
+        const btnEn = document.getElementById('btn-en');
+
+        if (lang === 'hi') {
+            hiNodes.forEach(node => node.style.display = 'block');
+            enNodes.forEach(node => node.style.display = 'none');
+            btnHi.classList.add('active');
+            btnEn.classList.remove('active');
         } else {
-            document.querySelector('.lang-btn:nth-child(2)').classList.add('active');
-            document.querySelectorAll('[lang="hi"]').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'block');
+            hiNodes.forEach(node => node.style.display = 'none');
+            enNodes.forEach(node => node.style.display = 'block');
+            btnHi.classList.remove('active');
+            btnEn.classList.add('active');
         }
     }
-    setLanguage('hi');
 </script>
 
 </body>
