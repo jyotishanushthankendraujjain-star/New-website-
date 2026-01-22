@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sateek Manual Kundli - Jyotish Paramarsh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-gradient: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            --deep-red: #8e0000;
+            --saffron: #ff9933;
+            --whatsapp-green: #25d366;
+        }
+
+        body {
+            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+            margin: 0; padding: 0;
+            background: #fff5e6; 
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Watermark Background Symbols */
+        body::before {
+            content: "ॐ 卐 ॐ 卐 ॐ";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0.04;
+            font-size: 50px;
+            word-spacing: 120px;
+            line-height: 180px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Language Toggle */
+        .lang-switch {
+            position: fixed; top: 15px; right: 15px; z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 5px; border-radius: 50px; border: 2px solid var(--deep-red);
+            box-shadow: 0 0 15px rgba(142, 0, 0, 0.3);
+        }
+        .lang-btn {
+            padding: 8px 18px; border: none; border-radius: 25px;
+            cursor: pointer; font-weight: bold; transition: 0.3s;
+        }
+        .lang-btn.active { background: var(--deep-red); color: white; }
+
+        header {
+            background: linear-gradient(rgba(142, 0, 0, 0.9), rgba(142, 0, 0, 0.9)), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+            color: #ffd700; text-align: center; padding: 60px 20px;
+            border-bottom: 5px solid #bf953f;
+        }
+        .logo {
+            width: 130px; height: 130px; border-radius: 50%;
+            border: 4px solid #ffd700; box-shadow: 0 0 20px #ffd700;
+            margin-bottom: 20px; animation: shine 3.5s infinite;
+        }
+        @keyframes shine {
+            0% { filter: brightness(1); transform: scale(1); }
+            50% { filter: brightness(1.4) drop-shadow(0 0 15px gold); transform: scale(1.05); }
+            100% { filter: brightness(1); transform: scale(1); }
+        }
+
+        .mantra-text {
+            font-style: italic; font-size: 1.3em; color: #ffcc00;
+            margin: 10px 0; display: block; font-weight: bold;
+        }
+
+        .promo-banner {
+            background: var(--gold-gradient);
+            color: #000; text-align: center; padding: 12px;
+            font-weight: 800; text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            letter-spacing: 1px;
+        }
+
+        .container { width: 90%; max-width: 1100px; margin: auto; padding: 40px 0; }
+
+        .why-manual {
+            background: white; border-radius: 20px; padding: 40px;
+            border: 3px solid #bf953f; position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+        
+        .card {
+            background: #fff; border-radius: 20px; padding: 35px;
+            border: 2px solid #ddd; text-align: center;
+            transition: 0.4s ease; position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+        }
+        .card:hover { transform: translateY(-12px); border-color: #bf953f; box-shadow: 0 20px 40px rgba(191, 149, 63, 0.4); }
+        
+        .card.popular { background: #fffcf0; border: 3px solid #bf953f; }
+        .card.popular::before {
+            content: "Recommended"; position: absolute; top: 15px; right: -35px;
+            background: var(--gold-gradient); padding: 5px 45px;
+            transform: rotate(45deg); font-size: 13px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .price { font-size: 38px; font-weight: 800; color: var(--deep-red); margin: 15px 0; }
+        .old-price { text-decoration: line-through; color: #999; font-size: 20px; }
+
+        .btn-whatsapp {
+            background: var(--whatsapp-green); color: white;
+            padding: 18px 25px; border-radius: 50px; font-weight: bold;
+            display: inline-block; text-decoration: none; margin-top: auto;
+            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4); transition: 0.3s;
+            font-size: 1.1em;
+        }
+        .btn-whatsapp:hover { background: #1da851; transform: scale(1.03); }
+
+        .delivery-section {
+            background: linear-gradient(135deg, #8e0000 0%, #4a0000 100%);
+            color: white; padding: 50px; border-radius: 25px;
+            margin-top: 60px; text-align: center; border: 4px solid #ffd700;
+            box-shadow: 0 10px 30px rgba(142, 0, 0, 0.4);
+        }
+
+        .symbol-box { font-size: 2.2em; color: var(--saffron); margin: 15px 0; }
+        
+        [lang="en"] { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="lang-switch">
+    <button class="lang-btn active" onclick="setLanguage('hi')">हिन्दी</button>
+    <button class="lang-btn" onclick="setLanguage('en')">English</button>
+</div>
+
+<div class="promo-banner">
+    <span lang="hi">✨ विशेष शुभ लाभ ऑफर: हस्तनिर्मित कुंडलियों पर 30% की भारी छूट ✨</span>
+    <span lang="en">✨ Special Shubh Laabh Offer: Flat 30% OFF on Handmade Kundli ✨</span>
+</div>
+
+<header>
+    <img src="logo.jpg" alt="Aapka Jyotish Logo" class="logo">
+    <div class="mantra-text">॥ शुभम भवतु ॥</div>
+    <h1 lang="hi">ॐ आपका ज्योतिष संस्थान ॐ</h1>
+    <h1 lang="en">ॐ Your Vedic Astrology ॐ</h1>
+    <p lang="hi" style="color: #fcf6ba; font-size: 1.2em;">मशीनी गलतियों को त्यागें, हस्तनिर्मित शुद्ध कुंडली अपनाएं</p>
+    <p lang="en" style="color: #fcf6ba; font-size: 1.2em;">Reject machine errors, embrace 100% accurate manual Kundli</p>
+    <div class="symbol-box">🕉️ 卐 🕉️</div>
+</header>
+
+<div class="container">
+    
+    <section class="why-manual">
+        <h2 lang="hi" style="color: var(--deep-red); text-align: center;">॥ क्यों चुनें हस्तनिर्मित कुंडली? ॥</h2>
+        <h2 lang="en" style="color: var(--deep-red); text-align: center;">॥ Why Choose Manual Kundli? ॥</h2>
+        <div class="grid">
+            <div style="text-align: left; padding: 10px;">
+                <h3 style="color:var(--deep-red)" lang="hi">🚫 ऑनलाइन कुंडली की त्रुटियां</h3>
+                <h3 style="color:var(--deep-red)" lang="en">🚫 Online Kundli Errors</h3>
+                <p lang="hi">सॉफ्टवेयर अक्सर स्थानीय समय और अयनमसा की सूक्ष्म गणना नहीं कर पाते, जिससे ग्रहों की दशा गलत हो सकती है। कंप्यूटर एक फिक्स्ड एल्गोरिथम पर चलता है, जो आपकी परिस्थितियों को नहीं समझ सकता।</p>
+                <p lang="en">Software often misses subtle local time and Ayanamsa calculations. A fixed machine algorithm cannot understand your unique life situations or complex planetary cancellations.</p>
+            </div>
+            <div style="text-align: left; padding: 10px; border-left: 1px solid #ddd;">
+                <h3 style="color: #b38728;" lang="hi">✅ हमारी हस्तनिर्मित शुद्धता</h3>
+                <h3 style="color: #b38728;" lang="en">✅ Our Manual Accuracy</h3>
+                <p lang="hi">हम प्राचीन ऋषियों के ग्रंथों के अनुसार एक-एक बिंदु की गणना स्वयं हाथ से करते हैं। इसमें भाव-चलित और षोडशवर्ग चक्रों का गहरा विश्लेषण होता है, जिससे उपाय अचूक साबित होते हैं।</p>
+                <p lang="en">We calculate every chart manually as per ancient Vedic scriptures. Deep analysis of Bhav-Chalit and Shodashvarga ensures that remedies are precise and effective.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <div class="symbol-box">📜</div>
+            <h3 lang="hi">बेसिक manual कुंडली</h3>
+            <h3 lang="en">Basic Manual Kundli</h3>
+            <div class="price"><span class="old-price">₹2100</span> ₹1499</div>
+            <ul style="text-align: left; list-style: '🚩 ';">
+                <li lang="hi">जन्म विवरण एवं सटीक ग्रह स्थिति</li>
+                <li lang="en">Accurate Birth & Planet Chart</li>
+                <li lang="hi">मंगल एवं कालसर्प दोष चेक</li>
+                <li lang="en">Manglik & Kalsarp check</li>
+                <li lang="hi">शुद्ध पंचांग गणना</li>
+                <li lang="en">Pure Panchang Calculation</li>
+                <li lang="hi"><b>WhatsApp पर PDF डिलीवरी</b></li>
+                <li lang="en"><b>Digital PDF on WhatsApp</b></li>
+            </ul>
+            <a href="https://wa.me/918827415099?text=Namaste, I want to order *Basic Package (₹1499)*.%0A%0A*Please provide:*%0A- Name:%20%0A- DOB:%20%0A- Time:%20%0A- Place:" class="btn-whatsapp">🟢 WhatsApp Order</a>
+        </div>
+
+        <div class="card popular">
+            <div class="symbol-box">🔱</div>
+            <h3 lang="hi">स्टैंडर्ड (5 वर्ष फल)</h3>
+            <h3 lang="en">Standard (5 Year)</h3>
+            <div class="price"><span class="old-price">₹3500</span> ₹2499</div>
+            <ul style="text-align: left; list-style: '🚩 ';">
+                <li lang="hi">5 वर्षों का विस्तृत भविष्यफल</li>
+                <li lang="en">Detailed 5-year prediction</li>
+                <li lang="hi">करियर, स्वास्थ्य एवं सटीक उपाय</li>
+                <li lang="en">Career, Health & Remedies</li>
+                <li lang="hi">दशा फल एवं रत्न परामर्श</li>
+                <li lang="en">Dasha Results & Gemstone Advice</li>
+                <li lang="hi"><b>PDF + Printed Home Delivery</b></li>
+                <li lang="en"><b>PDF + Printed Home Delivery</b></li>
+            </ul>
+            <a href="https://wa.me/918827415099?text=Namaste, I want to order *Standard Package (₹2499)*.%0A%0A*Please provide:*%0A- Name:%20%0A- DOB:%20%0A- Time:%20%0A- Place:" class="btn-whatsapp">🟢 WhatsApp Order</a>
+        </div>
+
+        <div class="card">
+            <div class="symbol-box">☸️</div>
+            <h3 lang="hi">प्रीमियम (संपूर्ण जीवन)</h3>
+            <h3 lang="en">Premium (Lifetime)</h3>
+            <div class="price"><span class="old-price">₹7000</span> ₹4999</div>
+            <ul style="text-align: left; list-style: '🚩 ';">
+                <li lang="hi">आजीवन विस्तृत भविष्य दर्शन</li>
+                <li lang="en">Detailed Lifetime Prediction</li>
+                <li lang="hi">विवाह एवं राजयोग विश्लेषण</li>
+                <li lang="en">Marriage & Rajyog Analysis</li>
+                <li lang="hi">30 min विशेष कॉल परामर्श</li>
+                <li lang="en">30 min Personal Call</li>
+                <li lang="hi"><b>Premium File Home Delivery</b></li>
+                <li lang="en"><b>Premium File Home Delivery</b></li>
+            </ul>
+            <a href="https://wa.me/918827415099?text=Namaste, I want to order *Premium Package (₹4999)*.%0A%0A*Please provide:*%0A- Name:%20%0A- DOB:%20%0A- Time:%20%0A- Place:" class="btn-whatsapp">🟢 WhatsApp Order</a>
+        </div>
+    </div>
+
+    <div class="delivery-section">
+        <h2 lang="hi" style="color:#ffd700">🚚 डिजिटल एवं होम डिलीवरी सुविधा</h2>
+        <h2 lang="en" style="color:#ffd700">🚚 Digital & Home Delivery</h2>
+        <p lang="hi" style="font-size: 1.1em;">आपकी कुंडली तैयार होते ही हम PDF आपके WhatsApp पर भेजते हैं। <b>स्टैंडर्ड और प्रीमियम</b> ग्राहकों को विशेष रूप से तैयार की गई प्रिंटेड फाइल कूरियर द्वारा उनके घर भेजी जाती है।</p>
+        <p lang="en" style="font-size: 1.1em;">We send PDF on WhatsApp as soon as your chart is ready. <b>Standard & Premium</b> clients receive a specially prepared printed file via courier at their doorstep.</p>
+        <div class="symbol-box">🚩🚩🚩</div>
+    </div>
+</div>
+
+<footer style="background:#111; color:#aaa; text-align:center; padding:40px;">
+    <p>© 2026 आपका ज्योतिष संस्थान | अध्यात्म और वैदिक विज्ञान का संगम</p>
+    <p style="font-size: 0.8em; margin-top: 10px;">संपर्क: 8827415099</p>
+</footer>
+
+<script>
+    function setLanguage(lang) {
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        if(lang === 'hi') {
+            document.querySelector('.lang-btn:nth-child(1)').classList.add('active');
+            document.querySelectorAll('[lang="hi"]').forEach(el => el.style.display = 'block');
+            document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'none');
+        } else {
+            document.querySelector('.lang-btn:nth-child(2)').classList.add('active');
+            document.querySelectorAll('[lang="hi"]').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('[lang="en"]').forEach(el => el.style.display = 'block');
+        }
+    }
+    // Set Hindi as default
+    setLanguage('hi');
+</script>
+
+</body>
+</html>
