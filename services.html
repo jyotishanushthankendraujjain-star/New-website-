@@ -2,129 +2,124 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
+<title>Jyotish Anushthan Karmakand Kendra, Ujjain</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>हमारी सेवाएं | वैदिक ज्योतिष एवं अनुष्ठान</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
---gold:#d4af37;
---dark:#050505;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
 body{
-font-family:Poppins,sans-serif;
-background:radial-gradient(circle at top,#111,#000);
-color:#fff;
-overflow-x:hidden;
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background:radial-gradient(circle at top,#fffbe6,#f3e2a9);
+    color:#4a2c00;
 }
-
-h1,h2,h3{
-font-family:Cinzel,serif;
-color:var(--gold);
-letter-spacing:1px;
-}
-
-section{padding:80px 8%}
-
-.mantra{
-text-align:center;
-font-size:22px;
-color:#ffd27d;
-margin:20px 0;
-text-shadow:0 0 15px gold;
-animation:pulse 2.5s infinite;
-}
-@keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
-
 header{
-position:sticky;top:0;z-index:999;
-background:rgba(0,0,0,.85);
-padding:14px 8%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:1px solid #222;
+    text-align:center;
+    padding:25px 10px;
+    position:relative;
 }
-header img{height:55px}
-nav a{margin-left:22px;color:#fff;text-decoration:none}
-nav a:hover{color:var(--gold)}
+header img{
+    width:120px;
+    filter:drop-shadow(0 0 12px gold);
+}
+header h1{
+    margin:10px 0 5px;
+    font-size:28px;
+    text-shadow:0 0 6px gold;
+}
+header p{
+    font-size:14px;
+    color:#8b6508;
+}
+.toggle{
+    position:absolute;
+    top:10px;
+    right:15px;
+}
+.toggle button{
+    border:none;
+    background:#fff;
+    padding:6px 10px;
+    border-radius:20px;
+    cursor:pointer;
+    box-shadow:0 0 6px gold;
+}
 
-.hero{
-min-height:90vh;
-background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.95)),
-url(bg.jpg) center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+.services{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
 }
-.hero h1{font-size:46px;text-shadow:0 0 30px gold}
-.hero p{max-width:850px;margin:20px auto;font-size:18px}
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:28px;
-margin-top:50px;
-}
 .card{
-background:linear-gradient(145deg,#0e0e0e,#050505);
-border:1px solid #222;
-border-radius:18px;
-overflow:hidden;
-transition:.4s;
-box-shadow:0 0 25px rgba(255,215,0,.05);
+    background:rgba(255,255,255,0.9);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 0 15px rgba(218,165,32,0.6);
+    cursor:pointer;
+    transition:0.3s;
+    position:relative;
 }
 .card:hover{
-transform:translateY(-8px) scale(1.03);
-box-shadow:0 0 45px rgba(255,215,0,.35);
+    transform:translateY(-6px);
+    box-shadow:0 0 28px gold;
 }
-.card img{width:100%;height:190px;object-fit:cover}
-.card h3{text-align:center;padding:16px}
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+.card h3{
+    text-align:center;
+    padding:12px;
+    background:linear-gradient(to right,#ffefba,#fff);
+}
+.card ul{
+    list-style:none;
+    padding:15px;
+    display:none;
+    font-size:14px;
+}
+.card ul li{
+    padding:6px 0;
+    border-bottom:1px dashed #d4af37;
+}
+.card::after{
+    content:"ॐ";
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:22px;
+    color:rgba(218,165,32,0.4);
+}
 
-.details{
-background:#060606;
-border-top:1px solid #222;
+.trust{
+    text-align:center;
+    padding:30px 15px;
+    background:linear-gradient(to right,#fff3cd,#ffecb3);
 }
-.block{margin-bottom:70px}
-.block ul{
-columns:2;
-column-gap:40px;
-margin-top:20px;
-}
-.block li{
-list-style:"🔱 ";
-margin:8px 0;
-padding-left:8px;
-}
-@media(max-width:768px){.block ul{columns:1}}
-
-footer{
-background:#000;
-border-top:1px solid #222;
-padding:40px 8%;
-text-align:center;
+.trust span{
+    display:inline-block;
+    margin:8px;
+    padding:10px 18px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 0 10px gold;
 }
 
 .whatsapp{
-position:fixed;
-bottom:22px;right:22px;
-width:60px;height:60px;
-border-radius:50%;
-background:#25D366;
-display:flex;align-items:center;justify-content:center;
-font-size:30px;color:#fff;
-box-shadow:0 0 30px #25D366;
-animation:glow 2s infinite;
-z-index:999;
-}
-@keyframes glow{
-0%,100%{box-shadow:0 0 15px #25D366}
-50%{box-shadow:0 0 40px #25D366}
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:14px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
 }
 </style>
 </head>
@@ -132,163 +127,166 @@ z-index:999;
 <body>
 
 <header>
+<div class="toggle">
+<button onclick="setLang('hi')">हिंदी</button>
+<button onclick="setLang('en')">English</button>
+</div>
+
 <img src="logo.jpg" alt="Logo">
-<nav>
-<a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
-</nav>
+<h1 id="title">ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</h1>
+<p id="subtitle">॥ ॐ नमः शिवाय ॥ उज्जैन – सिद्ध महाकाल की पावन भूमि</p>
 </header>
 
-<section class="hero">
-<div>
-<h1>वैदिक परंपरा से जीवन समाधान तक</h1>
-<p>ज्योतिष, अनुष्ठान, तंत्र साधना एवं उज्जैन विशेष सेवाएं — शुद्ध वैदिक विधि द्वारा</p>
-<div class="mantra">॥ ॐ नमः शिवाय ॥</div>
-</div>
-</section>
+<section class="services">
 
-<section>
-<h2 style="text-align:center">हमारी प्रमुख सेवाएं</h2>
-
-<div class="grid">
-<div class="card"><img src="jyotish.jpg"><h3>ज्योतिष सेवाएं</h3></div>
-<div class="card"><img src="ujjain.jpg"><h3>उज्जैन विशेष सेवाएं</h3></div>
-<div class="card"><img src="tantra.jpg"><h3>शक्ति तंत्र अनुष्ठान</h3></div>
-<div class="card"><img src="path.jpg"><h3>पाठ सेवाएं</h3></div>
-<div class="card"><img src="jaap.jpg"><h3>जाप सेवाएं</h3></div>
-<div class="card"><img src="dosh.jpg"><h3>दोष निवारण</h3></div>
-<div class="card"><img src="pitra.jpg"><h3>पितृ मोक्ष सेवाएं</h3></div>
-<div class="card"><img src="ved.jpg"><h3>वेद एवं पुराण</h3></div>
-<div class="card"><img src="katha.jpg"><h3>कथा सेवाएं</h3></div>
-<div class="card"><img src="special.jpg"><h3>विशेष सेवाएं</h3></div>
-</div>
-</section>
-
-<section class="details">
-
-<div class="block">
-<h2>🔮 ज्योतिष सेवाएं</h2>
+<div class="card" onclick="toggle(this)">
+<img src="jyotish-seva.jpg">
+<h3 data-hi="🔮 ज्योतिष सेवाएं" data-en="🔮 Astrology Services"></h3>
 <ul>
-<li>जन्म कुंडली विश्लेषण</li><li>विवाह मिलान</li><li>करियर व व्यापार ज्योतिष</li>
-<li>वार्षिक भविष्यफल</li><li>प्रश्न कुंडली</li><li>रत्न सुझाव</li>
-<li>मुहूर्त निर्धारण</li><li>नामकरण संस्कार</li><li>वास्तु परामर्श</li><li>ग्रह शांति उपाय</li>
+‎<li>जन्म कुंडली विश्लेषण</li>
+‎<li>विवाह मिलान</li>
+‎<li>करियर और व्यापार ज्योतिष</li>
+‎<li>वार्षिक भविष्यफल</li>
+‎<li>प्रश्न कुंडली</li>
+‎<li>रत्न सुझाव</li>
+‎<li>मुहूर्त निर्धारण</li>
+‎<li>नामकरण संस्कार</li>
+‎<li>वास्तु परामर्श</li>
+‎<li>ग्रह शांति उपाय</li>
 </ul>
 </div>
 
-<div class="block">
-<h2>🛕 उज्जैन विशेष सेवाएं</h2>
+<div class="card" onclick="toggle(this)">
+<img src="ujjain-seva.jpg">
+<h3 data-hi="🕉 उज्जैन विशेष सेवाएं" data-en="🕉 Ujjain Special Services"></h3>
 <ul>
-<li>महाकालेश्वर दर्शन व्यवस्था</li>
-<li>भस्म आरती बुकिंग मार्गदर्शन</li>
+<li>महाकाल दर्शन व्यवस्था</li>
+<li>भस्म आरती मार्गदर्शन</li>
 <li>क्षिप्रा स्नान</li>
-<li>रामघाट पूजन</li>
-<li>सिंहस्थ कुंभ मेला सेवाएं</li>
-<li>काल भैरव, हरसिद्धि, शनि मंदिर</li>
-<li>चिंतामन गणेश, गढ़ कालिका</li>
-<li>नवग्रह मंदिर दर्शन</li>
-<li>पारदेश्वर महादेव पूजन</li>
-<li>चार धाम मंदिर दर्शन</li>
+<li>काल भैरव / हरसिद्धि पूजन</li>
 </ul>
 </div>
 
-<div class="block">
-<h2>🔱 शक्ति तंत्र अनुष्ठान</h2>
+<div class="card" onclick="toggle(this)">
+<img src="shakti-tantra.jpg">
+<h3 data-hi="🔥 शक्ति तंत्र अनुष्ठान" data-en="🔥 Shakti Tantra Rituals"></h3>
 <ul>
-<li>दस महाविद्या अनुष्ठान</li>
-<li>काल भैरव रोग मुक्ति</li>
+<li>दस महाविद्या</li>
 <li>बगलामुखी अनुष्ठान</li>
-<li>महाकाली, तारा, छिन्नमस्ता</li>
+<li>महाकाली साधना</li>
 <li>त्रिपुर सुंदरी</li>
-<li>भुवनेश्वरी</li>
-<li>धूमावती</li>
-<li>मातंगी</li>
-<li>कमला</li>
-<li>शक्ति साधना</li>
 </ul>
 </div>
 
-<div class="block">
-<h2>📿 पाठ सेवाएं</h2>
+<div class="card" onclick="toggle(this)">
+<img src="path-seva.jpg">
+<h3 data-hi="📜 पाठ सेवाएं" data-en="📜 Path Services"></h3>
 <ul>
-<li>महामृत्युंजय पाठ</li><li>रुद्राष्टक पाठ</li>
-<li>दुर्गा सप्तशती</li><li>चंडी पाठ</li>
-<li>बगलामुखी पाठ</li><li>गणेश अथर्वशीर्ष</li>
-<li>विष्णु सहस्रनाम</li><li>हनुमान चालीसा</li>
-<li>नवग्रह पाठ</li><li>पितृ पाठ</li>
+<li>महामृत्युंजय पाठ</li>
+<li>दुर्गा सप्तशती</li>
+<li>हनुमान चालीसा</li>
+<li>विष्णु सहस्रनाम</li>
 </ul>
 </div>
 
-<div class="block">
-<h2>🧘 जाप सेवाएं</h2>
+<div class="card" onclick="toggle(this)">
+<img src="jap-seva.jpg">
+<h3 data-hi="🔔 जाप सेवाएं" data-en="🔔 Mantra Jaap"></h3>
 <ul>
-<li>ॐ नमः शिवाय जाप</li><li>महामृत्युंजय जाप</li>
-<li>दुर्गा मंत्र जाप</li><li>लक्ष्मी मंत्र जाप</li>
-<li>गणपति मंत्र जाप</li><li>राम मंत्र जाप</li>
-<li>हनुमान मंत्र जाप</li><li>नवग्रह मंत्र जाप</li>
+<li>ॐ नमः शिवाय</li>
+<li>देवी मंत्र जाप</li>
+<li>गणेश मंत्र जाप</li>
+<li>हनुमान जाप</li>
 </ul>
 </div>
 
-<div class="block">
-<h2>♻️ दोष निवारण</h2>
+<div class="card" onclick="toggle(this)">
+<img src="dosh-seva.jpg">
+<h3 data-hi="⚖ दोष निवारण" data-en="⚖ Dosha Nivaran"></h3>
 <ul>
-<li>काल सर्प दोष</li><li>मंगल दोष</li>
-<li>शनि दोष</li><li>राहु-केतु दोष</li>
-<li>पितृ दोष</li><li>गुरु चांडाल दोष</li>
-<li>केमद्रुम दोष</li><li>संतान दोष</li>
+<li>काल सर्प दोष</li>
+<li>मंगल दोष</li>
+<li>शनि दोष</li>
+<li>पितृ दोष</li>
 </ul>
 </div>
 
-<div class="block">
-<h2>🌾 पितृ मोक्ष एवं श्राद्ध</h2>
+<div class="card" onclick="toggle(this)">
+<img src="pitra-seva.jpg">
+<h3 data-hi="🪔 पितृ मोक्ष सेवाएं" data-en="🪔 Pitra Moksha"></h3>
 <ul>
-<li>पितृ तर्पण</li><li>गया श्राद्ध</li>
-<li>नारायण बलि</li><li>त्रिपिंडी श्राद्ध</li>
-<li>पिंडदान</li><li>वार्षिक श्राद्ध</li>
+<li>पितृ तर्पण</li>
+<li>श्राद्ध कर्म</li>
+<li>नारायण बलि</li>
+<li>पिंडदान</li>
 </ul>
 </div>
 
-<div class="block">
-<h2>📜 वेद एवं पुराण</h2>
+<div class="card" onclick="toggle(this)">
+<img src="ved-puran.jpg">
+<h3 data-hi="📖 वेद एवं पुराण" data-en="📖 Vedas & Puranas"></h3>
 <ul>
-<li>ऋग्वेद</li><li>यजुर्वेद</li><li>सामवेद</li><li>अथर्ववेद</li>
-<li>18 महापुराण</li><li>प्रमुख उपपुराण</li>
+<li>चारों वेद</li>
+<li>18 महापुराण</li>
+<li>उपपुराण</li>
 </ul>
 </div>
 
-<div class="block">
-<h2>🎤 कथा सेवाएं</h2>
+<div class="card" onclick="toggle(this)">
+<img src="katha-seva.jpg">
+<h3 data-hi="🎤 कथा सेवाएं" data-en="🎤 Katha Services"></h3>
 <ul>
-<li>श्रीमद्भागवत कथा</li>
-<li>रामायण कथा</li>
-<li>महाभारत कथा</li>
+<li>भागवत कथा</li>
+<li>राम कथा</li>
 <li>शिव पुराण कथा</li>
-<li>देवी भागवत कथा</li>
-<li>विष्णु पुराण कथा</li>
 </ul>
 </div>
 
-<div class="block">
-<h2>🌟 हमारी विशेष सेवाएं</h2>
+<div class="card" onclick="toggle(this)">
+<img src="vishesh-seva.jpg">
+<h3 data-hi="🌸 विशेष सेवाएं" data-en="🌸 Special Services"></h3>
 <ul>
-<li>महा रुद्राभिषेक</li>
-<li>सत्यनारायण पूजा</li>
-<li>नामकरण, विवाह संस्कार</li>
+<li>रुद्राभिषेक</li>
+<li>संस्कार पूजन</li>
 <li>मंत्र दीक्षा</li>
-<li>यंत्र प्राण प्रतिष्ठा</li>
-<li>तीर्थ यात्रा आयोजन</li>
-<li>व्यक्तिगत परामर्श</li>
+<li>आध्यात्मिक परामर्श</li>
 </ul>
 </div>
 
 </section>
 
-<footer>
-<div class="mantra">॥ हर हर महादेव ॥</div>
-<p>© 2026 वैदिक ज्योतिष एवं अनुष्ठान केंद्र</p>
-</footer>
+<section class="trust">
+<span>✔ उज्जैन सिद्ध क्षेत्र</span>
+<span>✔ वैदिक शास्त्र सम्मत विधि</span>
+<span>✔ अनुभवी आचार्य</span>
+<span>✔ पूर्ण गोपनीयता</span>
+</section>
 
-<a class="whatsapp" href="https://wa.me/918827415099" target="_blank">🟢</a>
+<a class="whatsapp" target="_blank"
+href="https://wa.me/918827415099?text=ॐ नमः शिवाय। मुझे आपकी आध्यात्मिक सेवाओं की जानकारी चाहिए।">
+📲 WhatsApp करें
+</a>
+
+<script>
+function toggle(card){
+    let ul = card.querySelector("ul");
+    ul.style.display = ul.style.display==="block" ? "none" : "block";
+}
+
+function setLang(lang){
+    document.querySelectorAll("[data-hi]").forEach(el=>{
+        el.innerText = el.getAttribute("data-"+lang);
+    });
+    if(lang==="en"){
+        document.getElementById("title").innerText="Jyotish Anushthan Karmakand Kendra, Ujjain";
+        document.getElementById("subtitle").innerText="Sacred Vedic & Tantric Services from Ujjain";
+    }else{
+        document.getElementById("title").innerText="ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन";
+        document.getElementById("subtitle").innerText="॥ ॐ नमः शिवाय ॥ उज्जैन – सिद्ध महाकाल की पावन भूमि";
+    }
+}
+setLang('hi');
+</script>
 
 </body>
 </html>
