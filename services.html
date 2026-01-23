@@ -1,216 +1,294 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>वैदिक ज्योतिष एवं उज्जैन सेवा केंद्र</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --holy-saffron: #FF9933;
-            --temple-gold: #D4AF37;
-            --deep-maroon: #660000;
-            --glow-gold: rgba(212, 175, 55, 0.8);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>हमारी सेवाएं | वैदिक ज्योतिष एवं अनुष्ठान</title>
 
-        body {
-            margin: 0; padding: 0;
-            background-color: #fdf5e6;
-            font-family: 'Tiro Devanagari Hindi', serif;
-            color: var(--deep-maroon);
-            background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-            scroll-behavior: smooth;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        /* Shining Header with Shlok */
-        header {
-            background: linear-gradient(to bottom, var(--deep-maroon), #330000);
-            color: var(--temple-gold);
-            text-align: center;
-            padding: 50px 20px;
-            border-bottom: 5px solid var(--temple-gold);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-        }
+<style>
+:root{
+--gold:#d4af37;
+--dark:#050505;
+}
 
-        .shlok {
-            font-style: italic;
-            font-size: 1.4rem;
-            display: block;
-            margin-bottom: 15px;
-            animation: textGlow 3s infinite alternate;
-        }
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Poppins,sans-serif;
+background:radial-gradient(circle at top,#111,#000);
+color:#fff;
+overflow-x:hidden;
+}
 
-        @keyframes textGlow {
-            from { text-shadow: 0 0 5px var(--temple-gold); opacity: 0.8; }
-            to { text-shadow: 0 0 20px #fff, 0 0 30px var(--holy-saffron); opacity: 1; }
-        }
+h1,h2,h3{
+font-family:Cinzel,serif;
+color:var(--gold);
+letter-spacing:1px;
+}
 
-        /* Sticky Navigation Tabs */
-        .nav-container {
-            position: sticky; top: 0; z-index: 1000;
-            background: var(--holy-saffron);
-            padding: 12px 0;
-            overflow-x: auto;
-            white-space: nowrap;
-            display: flex; justify-content: start;
-            border-bottom: 3px solid var(--temple-gold);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
+section{padding:80px 8%}
 
-        .nav-link {
-            color: white; text-decoration: none;
-            padding: 5px 20px; font-weight: bold;
-            font-size: 1.1rem; border-right: 1px solid rgba(255,255,255,0.3);
-            transition: 0.3s;
-        }
+.mantra{
+text-align:center;
+font-size:22px;
+color:#ffd27d;
+margin:20px 0;
+text-shadow:0 0 15px gold;
+animation:pulse 2.5s infinite;
+}
+@keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
 
-        .nav-link:hover { color: var(--deep-maroon); }
+header{
+position:sticky;top:0;z-index:999;
+background:rgba(0,0,0,.85);
+padding:14px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #222;
+}
+header img{height:55px}
+nav a{margin-left:22px;color:#fff;text-decoration:none}
+nav a:hover{color:var(--gold)}
 
-        /* Container & Cards */
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.hero{
+min-height:90vh;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.95)),
+url(bg.jpg) center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+.hero h1{font-size:46px;text-shadow:0 0 30px gold}
+.hero p{max-width:850px;margin:20px auto;font-size:18px}
 
-        .category-block { margin-bottom: 70px; scroll-margin-top: 100px; }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:28px;
+margin-top:50px;
+}
+.card{
+background:linear-gradient(145deg,#0e0e0e,#050505);
+border:1px solid #222;
+border-radius:18px;
+overflow:hidden;
+transition:.4s;
+box-shadow:0 0 25px rgba(255,215,0,.05);
+}
+.card:hover{
+transform:translateY(-8px) scale(1.03);
+box-shadow:0 0 45px rgba(255,215,0,.35);
+}
+.card img{width:100%;height:190px;object-fit:cover}
+.card h3{text-align:center;padding:16px}
 
-        .category-header {
-            text-align: center; font-size: 2.5rem;
-            margin-bottom: 40px; color: var(--deep-maroon);
-            border-bottom: 2px solid var(--temple-gold);
-            display: inline-block; width: 100%; padding-bottom: 10px;
-        }
+.details{
+background:#060606;
+border-top:1px solid #222;
+}
+.block{margin-bottom:70px}
+.block ul{
+columns:2;
+column-gap:40px;
+margin-top:20px;
+}
+.block li{
+list-style:"🔱 ";
+margin:8px 0;
+padding-left:8px;
+}
+@media(max-width:768px){.block ul{columns:1}}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
+footer{
+background:#000;
+border-top:1px solid #222;
+padding:40px 8%;
+text-align:center;
+}
 
-        .card {
-            background: #fff;
-            border: 2px solid var(--temple-gold);
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            transition: 0.4s;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            overflow: hidden;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 30px var(--glow-gold);
-            background: #fffdf0;
-        }
-
-        .card::before {
-            content: 'ॐ';
-            position: absolute; top: -10px; right: -5px;
-            font-size: 4rem; opacity: 0.05; color: var(--temple-gold);
-        }
-
-        .card i {
-            font-size: 2.8rem; color: var(--holy-saffron);
-            margin-bottom: 15px;
-            filter: drop-shadow(0 0 5px rgba(255, 153, 51, 0.4));
-        }
-
-        .wa-btn {
-            display: inline-block; background: #25D366;
-            color: white; padding: 12px 25px;
-            border-radius: 50px; text-decoration: none;
-            margin-top: 15px; font-family: 'Poppins', sans-serif;
-            font-weight: 600; transition: 0.3s;
-            border: none; cursor: pointer;
-        }
-
-        .wa-btn:hover { background: #128C7E; transform: scale(1.05); }
-
-        /* Floating WhatsApp Icon */
-        .floating-wa {
-            position: fixed; bottom: 30px; right: 30px;
-            background: #25D366; width: 60px; height: 60px;
-            border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; color: white; font-size: 30px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3); z-index: 9999;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-    </style>
+.whatsapp{
+position:fixed;
+bottom:22px;right:22px;
+width:60px;height:60px;
+border-radius:50%;
+background:#25D366;
+display:flex;align-items:center;justify-content:center;
+font-size:30px;color:#fff;
+box-shadow:0 0 30px #25D366;
+animation:glow 2s infinite;
+z-index:999;
+}
+@keyframes glow{
+0%,100%{box-shadow:0 0 15px #25D366}
+50%{box-shadow:0 0 40px #25D366}
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <span class="shlok">"ॐ असतो मा सद्गमय। तमसो मा ज्योतिर्गमय।"</span>
-    <h1 style="font-size: 3rem; margin: 10px 0;">वैदिक ज्योतिष एवं उज्जैन सेवा केंद्र</h1>
-    <p>आपका विश्वास, हमारी साधना - समस्त धार्मिक अनुष्ठान हेतु संपर्क करें</p>
+<img src="logo.jpg" alt="Logo">
+<nav>
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</nav>
 </header>
 
-<nav class="nav-container">
-    <a href="#cat1" class="nav-link">ज्योतिष</a>
-    <a href="#cat2" class="nav-link">उज्जैन विशेष</a>
-    <a href="#cat3" class="nav-link">शक्ति तंत्र</a>
-    <a href="#cat6" class="nav-link">दोष निवारण</a>
-    <a href="#cat7" class="nav-link">पितृ सेवा</a>
-    <a href="#cat10" class="nav-link">विशेष पूजा</a>
-</nav>
+<section class="hero">
+<div>
+<h1>वैदिक परंपरा से जीवन समाधान तक</h1>
+<p>ज्योतिष, अनुष्ठान, तंत्र साधना एवं उज्जैन विशेष सेवाएं — शुद्ध वैदिक विधि द्वारा</p>
+<div class="mantra">॥ ॐ नमः शिवाय ॥</div>
+</div>
+</section>
 
-<div class="container" id="main-content">
-    </div>
+<section>
+<h2 style="text-align:center">हमारी प्रमुख सेवाएं</h2>
 
-<a href="https://wa.me/918827415099?text=Namaste, mujhe pujan sevaon ki jankari chahiye." class="floating-wa" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+<div class="grid">
+<div class="card"><img src="jyotish.jpg"><h3>ज्योतिष सेवाएं</h3></div>
+<div class="card"><img src="ujjain.jpg"><h3>उज्जैन विशेष सेवाएं</h3></div>
+<div class="card"><img src="tantra.jpg"><h3>शक्ति तंत्र अनुष्ठान</h3></div>
+<div class="card"><img src="path.jpg"><h3>पाठ सेवाएं</h3></div>
+<div class="card"><img src="jaap.jpg"><h3>जाप सेवाएं</h3></div>
+<div class="card"><img src="dosh.jpg"><h3>दोष निवारण</h3></div>
+<div class="card"><img src="pitra.jpg"><h3>पितृ मोक्ष सेवाएं</h3></div>
+<div class="card"><img src="ved.jpg"><h3>वेद एवं पुराण</h3></div>
+<div class="card"><img src="katha.jpg"><h3>कथा सेवाएं</h3></div>
+<div class="card"><img src="special.jpg"><h3>विशेष सेवाएं</h3></div>
+</div>
+</section>
 
-<script>
-    const whatsappNumber = "918827415099";
+<section class="details">
 
-    const allServices = [
-        { id: "cat1", title: "ज्योतिष सेवाएं", icon: "fa-solid fa-star-and-crescent", list: ["जन्म कुंडली विश्लेषण", "विवाह मिलान", "करियर और व्यापार ज्योतिष", "वार्षिक भविष्यफल", "रत्न सुझाव", "वास्तु परामर्श"] },
-        { id: "cat2", title: "उज्जैन विशेष सेवाएं", icon: "fa-solid fa-temple", list: ["महाकालेश्वर दर्शन व्यवस्था", "भस्म आरती मार्गदर्शन", "क्षिप्रा स्नान", "काल भैरव मंदिर पूजन", "मंगलनाथ भात पूजा"] },
-        { id: "cat3", title: "शक्ति तंत्र अनुष्ठान", icon: "fa-solid fa-eye", list: ["दस महाविद्या अनुष्ठान", "बगलामुखी अनुष्ठान", "महाकाली अनुष्ठान", "तारा देवी अनुष्ठान", "रोग मुक्ति अनुष्ठान"] },
-        { id: "cat4", title: "पाठ सेवाएं", icon: "fa-solid fa-book-open", list: ["महामृत्युंजय पाठ", "दुर्गा सप्तशती पाठ", "चंडी पाठ", "विष्णु सहस्रनाम", "हनुमान चालीसा पाठ"] },
-        { id: "cat5", title: "जाप सेवाएं", icon: "fa-solid fa-om", list: ["शिव मंत्र जाप", "देवी मंत्र जाप", "गणपति जाप", "नवग्रह शांति जाप", "मृत्युंजय मंत्र जाप"] },
-        { id: "cat6", title: "दोष निवारण", icon: "fa-solid fa-fire", list: ["काल सर्प दोष", "मंगल दोष", "शनि दोष", "पितृ दोष निवारण", "गुरु चांडाल दोष"] },
-        { id: "cat7", title: "पितृ मोक्ष तर्पण एवं श्राद्ध", icon: "fa-solid fa-water", list: ["नारायण बलि श्राद्ध", "त्रिपिंडी श्राद्ध", "पिंडदान", "गया श्राद्ध", "पितृ तर्पण"] },
-        { id: "cat8", title: "वेद एवं पुराण सेवाएं", icon: "fa-solid fa-scroll", list: ["ऋग्वेद/यजुर्वेद पाठ", "स्थापत्य वेद (वास्तु)", "18 महापुराण श्रवण", "गरुड़ पुराण पाठ"] },
-        { id: "cat9", title: "कथा सेवाएं", icon: "fa-solid fa-microphone", list: ["श्रीमद्भागवत कथा", "राम कथा", "शिव पुराण कथा", "देवी भागवत कथा"] },
-        { id: "cat10", title: "विशेष पूजा सेवाएं", icon: "fa-solid fa-award", list: ["महा रुद्राभिषेक", "सत्यनारायण पूजा", "यज्ञोपवीत संस्कार", "नामकरण संस्कार"] }
-    ];
+<div class="block">
+<h2>🔮 ज्योतिष सेवाएं</h2>
+<ul>
+<li>जन्म कुंडली विश्लेषण</li><li>विवाह मिलान</li><li>करियर व व्यापार ज्योतिष</li>
+<li>वार्षिक भविष्यफल</li><li>प्रश्न कुंडली</li><li>रत्न सुझाव</li>
+<li>मुहूर्त निर्धारण</li><li>नामकरण संस्कार</li><li>वास्तु परामर्श</li><li>ग्रह शांति उपाय</li>
+</ul>
+</div>
 
-    const container = document.getElementById('main-content');
+<div class="block">
+<h2>🛕 उज्जैन विशेष सेवाएं</h2>
+<ul>
+<li>महाकालेश्वर दर्शन व्यवस्था</li>
+<li>भस्म आरती बुकिंग मार्गदर्शन</li>
+<li>क्षिप्रा स्नान</li>
+<li>रामघाट पूजन</li>
+<li>सिंहस्थ कुंभ मेला सेवाएं</li>
+<li>काल भैरव, हरसिद्धि, शनि मंदिर</li>
+<li>चिंतामन गणेश, गढ़ कालिका</li>
+<li>नवग्रह मंदिर दर्शन</li>
+<li>पारदेश्वर महादेव पूजन</li>
+<li>चार धाम मंदिर दर्शन</li>
+</ul>
+</div>
 
-    allServices.forEach(service => {
-        let html = `
-            <section class="category-block" id="${service.id}">
-                <h2 class="category-header">${service.title}</h2>
-                <div class="grid">
-        `;
-        
-        service.list.forEach(item => {
-            const msg = encodeURIComponent(`नमस्ते, मुझे "${item}" सेवा के बारे में जानकारी चाहिए।`);
-            html += `
-                <div class="card">
-                    <i class="${service.icon}"></i>
-                    <h3>${item}</h3>
-                    <p>विद्वान ब्राह्मणों द्वारा पूर्ण विधि-विधान से संपन्न।</p>
-                    <a href="https://wa.me/${whatsappNumber}?text=${msg}" class="wa-btn" target="_blank">
-                        <i class="fab fa-whatsapp"></i> संकल्प लें
-                    </a>
-                </div>
-            `;
-        });
+<div class="block">
+<h2>🔱 शक्ति तंत्र अनुष्ठान</h2>
+<ul>
+<li>दस महाविद्या अनुष्ठान</li>
+<li>काल भैरव रोग मुक्ति</li>
+<li>बगलामुखी अनुष्ठान</li>
+<li>महाकाली, तारा, छिन्नमस्ता</li>
+<li>त्रिपुर सुंदरी</li>
+<li>भुवनेश्वरी</li>
+<li>धूमावती</li>
+<li>मातंगी</li>
+<li>कमला</li>
+<li>शक्ति साधना</li>
+</ul>
+</div>
 
-        html += `</div></section>`;
-        container.innerHTML += html;
-    });
-</script>
+<div class="block">
+<h2>📿 पाठ सेवाएं</h2>
+<ul>
+<li>महामृत्युंजय पाठ</li><li>रुद्राष्टक पाठ</li>
+<li>दुर्गा सप्तशती</li><li>चंडी पाठ</li>
+<li>बगलामुखी पाठ</li><li>गणेश अथर्वशीर्ष</li>
+<li>विष्णु सहस्रनाम</li><li>हनुमान चालीसा</li>
+<li>नवग्रह पाठ</li><li>पितृ पाठ</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>🧘 जाप सेवाएं</h2>
+<ul>
+<li>ॐ नमः शिवाय जाप</li><li>महामृत्युंजय जाप</li>
+<li>दुर्गा मंत्र जाप</li><li>लक्ष्मी मंत्र जाप</li>
+<li>गणपति मंत्र जाप</li><li>राम मंत्र जाप</li>
+<li>हनुमान मंत्र जाप</li><li>नवग्रह मंत्र जाप</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>♻️ दोष निवारण</h2>
+<ul>
+<li>काल सर्प दोष</li><li>मंगल दोष</li>
+<li>शनि दोष</li><li>राहु-केतु दोष</li>
+<li>पितृ दोष</li><li>गुरु चांडाल दोष</li>
+<li>केमद्रुम दोष</li><li>संतान दोष</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>🌾 पितृ मोक्ष एवं श्राद्ध</h2>
+<ul>
+<li>पितृ तर्पण</li><li>गया श्राद्ध</li>
+<li>नारायण बलि</li><li>त्रिपिंडी श्राद्ध</li>
+<li>पिंडदान</li><li>वार्षिक श्राद्ध</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>📜 वेद एवं पुराण</h2>
+<ul>
+<li>ऋग्वेद</li><li>यजुर्वेद</li><li>सामवेद</li><li>अथर्ववेद</li>
+<li>18 महापुराण</li><li>प्रमुख उपपुराण</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>🎤 कथा सेवाएं</h2>
+<ul>
+<li>श्रीमद्भागवत कथा</li>
+<li>रामायण कथा</li>
+<li>महाभारत कथा</li>
+<li>शिव पुराण कथा</li>
+<li>देवी भागवत कथा</li>
+<li>विष्णु पुराण कथा</li>
+</ul>
+</div>
+
+<div class="block">
+<h2>🌟 हमारी विशेष सेवाएं</h2>
+<ul>
+<li>महा रुद्राभिषेक</li>
+<li>सत्यनारायण पूजा</li>
+<li>नामकरण, विवाह संस्कार</li>
+<li>मंत्र दीक्षा</li>
+<li>यंत्र प्राण प्रतिष्ठा</li>
+<li>तीर्थ यात्रा आयोजन</li>
+<li>व्यक्तिगत परामर्श</li>
+</ul>
+</div>
+
+</section>
+
+<footer>
+<div class="mantra">॥ हर हर महादेव ॥</div>
+<p>© 2026 वैदिक ज्योतिष एवं अनुष्ठान केंद्र</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/918827415099" target="_blank">🟢</a>
 
 </body>
 </html>
