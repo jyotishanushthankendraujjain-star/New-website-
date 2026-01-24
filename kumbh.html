@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<title>Kumbh Mela 2028 | Jyotish Anushthan Karmakand Kendra Ujjain</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#041a2d;
+  --saffron:#ff9933;
+  --gold:#ffd700;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Tiro Devanagari Hindi', serif;
+  background:radial-gradient(circle at top,#eef7ff,#fff);
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:rgba(4,26,45,.92);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px 6%;
+  z-index:1000;
+}
+header img{height:55px;filter:drop-shadow(0 0 8px gold);}
+header .brand{color:var(--gold);font-size:1.05rem;text-align:center;}
+header button{
+  background:linear-gradient(45deg,var(--saffron),var(--gold));
+  border:none;padding:8px 16px;
+  border-radius:30px;
+  font-weight:bold;cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  background:url("kumbh.jpg") center/cover fixed;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.65),rgba(4,26,45,.95));
+}
+.hero-content{
+  position:relative;z-index:2;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+}
+.hero h1{
+  font-size:3.4rem;
+  color:var(--gold);
+  text-shadow:0 0 30px gold;
+}
+.hero p{max-width:900px;font-size:1.3rem;margin:15px 0 25px;}
+.btn{
+  padding:14px 34px;
+  border-radius:50px;
+  background:linear-gradient(45deg,var(--saffron),var(--gold));
+  color:#000;font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 0 25px gold;
+  margin:6px;
+}
+
+/* DIYA */
+.diya{
+  position:absolute;
+  bottom:-120px;
+  width:40px;
+  opacity:.6;
+  animation:float 22s linear infinite;
+}
+@keyframes float{
+  to{transform:translateY(-130vh) rotate(360deg);}
+}
+
+/* MANTRA */
+.mantra{
+  background:linear-gradient(90deg,var(--blue),#000);
+  color:var(--gold);
+  text-align:center;
+  padding:18px;
+  font-size:1.25rem;
+}
+
+/* SECTION */
+section{padding:100px 8%;}
+h2{text-align:center;font-size:2.6rem;color:var(--blue);margin-bottom:40px;}
+.lang-en{display:none;}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:22px;
+  border-top:6px solid var(--saffron);
+  box-shadow:0 0 30px rgba(0,0,0,.15);
+}
+
+/* SHLOK */
+.shlok{
+  max-width:900px;
+  margin:60px auto;
+  padding:30px;
+  text-align:center;
+  border:2px solid var(--gold);
+  box-shadow:0 0 35px gold;
+  background:#fffdf2;
+  font-size:1.25rem;
+}
+
+/* PACKAGES */
+table{
+  width:100%;
+  border-collapse:collapse;
+  box-shadow:0 0 25px rgba(0,0,0,.15);
+}
+th,td{
+  padding:16px;
+  border:1px solid #ddd;
+  text-align:center;
+}
+th{background:var(--blue);color:gold;}
+
+/* FOOTER */
+footer{
+  background:linear-gradient(45deg,var(--blue),#000);
+  color:#fff;
+  text-align:center;
+  padding:70px 8%;
+}
+footer img{height:80px;filter:drop-shadow(0 0 10px gold);}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:20px;bottom:20px;
+  background:#25d366;
+  color:#fff;
+  padding:16px 26px;
+  border-radius:50px;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 0 25px #25d366;
+}
+.sound{
+  position:fixed;
+  left:20px;bottom:20px;
+  background:gold;
+  padding:14px 18px;
+  border-radius:50%;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo.jpg">
+  <div class="brand">ज्योतिष अनुष्ठान कर्मकांड केंद्र – उज्जैन</div>
+  <button onclick="toggleLang()">Hindi / English</button>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1 class="lang-hi">सिंहस्थ कुंभ मेला 2028</h1>
+    <h1 class="lang-en">Simhastha Kumbh Mela 2028</h1>
+
+    <p class="lang-hi">क्षिप्रा तट, उज्जैन – मोक्ष का द्वार</p>
+    <p class="lang-en">Shipra River, Ujjain – Gateway to Liberation</p>
+
+    <a class="btn" href="https://wa.me/918827415099?text=Kumbh%202028%20Puja%20Booking">WhatsApp Booking</a>
+  </div>
+
+  <img src="diya.png" class="diya" style="left:20%">
+  <img src="diya.png" class="diya" style="left:55%;animation-duration:26s">
+</div>
+
+<div class="mantra">
+ॐ नमः शिवाय | हर हर महादेव | गंगे च यमुने चैव
+</div>
+
+<section>
+<h2 class="lang-hi">सिंहस्थ कुंभ का आध्यात्मिक महत्व</h2>
+<h2 class="lang-en">Spiritual Significance of Simhastha</h2>
+
+<p class="lang-hi" style="text-align:center;font-size:1.2rem;">
+जब गुरु सिंह राशि में प्रवेश करते हैं, उज्जैन दिव्य ऊर्जा का केंद्र बन जाता है।
+</p>
+<p class="lang-en" style="text-align:center;font-size:1.2rem;">
+When Jupiter enters Leo, Ujjain becomes a cosmic spiritual epicenter.
+</p>
+</section>
+
+<div class="shlok">
+“स्नानं दानं जपं होमं कुंभे कोटिगुणं भवेत्”
+</div>
+
+<section>
+<h2 class="lang-hi">पूजा पैकेज</h2>
+<h2 class="lang-en">Puja Packages</h2>
+
+<table>
+<tr>
+<th class="lang-hi">पैकेज</th>
+<th class="lang-en">Package</th>
+<th>Details</th>
+<th>Price</th>
+<th>Action</th>
+</tr>
+<tr>
+<td>साधारण</td><td>Basic</td>
+<td>स्नान + संकल्प</td>
+<td>₹2999</td>
+<td><a class="btn" href="https://wa.me/918827415099?text=Basic%20Kumbh%20Package">WhatsApp</a></td>
+</tr>
+<tr>
+<td>विशेष</td><td>Special</td>
+<td>पिंडदान + ग्रह शांति</td>
+<td>₹7100</td>
+<td><a class="btn" href="https://wa.me/918827415099?text=Special%20Kumbh%20Package">WhatsApp</a></td>
+</tr>
+<tr>
+<td>महापूजन</td><td>Maha</td>
+<td>सम्पूर्ण वैदिक अनुष्ठान</td>
+<td>₹15100</td>
+<td><a class="btn" href="https://wa.me/918827415099?text=Maha%20Kumbh%20Package">WhatsApp</a></td>
+</tr>
+</table>
+</section>
+
+<footer>
+<img src="logo.jpg">
+<h2 style="color:gold;margin-top:10px;">ज्योतिष अनुष्ठान कर्मकांड केंद्र – उज्जैन</h2>
+<p>🔱 Kumbh Special • Vedic Rituals • Astrology 🔱</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/918827415099?text=Kumbh%202028%20Inquiry">💬 WhatsApp</a>
+<div class="sound" onclick="playSound()">🔔</div>
+
+<audio id="bell" src="https://actions.google.com/sounds/v1/alarms/temple_bell.ogg"></audio>
+
+<script>
+function toggleLang(){
+  document.querySelectorAll('.lang-hi').forEach(e=>e.style.display=e.style.display==='none'?'block':'none');
+  document.querySelectorAll('.lang-en').forEach(e=>e.style.display=e.style.display==='none'?'block':'none');
+}
+function playSound(){
+  document.getElementById('bell').play();
+}
+</script>
+
+</body>
+</html>
