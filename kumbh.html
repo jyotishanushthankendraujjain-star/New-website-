@@ -2,148 +2,253 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ujjain Kumbh 2028 | Jyotish Anushthan Karmakand Kendra</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{margin:0;font-family:Segoe UI,sans-serif;background:radial-gradient(circle at top,#1a0f0f,#000);color:#fff}
-h1,h2,h3{color:#f5c16c}
-section{padding:60px 20px;max-width:1200px;margin:auto}
-.hero{text-align:center;padding:90px 20px;background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),url('mahakal.jpg') center/cover}
-.hero h1{font-size:38px;text-shadow:0 0 20px gold}
-.hero p{max-width:850px;margin:20px auto;font-size:18px}
-.btn{display:inline-block;padding:12px 26px;background:linear-gradient(45deg,#b8860b,#ffd700);color:#000;font-weight:700;border-radius:30px;text-decoration:none;margin-top:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.card{background:linear-gradient(180deg,#1b0f0f,#000);border:1px solid rgba(255,215,0,.3);border-radius:18px;overflow:hidden}
-.card img{width:100%;height:200px;object-fit:cover}
-.card div{padding:20px}
-.price{color:#ffd700;font-weight:700;margin-top:6px}
-.strip{position:fixed;bottom:0;left:0;width:100%;background:linear-gradient(90deg,#8b0000,#ffcc00,#8b0000);color:#000;font-weight:700;padding:12px;z-index:999}
-.strip span{white-space:nowrap;display:inline-block;animation:scroll 18s linear infinite}
-@keyframes scroll{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
-.strip a{color:#000;text-decoration:none}
-.floating{position:fixed;right:20px;bottom:90px;background:#25D366;color:#000;font-weight:700;padding:14px 18px;border-radius:50px;text-decoration:none}
-.toggle{position:fixed;top:15px;right:15px;border:1px solid gold;padding:6px 14px;border-radius:20px;cursor:pointer}
-.en{display:none}
-.footer{background:#050505;padding:50px 20px;text-align:center;border-top:1px solid rgba(255,215,0,.3)}
-.footer img{height:70px;margin-bottom:10px}
-.social a{margin:0 8px;font-size:22px;color:#ffd700;text-decoration:none}
+:root{
+  --gold:#d4af37;
+  --dark:#0b0b0b;
+  --red:#8b0000;
+  --bg:#111;
+}
+body{
+  margin:0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #1a0f00, #000);
+  color:#fff;
+}
+header{
+  background: linear-gradient(135deg,#2b0000,#000);
+  padding:25px;
+  text-align:center;
+  position:relative;
+}
+header img{
+  width:90px;
+}
+header h1{
+  margin:10px 0 5px;
+  color:var(--gold);
+  font-size:28px;
+}
+header p{
+  opacity:0.9;
+}
+
+.toggle{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:var(--gold);
+  color:#000;
+  padding:8px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.section{
+  padding:50px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+.section h2{
+  text-align:center;
+  color:var(--gold);
+  margin-bottom:30px;
+  font-size:32px;
+}
+
+.card{
+  background: linear-gradient(145deg,#1a1a1a,#000);
+  border:1px solid rgba(212,175,55,0.3);
+  border-radius:20px;
+  padding:25px;
+  margin-bottom:35px;
+  box-shadow:0 0 25px rgba(212,175,55,0.15);
+}
+.card img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+.card h3{
+  color:var(--gold);
+  margin-bottom:10px;
+}
+.price{
+  color:#00ffcc;
+  font-weight:bold;
+  margin-top:8px;
+}
+
+.whatsapp-btn{
+  display:inline-block;
+  margin-top:15px;
+  background:#25D366;
+  color:#000;
+  padding:12px 20px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.strip{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:linear-gradient(90deg,#8b0000,#000);
+  color:#fff;
+  padding:12px;
+  text-align:center;
+  z-index:999;
+}
+.strip a{
+  color:var(--gold);
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.pandit{
+  text-align:center;
+}
+.pandit img{
+  width:160px;
+  border-radius:50%;
+  border:4px solid var(--gold);
+  margin-bottom:15px;
+}
+
+footer{
+  background:#000;
+  padding:30px 20px;
+  text-align:center;
+}
+footer img{
+  width:70px;
+}
+.social a{
+  margin:0 10px;
+  color:var(--gold);
+  font-size:22px;
+  text-decoration:none;
+}
+.mantra{
+  margin-top:15px;
+  color:var(--gold);
+  font-size:18px;
+}
 </style>
 </head>
 
 <body>
 
-<div class="toggle" onclick="toggleLang()">हिंदी | ENG</div>
+<header>
+  <img src="logo.jpg">
+  <h1 class="hi">उज्जैन कुंभ (सिंहस्थ) 2028</h1>
+  <h1 class="en" style="display:none;">Ujjain Kumbh (Simhastha) 2028</h1>
 
-<!-- HERO -->
-<div class="hero hi">
-<h1>🕉️ उज्जैन कुंभ (सिंहस्थ) 2028</h1>
-<p>महाकाल की पावन नगरी उज्जैन में कुंभ – जहाँ स्नान, संकल्प और अनुष्ठान से जीवन शुद्ध होता है।</p>
-<a class="btn" href="https://wa.me/918827415099?text=उज्जैन%20कुंभ%202028%20पूजा%20बुकिंग">WhatsApp बुकिंग</a>
+  <p class="hi">महाकाल की पावन नगरी में दिव्य वैदिक अनुष्ठान</p>
+  <p class="en" style="display:none;">Divine Vedic Rituals in the City of Mahakal</p>
+
+  <div class="toggle" onclick="toggleLang()">EN / हिंदी</div>
+</header>
+
+<section class="section">
+
+<h2 class="hi">महाकालेश्वर विशेष पूजा</h2>
+<h2 class="en" style="display:none;">Mahakaleshwar Special Pooja</h2>
+
+<div class="card">
+  <img src="mahakal.jpg">
+  <h3 class="hi">महा रुद्राभिषेक व भस्म आरती</h3>
+  <h3 class="en" style="display:none;">Maha Rudrabhishek & Bhasma Aarti</h3>
+
+  <p class="hi">महाकाल की विशेष कृपा हेतु पूर्ण वैदिक विधि।</p>
+  <p class="en" style="display:none;">Complete Vedic ritual for Mahakal blessings.</p>
+
+  <div class="price hi">₹ 11,000</div>
+  <div class="price en" style="display:none;">₹ 11,000</div>
+
+  <a class="whatsapp-btn" href="https://wa.me/918827415099">WhatsApp Booking</a>
 </div>
 
-<div class="hero en">
-<h1>🕉️ Ujjain Kumbh (Simhastha) 2028</h1>
-<p>The sacred city of Mahakal where holy bathing and rituals cleanse karma and soul.</p>
-<a class="btn" href="https://wa.me/918827415099?text=Ujjain%20Kumbh%202028%20Pooja%20Booking">WhatsApp Booking</a>
+<div class="card">
+  <img src="ramghat-shipra.jpg">
+  <h3 class="hi">क्षिप्रा स्नान व पितृ तर्पण</h3>
+  <h3 class="en" style="display:none;">Shipra Snan & Pitra Tarpan</h3>
+
+  <div class="price hi">₹ 5,100</div>
+  <div class="price en" style="display:none;">₹ 5,100</div>
+
+  <a class="whatsapp-btn" href="https://wa.me/918827415099">WhatsApp Booking</a>
 </div>
 
-<!-- PLACES -->
-<section class="hi">
-<h2>📍 उज्जैन की पवित्र जगहें, पूजा व शुल्क</h2>
-<div class="grid">
-
 <div class="card">
-<img src="mahakal.jpg"><div>
-<h3>श्री महाकालेश्वर ज्योतिर्लिंग</h3>
-<ul><li>भस्म आरती</li><li>महा रुद्राभिषेक</li><li>महामृत्युंजय जाप</li></ul>
-<div class="price">₹ 5,100 से प्रारंभ</div>
-<a class="btn" href="https://wa.me/918827415099?text=महाकाल%20पूजा%20बुकिंग">बुक करें</a>
-</div></div>
+  <img src="kalbhairav.jpg">
+  <h3 class="hi">काल भैरव पूजा व रक्षा कवच</h3>
+  <h3 class="en" style="display:none;">Kal Bhairav Pooja & Protection Ritual</h3>
 
-<div class="card">
-<img src="ramghat-shipra.jpg"><div>
-<h3>राम घाट – क्षिप्रा स्नान</h3>
-<ul><li>स्नान विधि</li><li>पितृ तर्पण</li><li>संकल्प पूजा</li></ul>
-<div class="price">₹ 2,100 से प्रारंभ</div>
-<a class="btn" href="https://wa.me/918827415099?text=क्षिप्रा%20स्नान%20बुकिंग">बुक करें</a>
-</div></div>
+  <div class="price hi">₹ 7,100</div>
+  <div class="price en" style="display:none;">₹ 7,100</div>
 
-<div class="card">
-<img src="kalbhairav.jpg"><div>
-<h3>काल भैरव मंदिर</h3>
-<ul><li>काल दोष शांति</li><li>रक्षा कवच पूजा</li></ul>
-<div class="price">₹ 3,100 से प्रारंभ</div>
-<a class="btn" href="https://wa.me/918827415099?text=काल%20भैरव%20पूजा">बुक करें</a>
-</div></div>
-
-<div class="card">
-<img src="harsiddhi.jpg"><div>
-<h3>हरसिद्धि माता मंदिर</h3>
-<ul><li>शक्ति पूजा</li><li>दीपदान</li></ul>
-<div class="price">₹ 2,500 से प्रारंभ</div>
-<a class="btn" href="https://wa.me/918827415099?text=हरसिद्धि%20माता%20पूजा">बुक करें</a>
-</div></div>
-
-<div class="card">
-<img src="mangalnath.jpg"><div>
-<h3>मंगलनाथ मंदिर</h3>
-<ul><li>मंगल दोष निवारण</li><li>विवाह बाधा शांति</li></ul>
-<div class="price">₹ 4,100 से प्रारंभ</div>
-<a class="btn" href="https://wa.me/918827415099?text=मंगलनाथ%20पूजा">बुक करें</a>
-</div></div>
-
-<div class="card">
-<img src="siddhavat.jpg"><div>
-<h3>सिद्धवट</h3>
-<ul><li>पितृ दोष शांति</li><li>तर्पण विधि</li></ul>
-<div class="price">₹ 3,100 से प्रारंभ</div>
-<a class="btn" href="https://wa.me/918827415099?text=सिद्धवट%20पूजा">बुक करें</a>
-</div></div>
-
+  <a class="whatsapp-btn" href="https://wa.me/918827415099">WhatsApp Booking</a>
 </div>
+
+<div class="card">
+  <img src="mangalnath.jpg">
+  <h3 class="hi">मंगल दोष निवारण पूजा</h3>
+  <h3 class="en" style="display:none;">Mangal Dosh Nivaran Pooja</h3>
+
+  <div class="price hi">₹ 6,500</div>
+  <div class="price en" style="display:none;">₹ 6,500</div>
+
+  <a class="whatsapp-btn" href="https://wa.me/918827415099">WhatsApp Booking</a>
+</div>
+
 </section>
 
-<!-- PANDIT -->
-<section class="hi">
-<h2>🙏 आचार्य पंडित अभिषेक उपाध्याय</h2>
-<div class="grid">
-<div class="card">
-<img src="pandit-abhishek.jpg">
-<div>
-<p>
-15+ वर्षों के अनुभव के साथ पंडित अभिषेक उपाध्याय  
-वैदिक ज्योतिष, कुंभ अनुष्ठान, पितृ दोष, ग्रह शांति एवं विशेष पूजा में निपुण हैं।  
-उज्जैन की शास्त्रसम्मत परंपराओं के अनुसार शुद्ध विधि से पूजा संपन्न कराते हैं।
-</p>
-</div>
-</div>
-</div>
+<section class="section pandit">
+  <h2 class="hi">आचार्य पंडित अभिषेक उपाध्याय</h2>
+  <h2 class="en" style="display:none;">Acharya Pandit Abhishek Upadhyay</h2>
+
+  <img src="pandit.jpg">
+
+  <p class="hi">
+  15 वर्षों से अधिक अनुभव के साथ उज्जैन में वैदिक, तांत्रिक एवं ज्योतिष अनुष्ठानों के विशेषज्ञ।
+  </p>
+  <p class="en" style="display:none;">
+  Vedic, Tantric & Astrology expert with 15+ years of experience in Ujjain.
+  </p>
 </section>
 
-<!-- FOOTER -->
-<div class="footer">
-<img src="logo.jpg" alt="Logo">
-<p><strong>Jyotish Anushthan Karmakand Kendra, Ujjain</strong></p>
-<p>📲 WhatsApp: 8827415099</p>
-<div class="social">
-<a href="#">📘</a>
-<a href="#">📸</a>
-<a href="https://wa.me/918827415099">💬</a>
-</div>
-</div>
+<footer>
+  <img src="logo.jpg">
+  <p>Jyotish Anushthan Karmakand Kendra, Ujjain</p>
 
-<a class="floating" href="https://wa.me/918827415099">📲 WhatsApp</a>
+  <div class="social">
+    <a href="#">📘</a>
+    <a href="#">📸</a>
+    <a href="https://wa.me/918827415099">💬</a>
+  </div>
+
+  <div class="mantra">ॐ नमः शिवाय 🔱</div>
+</footer>
 
 <div class="strip">
-<span>🕉️ UJJAIN KUMBH 2028 SPECIAL POOJA BOOKING OPEN • LIMITED SLOTS • CLICK FOR WHATSAPP 🕉️ 
-<a href="https://wa.me/918827415099">BOOK NOW</a></span>
+  <a href="https://wa.me/918827415099">
+  🕉️ Ujjain Kumbh 2028 Special Booking Open – Click for WhatsApp
+  </a>
 </div>
 
 <script>
 function toggleLang(){
-document.querySelectorAll('.hi').forEach(e=>e.style.display=e.style.display==='none'?'block':'none');
-document.querySelectorAll('.en').forEach(e=>e.style.display=e.style.display==='none'?'block':'none');
+  document.querySelectorAll('.hi').forEach(el=>el.style.display =
+    el.style.display === 'none' ? 'block' : 'none');
+  document.querySelectorAll('.en').forEach(el=>el.style.display =
+    el.style.display === 'none' ? 'block' : 'none');
 }
 </script>
 
