@@ -2,7 +2,7 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<title>हमारे प्रमुख विद्वान | Jyotish Anushthan Karmakand Kendra, Ujjain</title>
+<title>Our Esteemed Scholars | Jyotish Anushthan Karmakand Kendra, Ujjain</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
@@ -16,46 +16,25 @@ font-family:'Noto Serif Devanagari',serif;
 background:radial-gradient(circle at top,#fff8dc,#f5eddc);
 color:var(--dark);
 }
-
-/* BRAND */
 .brand{
 position:sticky;top:0;z-index:999;
-text-align:center;
-padding:18px;
+text-align:center;padding:18px;
 background:linear-gradient(to bottom,#fff9e6,#f1e2b6);
 box-shadow:0 4px 15px rgba(0,0,0,.15);
 }
-.brand img{height:62px;filter:drop-shadow(0 0 14px rgba(212,175,55,.7));}
-.brand h1{margin:10px 0 6px;font-family:'Cinzel',serif;color:var(--gold);}
-.brand-desc{font-size:15px;color:#6b5200;max-width:850px;margin:auto;}
-.toggle{margin-top:12px;background:var(--gold);color:#fff;border:none;padding:8px 18px;border-radius:20px;cursor:pointer;}
+.brand img{height:62px;}
+.brand h1{margin:10px 0;font-family:'Cinzel',serif;color:var(--gold);}
+.brand-desc{font-size:15px;max-width:850px;margin:auto;}
+.toggle{margin-top:10px;background:var(--gold);color:#fff;border:none;padding:8px 18px;border-radius:20px;cursor:pointer;}
 
-/* KUMBH STRIP */
 .kumbh-strip{
 background:linear-gradient(90deg,#3b2b1a,#8b6508,#3b2b1a);
-color:#fff;
-text-align:center;
-padding:14px 10px;
-font-size:17px;
-position:relative;
-overflow:hidden;
+color:#fff;text-align:center;padding:14px;
 }
-.kumbh-strip::before{
-content:"";
-position:absolute;inset:0;
-background:radial-gradient(circle,rgba(212,175,55,.35),transparent 70%);
-animation:glow 3s infinite alternate;
-}
-@keyframes glow{from{opacity:.3;}to{opacity:.7;}}
-.kumbh-strip span{position:relative;z-index:1;}
-.kumbh-strip i{color:var(--gold);margin:0 8px;}
 
-/* HEADER */
 .header{text-align:center;padding:55px 20px;}
 .header h2{font-family:'Cinzel',serif;color:var(--gold);font-size:34px;}
-.mantra{font-size:18px;color:#8a6a00;margin-top:12px;}
 
-/* CARDS */
 .section{padding:60px 20px;}
 .cards{
 max-width:1200px;margin:auto;
@@ -68,18 +47,8 @@ background:linear-gradient(145deg,#fffdf6,#f3ead1);
 border-radius:22px;
 box-shadow:0 15px 35px rgba(0,0,0,.12);
 overflow:hidden;
-border:1px solid rgba(212,175,55,.35);
-transition:.4s;
 }
-.card:hover{transform:translateY(-6px);box-shadow:0 0 40px rgba(212,175,55,.45);}
-.card-img{position:relative;}
-.card-img::after{
-content:"";
-position:absolute;inset:0;
-background:radial-gradient(circle,rgba(212,175,55,.35),transparent 65%);
-opacity:.6;
-}
-.card img{width:100%;height:300px;object-fit:cover;border-bottom:4px solid var(--gold);}
+.card img{width:100%;height:300px;object-fit:cover;}
 .card-content{padding:25px;}
 .card h3{font-family:'Cinzel',serif;color:var(--gold);}
 .exp{font-size:14px;color:#8a6a00;margin-bottom:10px;}
@@ -87,45 +56,34 @@ opacity:.6;
 .social{margin-top:14px;display:flex;gap:18px;}
 .social a{color:var(--gold);font-size:22px;}
 
-/* FOOTER */
-.footer{text-align:center;padding:40px 20px;background:linear-gradient(to top,#f1e2b6,#fffaf0);}
-.footer img{height:50px;}
+.footer{text-align:center;padding:40px;background:#f1e2b6;}
 .footer h3{font-family:'Cinzel',serif;color:var(--gold);}
-.footer .shlok{font-size:18px;color:#8b6508;}
 
-/* WHATSAPP */
 .whatsapp-float{
 position:fixed;bottom:20px;right:20px;
 background:#25D366;color:#fff;
-width:55px;height:55px;
+width:55px;height:55px;border-radius:50%;
 display:flex;align-items:center;justify-content:center;
-border-radius:50%;font-size:28px;
+font-size:28px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- BRAND -->
 <div class="brand">
 <img src="logo.jpg">
 <h1 id="brandName">ज्योतिष अनुष्ठान कर्मकाण्ड केन्द्र, उज्जैन</h1>
 <div class="brand-desc" id="brandDesc">
-वैदिक परंपरा, शुद्ध मंत्रोच्चारण एवं अनुभवी आचार्यों द्वारा सम्पूर्ण ज्योतिष एवं कर्मकाण्ड सेवाएं
+वैदिक परंपरा, शुद्ध मंत्रोच्चारण एवं अनुभवी आचार्यों द्वारा सम्पूर्ण सेवाएं
 </div>
 <button class="toggle" onclick="toggleLang()">EN / हिंदी</button>
 </div>
 
-<!-- TOP KUMBH STRIP -->
-<div class="kumbh-strip" id="k1">
-<span><i class="fa-solid fa-om"></i> सिंहस्थ कुंभ महापर्व 2028 – उज्जैन <i class="fa-solid fa-trident"></i></span>
-</div>
+<div class="kumbh-strip" id="k1">🔱 सिंहस्थ कुंभ 2028 – उज्जैन 🔱</div>
 
 <div class="header">
 <h2 id="title">हमारे प्रमुख विद्वान</h2>
-<div class="mantra">
-ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्मा अमृतं गमय ॥
-</div>
 </div>
 
 <section class="section">
@@ -133,133 +91,89 @@ border-radius:50%;font-size:28px;
 
 <!-- 1 -->
 <div class="card">
-<div class="card-img"><img src="abhishek.jpg"></div>
+<img src="abhishek.jpg">
 <div class="card-content">
 <h3 id="a1">पं. अभिषेक उपाध्याय</h3>
 <div class="exp" id="a1e">मुख्य आचार्य | 15+ वर्ष</div>
-<p id="a1d">पं. अभिषेक उपाध्याय एक अनुभवी, विद्वान एवं सिद्ध आचार्य हैं, जिन्हें वैदिक शास्त्र, ज्योतिष, कर्मकांड एवं अनुष्ठान विद्या में गहन ज्ञान प्राप्त है। आपने पिछले 15 वर्षों से वैदिक परंपराओं के अनुसार असंख्य पूजा-पाठ, अनुष्ठान, हवन, यज्ञ एवं संस्कारों को सफलतापूर्वक संपन्न कराया है।
-इनकी विशेषता यह है कि ये प्रत्येक पूजा एवं अनुष्ठान को शुद्ध वैदिक विधि, मंत्रोच्चारण एवं शास्त्रीय नियमों के अनुसार पूर्ण निष्ठा और श्रद्धा से संपन्न कराते हैं।
-जन्म कुंडली विश्लेषण, ग्रह दोष निवारण, वास्तु परामर्श, रत्न परामर्श एवं ज्योतिषीय समाधान में इनका मार्गदर्शन अत्यंत सटीक और प्रभावशाली माना जाता है।
-पं. अभिषेक उपाध्याय का उद्देश्य केवल पूजा कराना ही नहीं, बल्कि भक्त के जीवन में सकारात्मक ऊर्जा, शांति, समृद्धि एवं आध्यात्मिक उन्नति लाना है।
-इन्हें महान अनुष्ठानों, विशेष पूजा, व्यक्तिगत एवं पारिवारिक धार्मिक कार्यों के लिए एक विश्वसनीय एवं योग्य विद्वान के रूप में जाना जाता है।
-✨ श्रद्धा, शुद्धता और शास्त्रसम्मत पूजा — यही इनकी पहचान है।</p>
+<p id="a1d"></p>
 <div class="social">
 <a href="https://wa.me/918827415099"><i class="fab fa-whatsapp"></i></a>
-<a href="https://instagram.com/abhishek_upadhyay"><i class="fab fa-instagram"></i></a>
-<a href="https://facebook.com/abhishek.upadhyay"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
 </div>
 </div>
 </div>
 
 <!-- 2 -->
 <div class="card">
-<div class="card-img"><img src="rajiv.jpg"></div>
+<img src="rajiv.jpg">
 <div class="card-content">
 <h3 id="a2">पं. राजीव उपाध्याय</h3>
 <div class="exp" id="a2e">वरिष्ठ आचार्य | 15+ वर्ष</div>
-<p id="a2d">संस्कार विधि, गृह शांति एवं सत्यनारायण कथा में दक्ष।</p>
-<div class="social">
-<a href="https://wa.me/918827415099"><i class="fab fa-whatsapp"></i></a>
-<a href="https://instagram.com/rajiv_upadhyay"><i class="fab fa-instagram"></i></a>
-<a href="https://facebook.com/rajiv.upadhyay"><i class="fab fa-facebook"></i></a>
+<p id="a2d"></p>
 </div>
 </div>
-</div>
-
-<!-- MID STRIP -->
-</div>
-</section>
-
-<div class="kumbh-strip" id="k2">
-<span>🔱 महाकाल की पावन नगरी उज्जैन में कुंभ विशेष वैदिक अनुष्ठान 🔱</span>
-</div>
-
-<section class="section">
-<div class="cards">
 
 <!-- 3 -->
 <div class="card">
-<div class="card-img"><img src="dinesh.jpg"></div>
+<img src="dinesh.jpg">
 <div class="card-content">
-<h3>पं. दिनेश जोशी</h3>
-<div class="exp">महाविद्वान | 35+ वर्ष</div>
-<p>महायज्ञ, श्राद्ध कर्म एवं पितृ दोष शांति में अनुभवी।</p>
+<h3 id="a3">पं. दिनेश जोशी</h3>
+<div class="exp" id="a3e">महाविद्वान | 35+ वर्ष</div>
+<p id="a3d"></p>
 </div>
 </div>
 
 <!-- 4 -->
 <div class="card">
-<div class="card-img"><img src="pravin.jpg"></div>
+<img src="pravin.jpg">
 <div class="card-content">
-<h3>पं. प्रविण रावल</h3>
-<div class="exp">वरिष्ठ कर्मकाण्ड विशेषज्ञ | 25+ वर्ष</div>
-<p>कालसर्प दोष, नवचंडी पाठ एवं विशेष अनुष्ठानों में निपुण।</p>
+<h3 id="a4">पं. प्रविण रावल</h3>
+<div class="exp" id="a4e">वरिष्ठ कर्मकाण्ड विशेषज्ञ | 25+ वर्ष</div>
+<p id="a4d"></p>
 </div>
 </div>
 
 </div>
 </section>
 
-<!-- BOTTOM STRIP -->
-<div class="kumbh-strip" id="k3">
-<span>🕉️ सिंहस्थ कुंभ 2028 | महाकाल की कृपा से संपूर्ण वैदिक सेवाएं 🕉️</span>
-</div>
+<div class="kumbh-strip" id="k2">🕉️ कुंभ विशेष वैदिक अनुष्ठान | उज्जैन 🕉️</div>
 
 <div class="footer">
-<img src="logo.jpg">
 <h3>Jyotish Anushthan Karmakand Kendra, Ujjain</h3>
-<div class="shlok">सर्वे भवन्तु सुखिनः • सर्वे सन्तु निरामयाः</div>
 </div>
 
-<a class="whatsapp-float" href="https://wa.me/918827415099"><i class="fab fa-whatsapp"></i></a>
+<a class="whatsapp-float" href="https://wa.me/918827415099">
+<i class="fab fa-whatsapp"></i>
+</a>
 
 <script>
 let hi=true;
+
+const data={
+hi:{
+a1:`पं. अभिषेक उपाध्याय एक अनुभवी, विद्वान एवं सिद्ध आचार्य हैं, जिन्हें वैदिक शास्त्र, ज्योतिष, कर्मकांड एवं अनुष्ठान विद्या में गहन ज्ञान प्राप्त है। पिछले 15 वर्षों से आपने शुद्ध वैदिक विधि द्वारा असंख्य पूजा, हवन, यज्ञ एवं संस्कार संपन्न कराए हैं। इनका उद्देश्य भक्त के जीवन में शांति, समृद्धि एवं सकारात्मक ऊर्जा लाना है। ✨`,
+a2:`पं. राजीव उपाध्याय एक अनुभवी वरिष्ठ आचार्य हैं, जिन्हें संस्कार विधि, गृह शांति, सत्यनारायण कथा एवं पारिवारिक धार्मिक अनुष्ठानों में विशेष दक्षता प्राप्त है। वैदिक मंत्रोच्चारण की शुद्धता और सरल मार्गदर्शन इनकी पहचान है। ✨`,
+a3:`पं. दिनेश जोशी एक महाविद्वान आचार्य हैं जिनका 35 वर्षों का अनुभव उन्हें विशेष बनाता है। महायज्ञ, श्राद्ध कर्म, पितृ दोष शांति एवं वैदिक विधान में इनका योगदान अत्यंत सम्माननीय है। ✨`,
+a4:`पं. प्रविण रावल एक वरिष्ठ कर्मकाण्ड विशेषज्ञ हैं, जिन्हें कालसर्प दोष, नवचंडी पाठ एवं विशेष साधनात्मक अनुष्ठानों में गहन अनुभव प्राप्त है। शास्त्रसम्मत विधि एवं सिद्ध परिणाम इनकी विशेषता है। ✨`
+},
+en:{
+a1:`Pt. Abhishek Upadhyay is a highly learned and experienced Vedic scholar with over 15 years of expertise in Vedic rituals, astrology, karmakand and anushthan. His purpose is to bring peace, prosperity and positive spiritual energy into devotees’ lives. ✨`,
+a2:`Pt. Rajiv Upadhyay is a senior priest skilled in sanskar rituals, griha shanti, and Satyanarayan Katha. His calm guidance and authentic mantra chanting make him highly respected. ✨`,
+a3:`Pt. Dinesh Joshi is a master scholar with 35+ years of experience, renowned for maha yagyas, shraddh rituals and pitra dosha remedies performed strictly as per Vedic scriptures. ✨`,
+a4:`Pt. Pravin Rawal is a senior karmakand expert with deep specialization in Kalsarp Dosha, Navchandi Path and advanced Vedic anushthans, delivering spiritually powerful results. ✨`
+}
+};
+
 function toggleLang(){
 hi=!hi;
-document.getElementById("brandName").innerText=hi?
-"ज्योतिष अनुष्ठान कर्मकाण्ड केन्द्र, उज्जैन":
-"Jyotish Anushthan Karmakand Kendra, Ujjain";
-
-document.getElementById("brandDesc").innerText=hi?
-"वैदिक परंपरा, शुद्ध मंत्रोच्चारण एवं अनुभवी आचार्यों द्वारा सम्पूर्ण ज्योतिष एवं कर्मकाण्ड सेवाएं":
-"Complete Vedic astrology and ritual services in the holy city of Ujjain.";
-
 document.getElementById("title").innerText=hi?"हमारे प्रमुख विद्वान":"Our Esteemed Scholars";
-
-document.getElementById("a1").innerText=hi?"पं. अभिषेक उपाध्याय":"Pt. Abhishek Upadhyay";
-document.getElementById("a1e").innerText=hi?"मुख्य आचार्य | 15+ वर्ष":"Chief Priest | 15+ Years";
-document.getElementById("a1d").innerText=hi?
-"पं. अभिषेक उपाध्याय एक अनुभवी, विद्वान एवं सिद्ध आचार्य हैं, जिन्हें वैदिक शास्त्र, ज्योतिष, कर्मकांड एवं अनुष्ठान विद्या में गहन ज्ञान प्राप्त है। आपने पिछले 15 वर्षों से वैदिक परंपराओं के अनुसार असंख्य पूजा-पाठ, अनुष्ठान, हवन, यज्ञ एवं संस्कारों को सफलतापूर्वक संपन्न कराया है।
-इनकी विशेषता यह है कि ये प्रत्येक पूजा एवं अनुष्ठान को शुद्ध वैदिक विधि, मंत्रोच्चारण एवं शास्त्रीय नियमों के अनुसार पूर्ण निष्ठा और श्रद्धा से संपन्न कराते हैं।
-जन्म कुंडली विश्लेषण, ग्रह दोष निवारण, वास्तु परामर्श, रत्न परामर्श एवं ज्योतिषीय समाधान में इनका मार्गदर्शन अत्यंत सटीक और प्रभावशाली माना जाता है।
-पं. अभिषेक उपाध्याय का उद्देश्य केवल पूजा कराना ही नहीं, बल्कि भक्त के जीवन में सकारात्मक ऊर्जा, शांति, समृद्धि एवं आध्यात्मिक उन्नति लाना है।
-इन्हें महान अनुष्ठानों, विशेष पूजा, व्यक्तिगत एवं पारिवारिक धार्मिक कार्यों के लिए एक विश्वसनीय एवं योग्य विद्वान के रूप में जाना जाता है।
-✨ श्रद्धा, शुद्धता और शास्त्रसम्मत पूजा — यही इनकी पहचान है।":
-"Pt. Abhishek Upadhyay is a highly learned, experienced, and dedicated Vedic scholar, possessing deep expertise in Vedic rituals, astrology, Karmakand, Anushthan, Pooja, and Kundli analysis. With over 15 years of experience, he has successfully conducted numerous Vedic poojas, havans, yagyas, samskaras, and sacred rituals strictly according to traditional scriptures.
-His key strength lies in performing every ritual with pure Vedic methodology, accurate mantra chanting, and strict adherence to Shastric principles, ensuring complete spiritual authenticity.
-He is widely respected for his precise horoscope analysis, planetary dosha remedies, Vastu consultation, gemstone guidance, and astrological solutions, which are known to bring clarity and positive transformation in devotees’ lives.
-Pt. Abhishek Upadhyay believes that a pooja is not merely a ritual, but a divine process to invoke peace, prosperity, spiritual growth, and positive energy. His guidance is trusted for grand Anushthans, special ceremonies, personal and family religious functions, making him a reliable and revered spiritual guide.
-✨ Faith, purity, and scriptural excellence define his spiritual practice.";
-
-document.getElementById("a2").innerText=hi?"पं. राजीव उपाध्याय":"Pt. Rajiv Upadhyay";
-document.getElementById("a2e").innerText=hi?"वरिष्ठ आचार्य | 15+ वर्ष":"Senior Priest | 15+ Years";
-document.getElementById("a2d").innerText=hi?
-"संस्कार विधि, गृह शांति एवं सत्यनारायण कथा में दक्ष।":
-"Specialist in sanskar rituals, griha shanti and Satyanarayan Katha.";
-
-document.getElementById("k1").children[0].innerText=hi?
-"सिंहस्थ कुंभ महापर्व 2028 – उज्जैन":
-"Simhastha Kumbh Mela 2028 – Ujjain";
-
-document.getElementById("k2").children[0].innerText=hi?
-"🔱 महाकाल की पावन नगरी उज्जैन में कुंभ विशेष वैदिक अनुष्ठान 🔱":
-"🔱 Special Vedic rituals in holy city of Mahakal – Ujjain 🔱";
-
-document.getElementById("k3").children[0].innerText=hi?
-"🕉️ सिंहस्थ कुंभ 2028 | महाकाल की कृपा से संपूर्ण वैदिक सेवाएं 🕉️":
-"🕉️ Simhastha Kumbh 2028 | Complete Vedic services with Mahakal's blessings 🕉️";
+document.getElementById("a1d").innerText=hi?data.hi.a1:data.en.a1;
+document.getElementById("a2d").innerText=hi?data.hi.a2:data.en.a2;
+document.getElementById("a3d").innerText=hi?data.hi.a3:data.en.a3;
+document.getElementById("a4d").innerText=hi?data.hi.a4:data.en.a4;
 }
+toggleLang();
 </script>
 
 </body>
