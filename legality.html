@@ -8,35 +8,41 @@
 <style>
 body{
     margin:0;
-    font-family: "Noto Serif Devanagari", serif;
-    background: radial-gradient(circle at top, #fff9e6, #f5d98b);
+    font-family:"Noto Serif Devanagari", serif;
+    background:radial-gradient(circle at top,#fff8dc,#f3d27a);
     color:#4b2e00;
 }
 header{
+    background:linear-gradient(90deg,#f7e7a1,#d4af37,#f7e7a1);
     text-align:center;
-    padding:30px 15px;
-    background: linear-gradient(90deg,#f7e7a1,#d4af37,#f7e7a1);
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    padding:25px 15px 30px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+.logo{
+    width:90px;
+    margin-bottom:10px;
 }
 header h1{
-    margin:10px 0;
+    margin:8px 0;
     font-size:30px;
 }
 header p{
-    font-size:16px;
+    margin:0;
+    font-size:15px;
 }
 .toggle-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
     background:#4b2e00;
     color:#fff;
     border:none;
-    padding:10px 18px;
+    padding:8px 16px;
     border-radius:25px;
     cursor:pointer;
-    font-size:14px;
 }
 .strip{
     background:linear-gradient(90deg,#b8860b,#ffd700,#b8860b);
-    color:#4b2e00;
     text-align:center;
     padding:12px;
     font-weight:bold;
@@ -45,22 +51,22 @@ header p{
 .container{
     max-width:1100px;
     margin:auto;
-    padding:30px 15px;
+    padding:35px 15px;
 }
 .section{
-    background:rgba(255,255,255,0.9);
-    margin-bottom:25px;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    background:rgba(255,255,255,0.92);
+    padding:28px;
+    margin-bottom:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.18);
     position:relative;
 }
-.section:before{
+.section::before{
     content:"ॐ";
     position:absolute;
-    top:-15px;
-    right:20px;
-    font-size:40px;
+    top:-18px;
+    right:22px;
+    font-size:42px;
     color:#d4af37;
 }
 .section h2{
@@ -71,14 +77,15 @@ header p{
 .mantra{
     text-align:center;
     font-size:18px;
+    margin:25px 0 40px;
     color:#7a4a00;
-    margin:25px 0;
 }
 footer{
     background:#4b2e00;
     color:#fff;
     text-align:center;
-    padding:20px;
+    padding:22px;
+    font-size:14px;
 }
 </style>
 </head>
@@ -87,73 +94,71 @@ footer{
 
 <header>
     <button class="toggle-btn" onclick="toggleLang()">English</button>
+    <img src="logo.jpg" alt="Jyotish Anushthan Karmakand Kendra Logo" class="logo">
     <h1 id="brand">ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</h1>
     <p id="tagline">वैदिक परंपरा • आध्यात्मिक शुद्धता • शास्त्रीय विश्वास</p>
 </header>
 
 <div class="strip" id="kumbhStrip">
-    🔱 उज्जैन सिंहस्थ कुम्भ 2028 | विशेष वैदिक सेवाएँ एवं अनुष्ठान 🔱
+🔱 उज्जैन सिंहस्थ कुम्भ 2028 | विशेष वैदिक अनुष्ठान एवं सेवाएँ 🔱
 </div>
 
 <div class="container">
 
 <div class="mantra" id="mantra">
-    ॐ सर्वे भवन्तु सुखिनः । सर्वे सन्तु निरामयाः ॥
+ॐ सर्वे भवन्तु सुखिनः । सर्वे सन्तु निरामयाः ॥
 </div>
 
-<div class="section" id="legal1">
-<h2>कानूनी अस्वीकरण (Legal Disclaimer)</h2>
+<div class="section" id="l1">
+<h2>कानूनी अस्वीकरण</h2>
 <p>
-यह वेबसाइट केवल धार्मिक, आध्यात्मिक, सांस्कृतिक एवं वैदिक जानकारी प्रदान करने के उद्देश्य से बनाई गई है।
-यहाँ दी गई ज्योतिषीय भविष्यवाणियाँ, पूजन विधियाँ, अनुष्ठान विवरण एवं उपाय शास्त्रों, परंपराओं एवं अनुभव पर आधारित हैं।
-इनका उद्देश्य किसी भी प्रकार की कानूनी, चिकित्सा, वित्तीय अथवा प्रशासनिक सलाह देना नहीं है।
+यह वेबसाइट पूर्णतः धार्मिक, आध्यात्मिक एवं वैदिक जानकारी के उद्देश्य से संचालित की जाती है।
+यहाँ दी गई ज्योतिषीय व्याख्याएँ, पूजा विधियाँ, अनुष्ठान, मंत्र एवं उपाय शास्त्रों एवं परंपराओं पर आधारित हैं।
 </p>
 <p>
-किसी भी सेवा का लाभ उठाने से पूर्व उपयोगकर्ता अपनी व्यक्तिगत विवेकशीलता का प्रयोग करें।
-हम किसी भी निर्णय के प्रत्यक्ष या अप्रत्यक्ष परिणाम के लिए उत्तरदायी नहीं होंगे।
-</p>
-</div>
-
-<div class="section" id="legal2">
-<h2>सेवाओं की प्रकृति</h2>
-<p>
-हमारे द्वारा प्रदान की जाने वाली सभी सेवाएँ जैसे – ज्योतिष परामर्श, कुंडली विश्लेषण, वैदिक पूजा,
-अनुष्ठान, यज्ञ, शांति पाठ, कुम्भ विशेष सेवाएँ – पूर्णतः धार्मिक एवं आस्था आधारित हैं।
-</p>
-<p>
-इन सेवाओं को किसी भी प्रकार की गारंटी, कानूनी बाध्यता या निश्चित परिणाम के रूप में नहीं देखा जाना चाहिए।
-प्रत्येक व्यक्ति का कर्म, भाग्य एवं परिस्थिति भिन्न होती है।
+यह किसी भी प्रकार की कानूनी, चिकित्सा, वित्तीय अथवा प्रशासनिक सलाह नहीं है।
+उपयोगकर्ता अपने विवेक से निर्णय लें।
 </p>
 </div>
 
-<div class="section" id="legal3">
-<h2>कॉपीराइट एवं बौद्धिक संपदा</h2>
+<div class="section" id="l2">
+<h2>सेवाओं की सीमाएँ</h2>
 <p>
-इस वेबसाइट पर उपलब्ध समस्त सामग्री – पाठ्य सामग्री, डिजाइन, प्रतीक, मंत्र, श्लोक, लोगो एवं संरचना –
+ज्योतिषीय परामर्श, कुंडली विश्लेषण, पूजा-अनुष्ठान, यज्ञ एवं कुम्भ सेवाएँ आस्था आधारित हैं।
+इनसे किसी निश्चित परिणाम की गारंटी नहीं दी जाती।
+</p>
+<p>
+कर्म, ग्रह स्थिति एवं जीवन परिस्थिति प्रत्येक व्यक्ति के लिए भिन्न होती है।
+</p>
+</div>
+
+<div class="section" id="l3">
+<h2>कॉपीराइट नीति</h2>
+<p>
+इस वेबसाइट की समस्त सामग्री, डिजाइन, प्रतीक, मंत्र, श्लोक, लोगो एवं संरचना
 ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन की बौद्धिक संपदा है।
 </p>
 <p>
-बिना पूर्व लिखित अनुमति के किसी भी प्रकार की नकल, पुनर्प्रकाशन या व्यावसायिक उपयोग दंडनीय हो सकता है।
+बिना अनुमति किसी भी प्रकार की प्रतिलिपि प्रतिबंधित है।
 </p>
 </div>
 
-<div class="section" id="legal4">
-<h2>उज्जैन सिंहस्थ कुम्भ 2028 विशेष सूचना</h2>
+<div class="section" id="l4">
+<h2>उज्जैन सिंहस्थ कुम्भ 2028</h2>
 <p>
-उज्जैन सिंहस्थ कुम्भ 2028 के अंतर्गत प्रदर्शित सेवाएँ धार्मिक आयोजन हेतु हैं।
-तिथियाँ, स्थान, नियम एवं प्रशासनिक दिशा-निर्देश समय-समय पर बदल सकते हैं।
+सिंहस्थ कुम्भ 2028 से संबंधित सभी सेवाएँ प्रशासनिक नियमों एवं समय-सारणी पर निर्भर होंगी।
+तिथियों एवं व्यवस्थाओं में परिवर्तन संभव है।
 </p>
 <p>
-अतः उपयोगकर्ताओं को अंतिम निर्णय से पूर्व आधिकारिक घोषणाओं की पुष्टि स्वयं करनी चाहिए।
+अंतिम पुष्टि आधिकारिक घोषणाओं के अनुसार ही मान्य होगी।
 </p>
 </div>
 
-<div class="section" id="legal5">
+<div class="section" id="l5">
 <h2>उपयोगकर्ता उत्तरदायित्व</h2>
 <p>
-वेबसाइट का उपयोग करते समय उपयोगकर्ता यह स्वीकार करता है कि वह सभी नियमों, शर्तों एवं
-धार्मिक मर्यादाओं का पालन करेगा।
-किसी भी प्रकार की गलत जानकारी प्रदान करने की स्थिति में समस्त उत्तरदायित्व उपयोगकर्ता का होगा।
+वेबसाइट का उपयोग करते समय उपयोगकर्ता सही जानकारी प्रदान करेगा एवं धार्मिक मर्यादाओं का पालन करेगा।
+किसी भी दुरुपयोग की स्थिति में संपूर्ण उत्तरदायित्व उपयोगकर्ता का होगा।
 </p>
 </div>
 
@@ -164,34 +169,28 @@ footer{
 </footer>
 
 <script>
-let isHindi = true;
-
+let hindi=true;
 function toggleLang(){
-    if(isHindi){
-        document.documentElement.lang = "en";
-        document.title = "Legal Information | Jyotish Anushthan Karmakand Kendra Ujjain";
-        document.querySelector(".toggle-btn").innerText = "हिंदी";
-        document.getElementById("brand").innerText = "Jyotish Anushthan Karmakand Kendra, Ujjain";
-        document.getElementById("tagline").innerText = "Vedic Tradition • Spiritual Purity • Scriptural Faith";
-        document.getElementById("kumbhStrip").innerText = "🔱 Ujjain Simhastha Kumbh 2028 | Special Vedic Services & Rituals 🔱";
-        document.getElementById("mantra").innerText = "Om Sarve Bhavantu Sukhinah, Sarve Santu Niramayah";
+if(hindi){
+document.documentElement.lang="en";
+document.querySelector(".toggle-btn").innerText="हिंदी";
+document.title="Legal Information | Jyotish Anushthan Karmakand Kendra Ujjain";
+document.getElementById("brand").innerText="Jyotish Anushthan Karmakand Kendra, Ujjain";
+document.getElementById("tagline").innerText="Vedic Tradition • Spiritual Purity • Scriptural Faith";
+document.getElementById("kumbhStrip").innerText="🔱 Ujjain Simhastha Kumbh 2028 | Special Vedic Rituals & Services 🔱";
+document.getElementById("mantra").innerText="Om Sarve Bhavantu Sukhinah | Sarve Santu Niramayah";
 
-        document.getElementById("legal1").innerHTML = "<h2>Legal Disclaimer</h2><p>This website is created for religious, spiritual and cultural information only. Astrological predictions, rituals and remedies are based on traditional scriptures and experience. This does not constitute legal, medical or financial advice.</p><p>Users are advised to use their own discretion. We are not responsible for any outcomes.</p>";
+document.getElementById("l1").innerHTML="<h2>Legal Disclaimer</h2><p>This website is intended for religious and spiritual information only.</p><p>No legal, medical or financial advice is provided.</p>";
+document.getElementById("l2").innerHTML="<h2>Service Limitations</h2><p>All astrology and ritual services are faith based.</p>";
+document.getElementById("l3").innerHTML="<h2>Copyright Policy</h2><p>All content and design are intellectual property of Jyotish Anushthan Karmakand Kendra, Ujjain.</p>";
+document.getElementById("l4").innerHTML="<h2>Ujjain Kumbh 2028</h2><p>Services are subject to official guidelines and schedules.</p>";
+document.getElementById("l5").innerHTML="<h2>User Responsibility</h2><p>Users must provide correct information and follow all rules.</p>";
+document.getElementById("footer").innerText="© 2026 Jyotish Anushthan Karmakand Kendra, Ujjain | All Rights Reserved";
 
-        document.getElementById("legal2").innerHTML = "<h2>Nature of Services</h2><p>All services such as astrology consultation, horoscope analysis, Vedic rituals, yajnas and Kumbh services are faith-based.</p><p>No guaranteed results are claimed.</p>";
-
-        document.getElementById("legal3").innerHTML = "<h2>Copyright & Intellectual Property</h2><p>All content, design, symbols, mantras and logos are the intellectual property of Jyotish Anushthan Karmakand Kendra, Ujjain.</p><p>Unauthorized use is prohibited.</p>";
-
-        document.getElementById("legal4").innerHTML = "<h2>Ujjain Kumbh 2028 Notice</h2><p>Services related to Kumbh 2028 are subject to administrative guidelines and may change.</p><p>Please verify official announcements.</p>";
-
-        document.getElementById("legal5").innerHTML = "<h2>User Responsibility</h2><p>Users agree to follow all rules and provide correct information.</p>";
-
-        document.getElementById("footer").innerText = "© 2026 Jyotish Anushthan Karmakand Kendra, Ujjain | All Rights Reserved";
-
-        isHindi = false;
-    }else{
-        location.reload();
-    }
+hindi=false;
+}else{
+location.reload();
+}
 }
 </script>
 
