@@ -5,87 +5,91 @@
 <title>कानूनी जानकारी | ज्योतिष अनुष्ठान कर्मकांड केंद्र उज्जैन</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body{
-    margin:0;
-    font-family:"Noto Serif Devanagari", serif;
-    background:radial-gradient(circle at top,#fff8dc,#f3d27a);
-    color:#4b2e00;
+margin:0;
+font-family:"Noto Serif Devanagari",serif;
+background:radial-gradient(circle at top,#fff8dc,#f1cd70);
+color:#4b2e00;
 }
 header{
-    background:linear-gradient(90deg,#f7e7a1,#d4af37,#f7e7a1);
-    text-align:center;
-    padding:25px 15px 30px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.25);
+background:linear-gradient(90deg,#f7e7a1,#d4af37,#f7e7a1);
+text-align:center;
+padding:25px 15px 30px;
+box-shadow:0 6px 18px rgba(0,0,0,0.25);
+position:relative;
 }
-.logo{
-    width:90px;
-    margin-bottom:10px;
-}
-header h1{
-    margin:8px 0;
-    font-size:30px;
-}
-header p{
-    margin:0;
-    font-size:15px;
-}
+.logo{width:90px;margin-bottom:10px;}
 .toggle-btn{
-    position:absolute;
-    top:15px;
-    right:15px;
-    background:#4b2e00;
-    color:#fff;
-    border:none;
-    padding:8px 16px;
-    border-radius:25px;
-    cursor:pointer;
+position:absolute;top:15px;right:15px;
+background:#4b2e00;color:#fff;
+border:none;padding:8px 16px;
+border-radius:25px;cursor:pointer;
 }
 .strip{
-    background:linear-gradient(90deg,#b8860b,#ffd700,#b8860b);
-    text-align:center;
-    padding:12px;
-    font-weight:bold;
-    letter-spacing:1px;
+background:linear-gradient(90deg,#b8860b,#ffd700,#b8860b);
+text-align:center;padding:12px;font-weight:bold;
 }
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:35px 15px;
-}
+.container{max-width:1100px;margin:auto;padding:35px 15px;}
 .section{
-    background:rgba(255,255,255,0.92);
-    padding:28px;
-    margin-bottom:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.18);
-    position:relative;
+background:rgba(255,255,255,0.93);
+padding:28px;margin-bottom:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.18);
+position:relative;
 }
 .section::before{
-    content:"ॐ";
-    position:absolute;
-    top:-18px;
-    right:22px;
-    font-size:42px;
-    color:#d4af37;
+content:"ॐ";
+position:absolute;top:-18px;right:22px;
+font-size:42px;color:#d4af37;
 }
-.section h2{
-    color:#8b5a00;
-    border-bottom:2px solid #d4af37;
-    padding-bottom:8px;
+.mantra{text-align:center;font-size:18px;margin:25px 0 40px;color:#7a4a00;}
+
+.founder{
+background:linear-gradient(180deg,#fff2c6,#d4af37);
+border-radius:30px;
+padding:35px;
+text-align:center;
+box-shadow:0 15px 35px rgba(0,0,0,0.3);
 }
-.mantra{
-    text-align:center;
-    font-size:18px;
-    margin:25px 0 40px;
-    color:#7a4a00;
+.founder img{
+width:140px;height:140px;
+border-radius:50%;
+border:5px solid #fff;
+box-shadow:0 0 25px #ffd700;
+margin-bottom:15px;
 }
+.social a{
+margin:0 12px;
+font-size:20px;
+color:#4b2e00;
+transition:0.3s;
+}
+.social a:hover{color:#000;transform:scale(1.2);}
+
 footer{
-    background:#4b2e00;
-    color:#fff;
-    text-align:center;
-    padding:22px;
-    font-size:14px;
+background:#4b2e00;color:#fff;
+text-align:center;padding:20px;font-size:14px;
+}
+
+/* Floating WhatsApp */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:#fff;
+width:55px;height:55px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+z-index:999;
 }
 </style>
 </head>
@@ -93,14 +97,14 @@ footer{
 <body>
 
 <header>
-    <button class="toggle-btn" onclick="toggleLang()">English</button>
-    <img src="logo.jpg" alt="Jyotish Anushthan Karmakand Kendra Logo" class="logo">
-    <h1 id="brand">ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</h1>
-    <p id="tagline">वैदिक परंपरा • आध्यात्मिक शुद्धता • शास्त्रीय विश्वास</p>
+<button class="toggle-btn" onclick="toggleLang()">English</button>
+<img src="logo.jpg" class="logo">
+<h1 id="brand">ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</h1>
+<p id="tagline">वैदिक परंपरा • आध्यात्मिक शुद्धता • शास्त्रीय विश्वास</p>
 </header>
 
 <div class="strip" id="kumbhStrip">
-🔱 उज्जैन सिंहस्थ कुम्भ 2028 | विशेष वैदिक अनुष्ठान एवं सेवाएँ 🔱
+🔱 उजज्जैन सिंहस्थ कुम्भ 2028 | विशेष वैदिक अनुष्ठान एवं सेवाएँ 🔱
 </div>
 
 <div class="container">
@@ -111,55 +115,35 @@ footer{
 
 <div class="section" id="l1">
 <h2>कानूनी अस्वीकरण</h2>
-<p>
-यह वेबसाइट पूर्णतः धार्मिक, आध्यात्मिक एवं वैदिक जानकारी के उद्देश्य से संचालित की जाती है।
-यहाँ दी गई ज्योतिषीय व्याख्याएँ, पूजा विधियाँ, अनुष्ठान, मंत्र एवं उपाय शास्त्रों एवं परंपराओं पर आधारित हैं।
-</p>
-<p>
-यह किसी भी प्रकार की कानूनी, चिकित्सा, वित्तीय अथवा प्रशासनिक सलाह नहीं है।
-उपयोगकर्ता अपने विवेक से निर्णय लें।
-</p>
+<p>यह वेबसाइट धार्मिक एवं आध्यात्मिक जानकारी हेतु है।</p>
 </div>
 
 <div class="section" id="l2">
-<h2>सेवाओं की सीमाएँ</h2>
-<p>
-ज्योतिषीय परामर्श, कुंडली विश्लेषण, पूजा-अनुष्ठान, यज्ञ एवं कुम्भ सेवाएँ आस्था आधारित हैं।
-इनसे किसी निश्चित परिणाम की गारंटी नहीं दी जाती।
-</p>
-<p>
-कर्म, ग्रह स्थिति एवं जीवन परिस्थिति प्रत्येक व्यक्ति के लिए भिन्न होती है।
-</p>
+<h2>सेवाओं की प्रकृति</h2>
+<p>सभी ज्योतिषीय सेवाएँ आस्था आधारित हैं।</p>
 </div>
 
 <div class="section" id="l3">
 <h2>कॉपीराइट नीति</h2>
-<p>
-इस वेबसाइट की समस्त सामग्री, डिजाइन, प्रतीक, मंत्र, श्लोक, लोगो एवं संरचना
-ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन की बौद्धिक संपदा है।
-</p>
-<p>
-बिना अनुमति किसी भी प्रकार की प्रतिलिपि प्रतिबंधित है।
-</p>
+<p>समस्त सामग्री कॉपीराइट द्वारा संरक्षित है।</p>
 </div>
 
 <div class="section" id="l4">
 <h2>उज्जैन सिंहस्थ कुम्भ 2028</h2>
-<p>
-सिंहस्थ कुम्भ 2028 से संबंधित सभी सेवाएँ प्रशासनिक नियमों एवं समय-सारणी पर निर्भर होंगी।
-तिथियों एवं व्यवस्थाओं में परिवर्तन संभव है।
-</p>
-<p>
-अंतिम पुष्टि आधिकारिक घोषणाओं के अनुसार ही मान्य होगी।
-</p>
+<p>सेवाएँ प्रशासनिक दिशा-निर्देशों पर निर्भर होंगी।</p>
 </div>
 
-<div class="section" id="l5">
-<h2>उपयोगकर्ता उत्तरदायित्व</h2>
-<p>
-वेबसाइट का उपयोग करते समय उपयोगकर्ता सही जानकारी प्रदान करेगा एवं धार्मिक मर्यादाओं का पालन करेगा।
-किसी भी दुरुपयोग की स्थिति में संपूर्ण उत्तरदायित्व उपयोगकर्ता का होगा।
-</p>
+<div class="founder" id="founder">
+<img src="abhishek.jpg">
+<h2>संस्थापक</h2>
+<p><strong>पं. अभिषेक उपाध्याय</strong></p>
+<p>15+ वर्षों का वैदिक ज्योतिष एवं कर्मकांड अनुभव</p>
+<div class="social">
+<a href="https://wa.me/918827415099"><i class="fab fa-whatsapp"></i></a>
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="mailto:info@example.com"><i class="fas fa-envelope"></i></a>
+</div>
 </div>
 
 </div>
@@ -168,29 +152,27 @@ footer{
 © 2026 ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन | सर्वाधिकार सुरक्षित
 </footer>
 
+<a href="https://wa.me/918827415099" class="whatsapp-float">
+<i class="fab fa-whatsapp"></i>
+</a>
+
 <script>
-let hindi=true;
+let h=true;
 function toggleLang(){
-if(hindi){
-document.documentElement.lang="en";
+if(h){
 document.querySelector(".toggle-btn").innerText="हिंदी";
-document.title="Legal Information | Jyotish Anushthan Karmakand Kendra Ujjain";
 document.getElementById("brand").innerText="Jyotish Anushthan Karmakand Kendra, Ujjain";
 document.getElementById("tagline").innerText="Vedic Tradition • Spiritual Purity • Scriptural Faith";
-document.getElementById("kumbhStrip").innerText="🔱 Ujjain Simhastha Kumbh 2028 | Special Vedic Rituals & Services 🔱";
-document.getElementById("mantra").innerText="Om Sarve Bhavantu Sukhinah | Sarve Santu Niramayah";
-
-document.getElementById("l1").innerHTML="<h2>Legal Disclaimer</h2><p>This website is intended for religious and spiritual information only.</p><p>No legal, medical or financial advice is provided.</p>";
-document.getElementById("l2").innerHTML="<h2>Service Limitations</h2><p>All astrology and ritual services are faith based.</p>";
-document.getElementById("l3").innerHTML="<h2>Copyright Policy</h2><p>All content and design are intellectual property of Jyotish Anushthan Karmakand Kendra, Ujjain.</p>";
-document.getElementById("l4").innerHTML="<h2>Ujjain Kumbh 2028</h2><p>Services are subject to official guidelines and schedules.</p>";
-document.getElementById("l5").innerHTML="<h2>User Responsibility</h2><p>Users must provide correct information and follow all rules.</p>";
+document.getElementById("kumbhStrip").innerText="🔱 Ujjain Simhastha Kumbh 2028 | Special Vedic Rituals 🔱";
+document.getElementById("mantra").innerText="Om Sarve Bhavantu Sukhinah";
+document.getElementById("l1").innerHTML="<h2>Legal Disclaimer</h2><p>This website is for spiritual information only.</p>";
+document.getElementById("l2").innerHTML="<h2>Nature of Services</h2><p>All services are faith based.</p>";
+document.getElementById("l3").innerHTML="<h2>Copyright Policy</h2><p>All content is protected.</p>";
+document.getElementById("l4").innerHTML="<h2>Ujjain Kumbh 2028</h2><p>Subject to official guidelines.</p>";
+document.getElementById("founder").innerHTML="<img src='abhishek.jpg'><h2>Founder</h2><p><strong>Pandit Abhishek Upadhyay</strong></p><p>15+ Years of Vedic Astrology Experience</p><div class='social'><a href='https://wa.me/919999999999'><i class='fab fa-whatsapp'></i></a><a href='#'><i class='fab fa-facebook'></i></a><a href='#'><i class='fab fa-instagram'></i></a><a href='mailto:info@example.com'><i class='fas fa-envelope'></i></a></div>";
 document.getElementById("footer").innerText="© 2026 Jyotish Anushthan Karmakand Kendra, Ujjain | All Rights Reserved";
-
-hindi=false;
-}else{
-location.reload();
-}
+h=false;
+}else{location.reload();}
 }
 </script>
 
